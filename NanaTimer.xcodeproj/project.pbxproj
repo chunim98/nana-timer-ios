@@ -8,7 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		512DF5BF2C36C60800CE7F95 /* rounded-mplus-1c-medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 512DF5BE2C36C60800CE7F95 /* rounded-mplus-1c-medium.ttf */; };
-		513227132C2B258000BAD13E /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513227122C2B258000BAD13E /* Utility.swift */; };
+		51309DA62D0DCC4100660118 /* Color+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51309DA52D0DCC4100660118 /* Color+.swift */; };
+		51309DA82D0DCC4D00660118 /* Int+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51309DA72D0DCC4D00660118 /* Int+.swift */; };
+		51309DAA2D0DCC5500660118 /* Font+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51309DA92D0DCC5500660118 /* Font+.swift */; };
+		51309DAD2D0DCCB000660118 /* IntStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51309DAC2D0DCCB000660118 /* IntStorage.swift */; };
+		51309DAF2D0DCCBD00660118 /* BoolStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51309DAE2D0DCCBD00660118 /* BoolStorage.swift */; };
+		51309DB12D0DCCC700660118 /* StringStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51309DB02D0DCCC700660118 /* StringStorage.swift */; };
+		51309DB32D0DCCCE00660118 /* StateStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51309DB22D0DCCCE00660118 /* StateStorage.swift */; };
+		51309DB52D0DCCDF00660118 /* IntArrayStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51309DB42D0DCCDF00660118 /* IntArrayStorage.swift */; };
+		51309DB82D0DCD2400660118 /* ChuUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51309DB72D0DCD2400660118 /* ChuUIButton.swift */; };
+		51309DBC2D0DCD3E00660118 /* ChuUIModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51309DBB2D0DCD3E00660118 /* ChuUIModifier.swift */; };
 		51657B022C31C1C500418325 /* FirstOperationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51657B012C31C1C500418325 /* FirstOperationView.swift */; };
 		5172FD452C3FD33000BC3A44 /* PushNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5172FD442C3FD33000BC3A44 /* PushNotificationManager.swift */; };
 		5172FD492C3FFC4400BC3A44 /* SetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5172FD482C3FFC4400BC3A44 /* SetView.swift */; };
@@ -36,7 +45,16 @@
 
 /* Begin PBXFileReference section */
 		512DF5BE2C36C60800CE7F95 /* rounded-mplus-1c-medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "rounded-mplus-1c-medium.ttf"; sourceTree = "<group>"; };
-		513227122C2B258000BAD13E /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		51309DA52D0DCC4100660118 /* Color+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+.swift"; sourceTree = "<group>"; };
+		51309DA72D0DCC4D00660118 /* Int+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+.swift"; sourceTree = "<group>"; };
+		51309DA92D0DCC5500660118 /* Font+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+.swift"; sourceTree = "<group>"; };
+		51309DAC2D0DCCB000660118 /* IntStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntStorage.swift; sourceTree = "<group>"; };
+		51309DAE2D0DCCBD00660118 /* BoolStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoolStorage.swift; sourceTree = "<group>"; };
+		51309DB02D0DCCC700660118 /* StringStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringStorage.swift; sourceTree = "<group>"; };
+		51309DB22D0DCCCE00660118 /* StateStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateStorage.swift; sourceTree = "<group>"; };
+		51309DB42D0DCCDF00660118 /* IntArrayStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntArrayStorage.swift; sourceTree = "<group>"; };
+		51309DB72D0DCD2400660118 /* ChuUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChuUIButton.swift; sourceTree = "<group>"; };
+		51309DBB2D0DCD3E00660118 /* ChuUIModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChuUIModifier.swift; sourceTree = "<group>"; };
 		51657B012C31C1C500418325 /* FirstOperationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstOperationView.swift; sourceTree = "<group>"; };
 		5172FD442C3FD33000BC3A44 /* PushNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationManager.swift; sourceTree = "<group>"; };
 		5172FD482C3FFC4400BC3A44 /* SetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetView.swift; sourceTree = "<group>"; };
@@ -55,7 +73,7 @@
 		51B40EF32C2E731C0097A88C /* RemoteTaskManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteTaskManager.swift; sourceTree = "<group>"; };
 		51B40EF92C2F07440097A88C /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		51D4D67F2C2C7D7A0014731D /* ChartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartModel.swift; sourceTree = "<group>"; };
-		51E3E2472C3064C500130BD3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		51E3E2472C3064C500130BD3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		51E982D32C085339003A7527 /* NanaTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NanaTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		51E982D62C085339003A7527 /* NanaTimerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NanaTimerApp.swift; sourceTree = "<group>"; };
 		51E982D82C085339003A7527 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -75,37 +93,139 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5198A8BB2C2DCA7000ECEE0C /* ViewModel */ = {
+		51309D992D0DC8BB00660118 /* Feature */ = {
 			isa = PBXGroup;
 			children = (
-				5172FD4E2C4049A000BC3A44 /* MainVM.swift */,
-				5198A8B32C2D759D00ECEE0C /* TimerVM.swift */,
-				5198A8B92C2DCA1200ECEE0C /* ChartVM.swift */,
-				5172FD4A2C3FFE0400BC3A44 /* SetVM.swift */,
+				51309D9B2D0DCA6F00660118 /* FirstOperation */,
+				51309D9C2D0DCA8100660118 /* Main */,
+				51309D9D2D0DCA9400660118 /* Timer */,
+				51309D9E2D0DCAA400660118 /* Chart */,
+				51309D9F2D0DCAAA00660118 /* Set */,
 			);
-			path = ViewModel;
+			path = Feature;
 			sourceTree = "<group>";
 		};
-		51B40EF62C2E82DC0097A88C /* View */ = {
+		51309D9B2D0DCA6F00660118 /* FirstOperation */ = {
 			isa = PBXGroup;
 			children = (
 				51657B012C31C1C500418325 /* FirstOperationView.swift */,
-				51E982D82C085339003A7527 /* MainView.swift */,
-				51B40EF92C2F07440097A88C /* TimerView.swift */,
-				51AD90DF2C283543008E3E67 /* ChartView.swift */,
-				5172FD482C3FFC4400BC3A44 /* SetView.swift */,
 			);
-			path = View;
+			path = FirstOperation;
 			sourceTree = "<group>";
 		};
-		51D4D67E2C2C7C8D0014731D /* Model */ = {
+		51309D9C2D0DCA8100660118 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				51E982D82C085339003A7527 /* MainView.swift */,
+				5172FD4E2C4049A000BC3A44 /* MainVM.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		51309D9D2D0DCA9400660118 /* Timer */ = {
+			isa = PBXGroup;
+			children = (
+				51B40EF92C2F07440097A88C /* TimerView.swift */,
+				5198A8B32C2D759D00ECEE0C /* TimerVM.swift */,
 				5198A8B52C2D75D100ECEE0C /* TimerModel.swift */,
+			);
+			path = Timer;
+			sourceTree = "<group>";
+		};
+		51309D9E2D0DCAA400660118 /* Chart */ = {
+			isa = PBXGroup;
+			children = (
 				51D4D67F2C2C7D7A0014731D /* ChartModel.swift */,
+				51AD90DF2C283543008E3E67 /* ChartView.swift */,
+				5198A8B92C2DCA1200ECEE0C /* ChartVM.swift */,
+			);
+			path = Chart;
+			sourceTree = "<group>";
+		};
+		51309D9F2D0DCAAA00660118 /* Set */ = {
+			isa = PBXGroup;
+			children = (
+				5172FD482C3FFC4400BC3A44 /* SetView.swift */,
+				5172FD4A2C3FFE0400BC3A44 /* SetVM.swift */,
 				5172FD4C2C3FFEC400BC3A44 /* SetModel.swift */,
 			);
-			path = Model;
+			path = Set;
+			sourceTree = "<group>";
+		};
+		51309DA02D0DCB1900660118 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				51309DA12D0DCBD800660118 /* Application */,
+				51E982DA2C08533A003A7527 /* Assets.xcassets */,
+				51309DA42D0DCC0F00660118 /* Extensions */,
+				51309DB62D0DCD1800660118 /* Components */,
+				51309DAB2D0DCC8C00660118 /* PropertyWrappers */,
+				51309DA32D0DCBF700660118 /* Managers */,
+				51309DBD2D0DCD7500660118 /* Localization */,
+				512DF5BE2C36C60800CE7F95 /* rounded-mplus-1c-medium.ttf */,
+				51A08A992C2F2588008225FB /* NanumSquareRoundOTFB.otf */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		51309DA12D0DCBD800660118 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				51E982D62C085339003A7527 /* NanaTimerApp.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		51309DA32D0DCBF700660118 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				5198A8B12C2D4A3600ECEE0C /* TimerService.swift */,
+				5198A8B72C2D92E000ECEE0C /* SceneManager.swift */,
+				51B40EF32C2E731C0097A88C /* RemoteTaskManager.swift */,
+				51B26B112C411CEA006502A3 /* HapticManager.swift */,
+				5172FD442C3FD33000BC3A44 /* PushNotificationManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		51309DA42D0DCC0F00660118 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				51309DA92D0DCC5500660118 /* Font+.swift */,
+				51309DA72D0DCC4D00660118 /* Int+.swift */,
+				51309DA52D0DCC4100660118 /* Color+.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		51309DAB2D0DCC8C00660118 /* PropertyWrappers */ = {
+			isa = PBXGroup;
+			children = (
+				51309DB42D0DCCDF00660118 /* IntArrayStorage.swift */,
+				51309DB22D0DCCCE00660118 /* StateStorage.swift */,
+				51309DB02D0DCCC700660118 /* StringStorage.swift */,
+				51309DAC2D0DCCB000660118 /* IntStorage.swift */,
+				51309DAE2D0DCCBD00660118 /* BoolStorage.swift */,
+			);
+			path = PropertyWrappers;
+			sourceTree = "<group>";
+		};
+		51309DB62D0DCD1800660118 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				51309DBB2D0DCD3E00660118 /* ChuUIModifier.swift */,
+				51309DB72D0DCD2400660118 /* ChuUIButton.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		51309DBD2D0DCD7500660118 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				51F1A9B02C3E717E00DBFCDE /* Localizable.xcstrings */,
+				51B26B132C419742006502A3 /* InfoPlist.xcstrings */,
+			);
+			path = Localization;
 			sourceTree = "<group>";
 		};
 		51E982CA2C085339003A7527 = {
@@ -128,21 +248,8 @@
 			isa = PBXGroup;
 			children = (
 				51E3E2472C3064C500130BD3 /* Info.plist */,
-				51E982D62C085339003A7527 /* NanaTimerApp.swift */,
-				51B40EF62C2E82DC0097A88C /* View */,
-				5198A8BB2C2DCA7000ECEE0C /* ViewModel */,
-				51D4D67E2C2C7C8D0014731D /* Model */,
-				5198A8B12C2D4A3600ECEE0C /* TimerService.swift */,
-				5198A8B72C2D92E000ECEE0C /* SceneManager.swift */,
-				51B40EF32C2E731C0097A88C /* RemoteTaskManager.swift */,
-				51B26B112C411CEA006502A3 /* HapticManager.swift */,
-				5172FD442C3FD33000BC3A44 /* PushNotificationManager.swift */,
-				513227122C2B258000BAD13E /* Utility.swift */,
-				51F1A9B02C3E717E00DBFCDE /* Localizable.xcstrings */,
-				51B26B132C419742006502A3 /* InfoPlist.xcstrings */,
-				51E982DA2C08533A003A7527 /* Assets.xcassets */,
-				512DF5BE2C36C60800CE7F95 /* rounded-mplus-1c-medium.ttf */,
-				51A08A992C2F2588008225FB /* NanumSquareRoundOTFB.otf */,
+				51309D992D0DC8BB00660118 /* Feature */,
+				51309DA02D0DCB1900660118 /* Common */,
 				51E982DC2C08533A003A7527 /* Preview Content */,
 			);
 			path = NanaTimer;
@@ -234,19 +341,28 @@
 			files = (
 				51E982D92C085339003A7527 /* MainView.swift in Sources */,
 				5198A8BA2C2DCA1200ECEE0C /* ChartVM.swift in Sources */,
-				513227132C2B258000BAD13E /* Utility.swift in Sources */,
+				51309DB52D0DCCDF00660118 /* IntArrayStorage.swift in Sources */,
 				51B40EF42C2E731D0097A88C /* RemoteTaskManager.swift in Sources */,
 				5172FD452C3FD33000BC3A44 /* PushNotificationManager.swift in Sources */,
+				51309DAF2D0DCCBD00660118 /* BoolStorage.swift in Sources */,
+				51309DBC2D0DCD3E00660118 /* ChuUIModifier.swift in Sources */,
+				51309DA62D0DCC4100660118 /* Color+.swift in Sources */,
+				51309DB12D0DCCC700660118 /* StringStorage.swift in Sources */,
 				5172FD4B2C3FFE0400BC3A44 /* SetVM.swift in Sources */,
 				51B26B122C411CEA006502A3 /* HapticManager.swift in Sources */,
 				51E982D72C085339003A7527 /* NanaTimerApp.swift in Sources */,
+				51309DB32D0DCCCE00660118 /* StateStorage.swift in Sources */,
+				51309DAA2D0DCC5500660118 /* Font+.swift in Sources */,
 				51B40EFA2C2F07440097A88C /* TimerView.swift in Sources */,
+				51309DAD2D0DCCB000660118 /* IntStorage.swift in Sources */,
 				51D4D6802C2C7D7A0014731D /* ChartModel.swift in Sources */,
 				51AD90E02C283543008E3E67 /* ChartView.swift in Sources */,
+				51309DB82D0DCD2400660118 /* ChuUIButton.swift in Sources */,
 				5198A8B42C2D759D00ECEE0C /* TimerVM.swift in Sources */,
 				5172FD4D2C3FFEC400BC3A44 /* SetModel.swift in Sources */,
 				51657B022C31C1C500418325 /* FirstOperationView.swift in Sources */,
 				5172FD4F2C4049A000BC3A44 /* MainVM.swift in Sources */,
+				51309DA82D0DCC4D00660118 /* Int+.swift in Sources */,
 				5198A8B62C2D75D100ECEE0C /* TimerModel.swift in Sources */,
 				5198A8B82C2D92E000ECEE0C /* SceneManager.swift in Sources */,
 				5172FD492C3FFC4400BC3A44 /* SetView.swift in Sources */,
