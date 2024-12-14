@@ -1,15 +1,16 @@
 //
-//  SetVM.swift
+//  SettingsVM.swift
 //  NanaTimer
 //
 //  Created by 신정욱 on 7/11/24.
 //
 
+@preconcurrency
 import SwiftUI
 
-final class SetVM: ObservableObject {
+final class SettingsVM: ObservableObject {
     
-    @Published var setModel = SetModel()
+    @Published var settingsModel = SettingsModel()
     
     func directAppSetting() {
         UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
@@ -23,10 +24,10 @@ final class SetVM: ObservableObject {
             DispatchQueue.main.async { [weak self] in
                 switch settings.authorizationStatus {
                 case .authorized:
-                    self?.setModel.isAuthorized = true
+                    self?.settingsModel.isAuthorized = true
                     
                 case .denied, .ephemeral, .notDetermined, .provisional:
-                    self?.setModel.isAuthorized = false
+                    self?.settingsModel.isAuthorized = false
                     
                 @unknown default:
                     print("알림허가 예외")

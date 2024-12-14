@@ -1,5 +1,5 @@
 //
-//  MainVM.swift
+//  HomeVM.swift
 //  NanaTimer
 //
 //  Created by 신정욱 on 7/12/24.
@@ -7,10 +7,10 @@
 
 import SwiftUI
 
-final class MainVM: ObservableObject {
+final class HomeVM: ObservableObject {
     
     var timerModel = TimerModel()
-    var setModel = SetModel()
+    var settingsModel = SettingsModel()
     
     init() {
         SceneManager.shared.taskSceneUpdate { [weak self] scene in self?.notifySceneUpdate(scene: scene) }
@@ -37,8 +37,8 @@ final class MainVM: ObservableObject {
             
         case .background:
             guard timerModel.state == .run else { return }
-            guard setModel.isOnNotify else { return }
-            PushNotificationManager.shared.requestScheduleNotification(title: "나나타이머", body: "타이머가 실행중이에요.", interval: Double(setModel.notiInterval.mToSecond))
+            guard settingsModel.isOnNotify else { return }
+            PushNotificationManager.shared.requestScheduleNotification(title: "나나타이머", body: "타이머가 실행중이에요.", interval: Double(settingsModel.notiInterval.mToSecond))
             
         default:// .inactive는 의도적으로 미구현
             return

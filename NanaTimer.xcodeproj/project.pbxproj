@@ -18,12 +18,12 @@
 		51309DB52D0DCCDF00660118 /* IntArrayStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51309DB42D0DCCDF00660118 /* IntArrayStorage.swift */; };
 		51309DB82D0DCD2400660118 /* ChuUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51309DB72D0DCD2400660118 /* ChuUIButton.swift */; };
 		51309DBC2D0DCD3E00660118 /* ChuUIModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51309DBB2D0DCD3E00660118 /* ChuUIModifier.swift */; };
-		51657B022C31C1C500418325 /* FirstOperationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51657B012C31C1C500418325 /* FirstOperationView.swift */; };
+		51657B022C31C1C500418325 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51657B012C31C1C500418325 /* OnboardingView.swift */; };
 		5172FD452C3FD33000BC3A44 /* PushNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5172FD442C3FD33000BC3A44 /* PushNotificationManager.swift */; };
-		5172FD492C3FFC4400BC3A44 /* SetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5172FD482C3FFC4400BC3A44 /* SetView.swift */; };
-		5172FD4B2C3FFE0400BC3A44 /* SetVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5172FD4A2C3FFE0400BC3A44 /* SetVM.swift */; };
-		5172FD4D2C3FFEC400BC3A44 /* SetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5172FD4C2C3FFEC400BC3A44 /* SetModel.swift */; };
-		5172FD4F2C4049A000BC3A44 /* MainVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5172FD4E2C4049A000BC3A44 /* MainVM.swift */; };
+		5172FD492C3FFC4400BC3A44 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5172FD482C3FFC4400BC3A44 /* SettingsView.swift */; };
+		5172FD4B2C3FFE0400BC3A44 /* SettingsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5172FD4A2C3FFE0400BC3A44 /* SettingsVM.swift */; };
+		5172FD4D2C3FFEC400BC3A44 /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5172FD4C2C3FFEC400BC3A44 /* SettingsModel.swift */; };
+		5172FD4F2C4049A000BC3A44 /* HomeVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5172FD4E2C4049A000BC3A44 /* HomeVM.swift */; };
 		5198A8B22C2D4A3600ECEE0C /* TimerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5198A8B12C2D4A3600ECEE0C /* TimerService.swift */; };
 		5198A8B42C2D759D00ECEE0C /* TimerVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5198A8B32C2D759D00ECEE0C /* TimerVM.swift */; };
 		5198A8B62C2D75D100ECEE0C /* TimerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5198A8B52C2D75D100ECEE0C /* TimerModel.swift */; };
@@ -37,7 +37,7 @@
 		51B40EFA2C2F07440097A88C /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B40EF92C2F07440097A88C /* TimerView.swift */; };
 		51D4D6802C2C7D7A0014731D /* ChartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D4D67F2C2C7D7A0014731D /* ChartModel.swift */; };
 		51E982D72C085339003A7527 /* NanaTimerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E982D62C085339003A7527 /* NanaTimerApp.swift */; };
-		51E982D92C085339003A7527 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E982D82C085339003A7527 /* MainView.swift */; };
+		51E982D92C085339003A7527 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E982D82C085339003A7527 /* HomeView.swift */; };
 		51E982DB2C08533A003A7527 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51E982DA2C08533A003A7527 /* Assets.xcassets */; };
 		51E982DE2C08533A003A7527 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51E982DD2C08533A003A7527 /* Preview Assets.xcassets */; };
 		51F1A9B12C3E717E00DBFCDE /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 51F1A9B02C3E717E00DBFCDE /* Localizable.xcstrings */; };
@@ -55,12 +55,12 @@
 		51309DB42D0DCCDF00660118 /* IntArrayStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntArrayStorage.swift; sourceTree = "<group>"; };
 		51309DB72D0DCD2400660118 /* ChuUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChuUIButton.swift; sourceTree = "<group>"; };
 		51309DBB2D0DCD3E00660118 /* ChuUIModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChuUIModifier.swift; sourceTree = "<group>"; };
-		51657B012C31C1C500418325 /* FirstOperationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstOperationView.swift; sourceTree = "<group>"; };
+		51657B012C31C1C500418325 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		5172FD442C3FD33000BC3A44 /* PushNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationManager.swift; sourceTree = "<group>"; };
-		5172FD482C3FFC4400BC3A44 /* SetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetView.swift; sourceTree = "<group>"; };
-		5172FD4A2C3FFE0400BC3A44 /* SetVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetVM.swift; sourceTree = "<group>"; };
-		5172FD4C2C3FFEC400BC3A44 /* SetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetModel.swift; sourceTree = "<group>"; };
-		5172FD4E2C4049A000BC3A44 /* MainVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVM.swift; sourceTree = "<group>"; };
+		5172FD482C3FFC4400BC3A44 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		5172FD4A2C3FFE0400BC3A44 /* SettingsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVM.swift; sourceTree = "<group>"; };
+		5172FD4C2C3FFEC400BC3A44 /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
+		5172FD4E2C4049A000BC3A44 /* HomeVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVM.swift; sourceTree = "<group>"; };
 		5198A8B12C2D4A3600ECEE0C /* TimerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerService.swift; sourceTree = "<group>"; };
 		5198A8B32C2D759D00ECEE0C /* TimerVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerVM.swift; sourceTree = "<group>"; };
 		5198A8B52C2D75D100ECEE0C /* TimerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerModel.swift; sourceTree = "<group>"; };
@@ -76,7 +76,7 @@
 		51E3E2472C3064C500130BD3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		51E982D32C085339003A7527 /* NanaTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NanaTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		51E982D62C085339003A7527 /* NanaTimerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NanaTimerApp.swift; sourceTree = "<group>"; };
-		51E982D82C085339003A7527 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		51E982D82C085339003A7527 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		51E982DA2C08533A003A7527 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		51E982DD2C08533A003A7527 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		51F1A9B02C3E717E00DBFCDE /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
@@ -96,30 +96,30 @@
 		51309D992D0DC8BB00660118 /* Feature */ = {
 			isa = PBXGroup;
 			children = (
-				51309D9B2D0DCA6F00660118 /* FirstOperation */,
-				51309D9C2D0DCA8100660118 /* Main */,
+				51309D9B2D0DCA6F00660118 /* Onboarding */,
+				51309D9C2D0DCA8100660118 /* Home */,
 				51309D9D2D0DCA9400660118 /* Timer */,
 				51309D9E2D0DCAA400660118 /* Chart */,
-				51309D9F2D0DCAAA00660118 /* Set */,
+				51309D9F2D0DCAAA00660118 /* Settings */,
 			);
 			path = Feature;
 			sourceTree = "<group>";
 		};
-		51309D9B2D0DCA6F00660118 /* FirstOperation */ = {
+		51309D9B2D0DCA6F00660118 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
-				51657B012C31C1C500418325 /* FirstOperationView.swift */,
+				51657B012C31C1C500418325 /* OnboardingView.swift */,
 			);
-			path = FirstOperation;
+			path = Onboarding;
 			sourceTree = "<group>";
 		};
-		51309D9C2D0DCA8100660118 /* Main */ = {
+		51309D9C2D0DCA8100660118 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				51E982D82C085339003A7527 /* MainView.swift */,
-				5172FD4E2C4049A000BC3A44 /* MainVM.swift */,
+				51E982D82C085339003A7527 /* HomeView.swift */,
+				5172FD4E2C4049A000BC3A44 /* HomeVM.swift */,
 			);
-			path = Main;
+			path = Home;
 			sourceTree = "<group>";
 		};
 		51309D9D2D0DCA9400660118 /* Timer */ = {
@@ -142,14 +142,14 @@
 			path = Chart;
 			sourceTree = "<group>";
 		};
-		51309D9F2D0DCAAA00660118 /* Set */ = {
+		51309D9F2D0DCAAA00660118 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				5172FD482C3FFC4400BC3A44 /* SetView.swift */,
-				5172FD4A2C3FFE0400BC3A44 /* SetVM.swift */,
-				5172FD4C2C3FFEC400BC3A44 /* SetModel.swift */,
+				5172FD482C3FFC4400BC3A44 /* SettingsView.swift */,
+				5172FD4A2C3FFE0400BC3A44 /* SettingsVM.swift */,
+				5172FD4C2C3FFEC400BC3A44 /* SettingsModel.swift */,
 			);
-			path = Set;
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		51309DA02D0DCB1900660118 /* Common */ = {
@@ -339,7 +339,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				51E982D92C085339003A7527 /* MainView.swift in Sources */,
+				51E982D92C085339003A7527 /* HomeView.swift in Sources */,
 				5198A8BA2C2DCA1200ECEE0C /* ChartVM.swift in Sources */,
 				51309DB52D0DCCDF00660118 /* IntArrayStorage.swift in Sources */,
 				51B40EF42C2E731D0097A88C /* RemoteTaskManager.swift in Sources */,
@@ -348,7 +348,7 @@
 				51309DBC2D0DCD3E00660118 /* ChuUIModifier.swift in Sources */,
 				51309DA62D0DCC4100660118 /* Color+.swift in Sources */,
 				51309DB12D0DCCC700660118 /* StringStorage.swift in Sources */,
-				5172FD4B2C3FFE0400BC3A44 /* SetVM.swift in Sources */,
+				5172FD4B2C3FFE0400BC3A44 /* SettingsVM.swift in Sources */,
 				51B26B122C411CEA006502A3 /* HapticManager.swift in Sources */,
 				51E982D72C085339003A7527 /* NanaTimerApp.swift in Sources */,
 				51309DB32D0DCCCE00660118 /* StateStorage.swift in Sources */,
@@ -359,13 +359,13 @@
 				51AD90E02C283543008E3E67 /* ChartView.swift in Sources */,
 				51309DB82D0DCD2400660118 /* ChuUIButton.swift in Sources */,
 				5198A8B42C2D759D00ECEE0C /* TimerVM.swift in Sources */,
-				5172FD4D2C3FFEC400BC3A44 /* SetModel.swift in Sources */,
-				51657B022C31C1C500418325 /* FirstOperationView.swift in Sources */,
-				5172FD4F2C4049A000BC3A44 /* MainVM.swift in Sources */,
+				5172FD4D2C3FFEC400BC3A44 /* SettingsModel.swift in Sources */,
+				51657B022C31C1C500418325 /* OnboardingView.swift in Sources */,
+				5172FD4F2C4049A000BC3A44 /* HomeVM.swift in Sources */,
 				51309DA82D0DCC4D00660118 /* Int+.swift in Sources */,
 				5198A8B62C2D75D100ECEE0C /* TimerModel.swift in Sources */,
 				5198A8B82C2D92E000ECEE0C /* SceneManager.swift in Sources */,
-				5172FD492C3FFC4400BC3A44 /* SetView.swift in Sources */,
+				5172FD492C3FFC4400BC3A44 /* SettingsView.swift in Sources */,
 				5198A8B22C2D4A3600ECEE0C /* TimerService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

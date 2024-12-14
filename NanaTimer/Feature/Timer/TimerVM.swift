@@ -11,7 +11,7 @@ final class TimerVM: ObservableObject {
     
     @Published
     var timerModel = TimerModel()
-    var setModel = SetModel()
+    var setModel = SettingsModel()
 
 
     

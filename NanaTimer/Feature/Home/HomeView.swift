@@ -1,5 +1,5 @@
 //
-//  MainView.swift
+//  HomeView.swift
 //  ReverseStopWatch
 //
 //  Created by 신정욱 on 5/30/24.
@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct MainView: View {
+struct HomeView: View {
     
-    @StateObject var mainVM: MainVM
+    @StateObject var homeVM: HomeVM
     @StateObject var timerVM: TimerVM
     @StateObject var chartVM: ChartVM
     
@@ -36,7 +36,7 @@ struct MainView: View {
                                 Spacer()
                             }
                  
-                            NavigationLink(destination: SetView(setVM: SetVM())) {
+                            NavigationLink(destination: SettingsView(settingsVM: SettingsVM())) {
                                 Image(systemName: "gearshape.fill")
                                     .resizable()
                                     .frame(width: 32, height: 32)
@@ -66,14 +66,14 @@ struct MainView: View {
                             UIPageControl.appearance().pageIndicatorTintColor = UIColor(Color.chuText.opacity(0.25))
                         }
                     }
-                    FirstOperationView()
+                    OnboardingView()
                 }
             }
             .animation(.bouncy, value: timerVM.timerModel.settedTime) // 하위뷰에 애니메이션 성질이 상속되니 조심해서 쓰자
             .background(Color.chuBack.ignoresSafeArea())
             .onAppear() {
                 PushNotificationManager.shared.requestAuthorization()
-                mainVM.configureNavigationViewStyle()
+                homeVM.configureNavigationViewStyle()
             }
         }
         .tint(Color.chuText) // 네비게이션 백버튼 색 바꾸는 용도, 전체적으로 엑센트 컬러가 바뀌어버림
@@ -83,5 +83,5 @@ struct MainView: View {
 
 
 #Preview {
-    MainView( mainVM: MainVM(), timerVM: TimerVM(), chartVM: ChartVM())
+    HomeView( homeVM: HomeVM(), timerVM: TimerVM(), chartVM: ChartVM())
 }

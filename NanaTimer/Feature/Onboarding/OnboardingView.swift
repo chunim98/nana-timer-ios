@@ -1,5 +1,5 @@
 //
-//  FirstOperationView.swift
+//  OnboardingView.swift
 //  ReverseStopWatch
 //
 //  Created by 신정욱 on 7/1/24.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct FirstOperationView: View {
+struct OnboardingView: View {
     @State var isMoving = true
     @State var animationTimer: Timer?
     @State var isAlertShowing = false
@@ -91,5 +91,5 @@ struct FirstOperationView: View {
 }
 
 #Preview {
-    FirstOperationView()
+    OnboardingView()
 }

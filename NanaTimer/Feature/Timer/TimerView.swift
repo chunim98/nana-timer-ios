@@ -42,7 +42,7 @@ struct TimerView: View {
                                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                             })
                         }else{
-                            //MARK: -  SetView
+                            //MARK: -  SettingsView
                             Button(action: { withAnimation{ timerVM.timerModel.isSetViewShowing.toggle() } }, label: {
                                 Image(systemName: "multiply.circle.fill")
                                     .resizable()
