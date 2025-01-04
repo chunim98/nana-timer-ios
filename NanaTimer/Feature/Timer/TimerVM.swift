@@ -7,11 +7,11 @@
 
 import SwiftUI
 
-final class TimerVM: ObservableObject {
+@Observable
+final class TimerVM {
     
-    @Published
     var timerModel = TimerModel()
-    var setModel = SettingsModel()
+    @ObservationIgnored var setModel = SettingsModel()
 
 
     

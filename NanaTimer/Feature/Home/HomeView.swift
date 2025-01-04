@@ -10,7 +10,7 @@ import SwiftUI
 struct HomeView: View {
     
     @StateObject var homeVM: HomeVM
-    @StateObject var timerVM: TimerVM
+    var timerVM: TimerVM
     @StateObject var chartVM: ChartVM
     
     @State var tabNum = 1
