@@ -14,7 +14,7 @@ struct HomeView: View {
     @StateObject var chartVM: ChartVM
     
     @State var tabNum = 1
-
+    
     var body: some View {
         NavigationStack {
             GeometryReader { geo in
@@ -25,17 +25,21 @@ struct HomeView: View {
                                 Text(timerVM.statusText)
                                     .font(.chuCustomFont(size: 28))
                                     .foregroundColor(Color.chuText)
+                                
                                 Spacer()
+                                
                             } else if tabNum == 2 {
                                 Text(chartVM.titleText)
                                     .font(.chuCustomFont(size: 28))
                                     .foregroundColor(Color.chuText)
+                                
                                 Text(chartVM.subTitleText)
                                     .font(.chuCustomFont(size: 14))
                                     .foregroundColor(Color.chuText.opacity(0.5))
+                                
                                 Spacer()
                             }
-                 
+                            
                             NavigationLink(destination: SettingsView(settingsVM: SettingsVM())) {
                                 Image(systemName: "gearshape.fill")
                                     .resizable()
@@ -52,13 +56,13 @@ struct HomeView: View {
                                 .offset(y: geo.size.height * -0.025)
                                 .tabItem { Image(systemName: "clock.fill") }
                                 .tag(1)
-
+                            
                             ChartView(chartVM: chartVM)
                                 .frame(maxWidth: geo.size.width * 0.9 , maxHeight: geo.size.height * 0.85)
                                 .offset(y: geo.size.height * -0.025)
                                 .tabItem { Image(systemName: "chart.bar.fill") }
                                 .tag(2)
-
+                            
                         }
                         .tabViewStyle(.page(indexDisplayMode: .automatic))
                         .onAppear() {

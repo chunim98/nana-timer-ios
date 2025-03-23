@@ -19,6 +19,7 @@
 		51309DB82D0DCD2400660118 /* ChuUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51309DB72D0DCD2400660118 /* ChuUIButton.swift */; };
 		51309DBC2D0DCD3E00660118 /* ChuUIModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51309DBB2D0DCD3E00660118 /* ChuUIModifier.swift */; };
 		51657B022C31C1C500418325 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51657B012C31C1C500418325 /* OnboardingView.swift */; };
+		517063962D8B3C8D00567612 /* OnboardingVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517063952D8B3C8A00567612 /* OnboardingVM.swift */; };
 		5172FD452C3FD33000BC3A44 /* PushNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5172FD442C3FD33000BC3A44 /* PushNotificationManager.swift */; };
 		5172FD492C3FFC4400BC3A44 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5172FD482C3FFC4400BC3A44 /* SettingsView.swift */; };
 		5172FD4B2C3FFE0400BC3A44 /* SettingsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5172FD4A2C3FFE0400BC3A44 /* SettingsVM.swift */; };
@@ -38,6 +39,10 @@
 		51B26B142C419742006502A3 /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 51B26B132C419742006502A3 /* InfoPlist.xcstrings */; };
 		51B40EF42C2E731D0097A88C /* RemoteTaskManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B40EF32C2E731C0097A88C /* RemoteTaskManager.swift */; };
 		51B40EFA2C2F07440097A88C /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B40EF92C2F07440097A88C /* TimerView.swift */; };
+		51CA3B842D9007D0009A7CD4 /* HideableVStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CA3B832D90078B009A7CD4 /* HideableVStack.swift */; };
+		51CA3B882D900AF0009A7CD4 /* CircleDismissButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CA3B872D900AF0009A7CD4 /* CircleDismissButton.swift */; };
+		51CA3B8C2D902EFF009A7CD4 /* CapsuleDismissButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CA3B8B2D902EFF009A7CD4 /* CapsuleDismissButton.swift */; };
+		51CA3B8E2D90340B009A7CD4 /* EdgeInsets+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CA3B8D2D903409009A7CD4 /* EdgeInsets+.swift */; };
 		51D4D6802C2C7D7A0014731D /* ChartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D4D67F2C2C7D7A0014731D /* ChartModel.swift */; };
 		51E982D72C085339003A7527 /* NanaTimerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E982D62C085339003A7527 /* NanaTimerApp.swift */; };
 		51E982D92C085339003A7527 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E982D82C085339003A7527 /* HomeView.swift */; };
@@ -59,6 +64,7 @@
 		51309DB72D0DCD2400660118 /* ChuUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChuUIButton.swift; sourceTree = "<group>"; };
 		51309DBB2D0DCD3E00660118 /* ChuUIModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChuUIModifier.swift; sourceTree = "<group>"; };
 		51657B012C31C1C500418325 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		517063952D8B3C8A00567612 /* OnboardingVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingVM.swift; sourceTree = "<group>"; };
 		5172FD442C3FD33000BC3A44 /* PushNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationManager.swift; sourceTree = "<group>"; };
 		5172FD482C3FFC4400BC3A44 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		5172FD4A2C3FFE0400BC3A44 /* SettingsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVM.swift; sourceTree = "<group>"; };
@@ -78,6 +84,10 @@
 		51B26B132C419742006502A3 /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
 		51B40EF32C2E731C0097A88C /* RemoteTaskManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteTaskManager.swift; sourceTree = "<group>"; };
 		51B40EF92C2F07440097A88C /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
+		51CA3B832D90078B009A7CD4 /* HideableVStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideableVStack.swift; sourceTree = "<group>"; };
+		51CA3B872D900AF0009A7CD4 /* CircleDismissButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleDismissButton.swift; sourceTree = "<group>"; };
+		51CA3B8B2D902EFF009A7CD4 /* CapsuleDismissButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsuleDismissButton.swift; sourceTree = "<group>"; };
+		51CA3B8D2D903409009A7CD4 /* EdgeInsets+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EdgeInsets+.swift"; sourceTree = "<group>"; };
 		51D4D67F2C2C7D7A0014731D /* ChartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartModel.swift; sourceTree = "<group>"; };
 		51E3E2472C3064C500130BD3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		51E982D32C085339003A7527 /* NanaTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NanaTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -99,6 +109,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5113EA362D8DAFE600153ECD /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				51CA3B832D90078B009A7CD4 /* HideableVStack.swift */,
+				51CA3B872D900AF0009A7CD4 /* CircleDismissButton.swift */,
+				51CA3B8B2D902EFF009A7CD4 /* CapsuleDismissButton.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		51309D992D0DC8BB00660118 /* Feature */ = {
 			isa = PBXGroup;
 			children = (
@@ -114,7 +134,9 @@
 		51309D9B2D0DCA6F00660118 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
+				5113EA362D8DAFE600153ECD /* Components */,
 				51657B012C31C1C500418325 /* OnboardingView.swift */,
+				517063952D8B3C8A00567612 /* OnboardingVM.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -198,6 +220,7 @@
 		51309DA42D0DCC0F00660118 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				51CA3B8D2D903409009A7CD4 /* EdgeInsets+.swift */,
 				51309DA92D0DCC5500660118 /* Font+.swift */,
 				51309DA72D0DCC4D00660118 /* Int+.swift */,
 				51309DA52D0DCC4100660118 /* Color+.swift */,
@@ -363,13 +386,16 @@
 				51309DB52D0DCCDF00660118 /* IntArrayStorage.swift in Sources */,
 				51B40EF42C2E731D0097A88C /* RemoteTaskManager.swift in Sources */,
 				519701F72D280F0700B74205 /* TimerEntryView.swift in Sources */,
+				51CA3B842D9007D0009A7CD4 /* HideableVStack.swift in Sources */,
 				5172FD452C3FD33000BC3A44 /* PushNotificationManager.swift in Sources */,
 				51309DAF2D0DCCBD00660118 /* BoolStorage.swift in Sources */,
 				51309DBC2D0DCD3E00660118 /* ChuUIModifier.swift in Sources */,
 				51309DA62D0DCC4100660118 /* Color+.swift in Sources */,
+				51CA3B882D900AF0009A7CD4 /* CircleDismissButton.swift in Sources */,
 				51309DB12D0DCCC700660118 /* StringStorage.swift in Sources */,
 				5172FD4B2C3FFE0400BC3A44 /* SettingsVM.swift in Sources */,
 				51B26B122C411CEA006502A3 /* HapticManager.swift in Sources */,
+				51CA3B8E2D90340B009A7CD4 /* EdgeInsets+.swift in Sources */,
 				51E982D72C085339003A7527 /* NanaTimerApp.swift in Sources */,
 				51309DB32D0DCCCE00660118 /* StateStorage.swift in Sources */,
 				51309DAA2D0DCC5500660118 /* Font+.swift in Sources */,
@@ -377,7 +403,9 @@
 				51309DAD2D0DCCB000660118 /* IntStorage.swift in Sources */,
 				51D4D6802C2C7D7A0014731D /* ChartModel.swift in Sources */,
 				51AD90E02C283543008E3E67 /* ChartView.swift in Sources */,
+				517063962D8B3C8D00567612 /* OnboardingVM.swift in Sources */,
 				519701FB2D297BFA00B74205 /* TimerMainView.swift in Sources */,
+				51CA3B8C2D902EFF009A7CD4 /* CapsuleDismissButton.swift in Sources */,
 				51309DB82D0DCD2400660118 /* ChuUIButton.swift in Sources */,
 				5198A8B42C2D759D00ECEE0C /* TimerVM.swift in Sources */,
 				5172FD4D2C3FFEC400BC3A44 /* SettingsModel.swift in Sources */,

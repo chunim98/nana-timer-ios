@@ -10,9 +10,7 @@ import SwiftUI
 
 extension Font {
     static func chuCustomFont(size: Float) -> Font {
-        guard let languageCode = Locale.current.language.languageCode?.identifier else {
-            return .system(size: CGFloat(size))
-        }
+        let languageCode = Locale.current.language.languageCode?.identifier ?? ""
         
         switch languageCode {
         case "ja":
@@ -21,4 +19,12 @@ extension Font {
             return Font.custom("NanumSquareRoundOTFB", size: CGFloat(size))
         }
     }
+    
+    static let localizedFont14 = chuCustomFont(size: 14)
+    static let localizedFont16 = chuCustomFont(size: 16)
+    static let localizedFont18 = chuCustomFont(size: 18)
+    static let localizedFont24 = chuCustomFont(size: 24)
+    static let localizedFont28 = chuCustomFont(size: 28)
+    static let localizedFont36 = chuCustomFont(size: 36)
+    static let localizedFont48 = chuCustomFont(size: 48)
 }

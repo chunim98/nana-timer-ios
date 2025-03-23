@@ -15,9 +15,7 @@ final class HomeVM: ObservableObject {
     init() {
         SceneManager.shared.taskSceneUpdate { [weak self] scene in self?.notifySceneUpdate(scene: scene) }
     }
-    
-    
-    
+
     // 네비게이션 뷰 색 바꿔주는 코드, 스크롤 시에도 색이 변하지 않음
     func configureNavigationViewStyle() {
         let navigationBarAppearance = UINavigationBarAppearance()
@@ -36,11 +34,19 @@ final class HomeVM: ObservableObject {
             PushNotificationManager.shared.cancelNotification()
             
         case .background:
-            guard timerModel.state == .run else { return }
-            guard settingsModel.isOnNotify else { return }
-            PushNotificationManager.shared.requestScheduleNotification(title: "나나타이머", body: "타이머가 실행중이에요.", interval: Double(settingsModel.notiInterval.mToSecond))
+            guard timerModel.state == .run,
+                  settingsModel.isOnNotify
+            else { return }
             
-        default:// .inactive는 의도적으로 미구현
+            PushNotificationManager.shared.requestScheduleNotification(
+                title: "나나타이머",
+                body: "타이머가 실행중이에요.",
+                interval: Double(
+                    settingsModel.notiInterval.mToSecond
+                )
+            )
+
+        default: // .inactive는 의도적으로 미구현
             return
         }
     }
