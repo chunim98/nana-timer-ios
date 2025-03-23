@@ -22,7 +22,6 @@ final class OnboardingVM: ObservableObject {
     
     @AppStorage("isHidden") private(set) var isHidden = false
     @Published private(set) var isAlertPresented = false
-    @Published private(set) var isImageMoving = true
     @Published private(set) var imageOffset = CGFloat(100)
     
     // MARK: Properties
@@ -54,7 +53,6 @@ final class OnboardingVM: ObservableObject {
             timerInactivate()
             
         case .timerTick:
-            isImageMoving.toggle()
             imageOffset *= -1
             
         case .onAppear:
