@@ -191,8 +191,7 @@
 				51309DAB2D0DCC8C00660118 /* PropertyWrappers */,
 				51309DA32D0DCBF700660118 /* Managers */,
 				51309DBD2D0DCD7500660118 /* Localization */,
-				512DF5BE2C36C60800CE7F95 /* rounded-mplus-1c-medium.ttf */,
-				51A08A992C2F2588008225FB /* NanumSquareRoundOTFB.otf */,
+				51C071DF2D913BE50054A606 /* Fonts */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -266,6 +265,15 @@
 				519701FA2D297BFA00B74205 /* TimerMainView.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		51C071DF2D913BE50054A606 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				512DF5BE2C36C60800CE7F95 /* rounded-mplus-1c-medium.ttf */,
+				51A08A992C2F2588008225FB /* NanumSquareRoundOTFB.otf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		51E982CA2C085339003A7527 = {
