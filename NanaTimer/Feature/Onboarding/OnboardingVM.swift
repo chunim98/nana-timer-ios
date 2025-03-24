@@ -9,8 +9,14 @@ import SwiftUI
 import Combine
 
 final class OnboardingVM: ObservableObject {
+        
+    struct State {
+        @BoolStorage("isHidden") var isHidden: Bool
+        var isAlertPresented = false
+        var imageOffset = CGFloat(100)
+    }
     
-    enum Action {
+    enum Intent {
         case presentAlert
         case dismissAlert
         case dismissView
@@ -18,42 +24,37 @@ final class OnboardingVM: ObservableObject {
         case onAppear
     }
     
-    // MARK: State
-    
-    @AppStorage("isHidden") private(set) var isHidden = false
-    @Published private(set) var isAlertPresented = false
-    @Published private(set) var imageOffset = CGFloat(100)
-    
     // MARK: Properties
     
-    let action = PassthroughSubject<Action, Never>()
+    @Published private(set) var state = State()
+    let intent = PassthroughSubject<Intent, Never>()
     private var cancellables = Set<AnyCancellable>()
     private var animationTimer: Timer?
 
     // MARK: Life Cycle
     
     init() {
-        action
-            .sink { [weak self] in self?.bindActions($0) }
+        intent
+            .sink { [weak self] in self?.process($0) }
             .store(in: &cancellables)
     }
     
     // MARK: Binding
     
-    private func bindActions(_ action: Action) {
-        switch action {
+    private func process(_ intent: Intent) {
+        switch intent {
         case .presentAlert:
-            isAlertPresented = true
+            state.isAlertPresented = true
             
         case .dismissAlert:
-            isAlertPresented = false
+            state.isAlertPresented = false
             
         case .dismissView:
-            isHidden = true
+            state.isHidden = true
             timerInactivate()
             
         case .timerTick:
-            imageOffset *= -1
+            state.imageOffset *= -1
             
         case .onAppear:
             timerActivate()
@@ -66,7 +67,7 @@ final class OnboardingVM: ObservableObject {
         animationTimer = Timer.scheduledTimer(
             withTimeInterval: 2,
             repeats: true,
-            block: { [weak self] _ in self?.action.send(.timerTick) }
+            block: { [weak self] _ in self?.intent.send(.timerTick) }
         )
     }
     

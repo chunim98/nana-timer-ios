@@ -18,7 +18,7 @@ struct CapsuleDismissButton: View {
     var body: some View {
         Button {
             HapticManager.shared.occurLight()
-            onboardingVM.action.send(.presentAlert)
+            onboardingVM.intent.send(.presentAlert)
             
         } label: {
             Text("닫기")
@@ -33,21 +33,14 @@ struct CapsuleDismissButton: View {
         
         .alert(
             "창을 닫을까요?\n이 창은 다시 볼 수 없어요",
-            isPresented: Binding(get: { onboardingVM.isAlertPresented }, set: { _,_ in })
+            isPresented: Binding(get: { onboardingVM.state.isAlertPresented }, set: { _,_ in })
         ) {
             Button("취소", role: .cancel) {
-                onboardingVM.action.send(.dismissAlert)
+                onboardingVM.intent.send(.dismissAlert)
             }
-            
             Button("닫기") {
                 HapticManager.shared.occurLight()
-                withAnimation {
-                    onboardingVM.action.send(.dismissView)
-                    
-                } completion: {
-                    // onboardingVM.animationTimer?.invalidate()
-                    // onboardingVM.animationTimer = nil
-                }
+                withAnimation { onboardingVM.intent.send(.dismissView) }
             }
         }
     }

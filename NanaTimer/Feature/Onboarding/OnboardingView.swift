@@ -12,7 +12,7 @@ struct OnboardingView: View {
     @StateObject private var onboardingVM = OnboardingVM()
     
     var body: some View {
-        HideableVStack(onboardingVM.isHidden) {
+        HideableVStack(onboardingVM.state.isHidden) {
             
             CircleDismissButton(onboardingVM)
             
@@ -29,8 +29,8 @@ struct OnboardingView: View {
                 .foregroundStyle(Color.chuText)
                 .aspectRatio(contentMode: .fit)
                 .frame(height: 80)
-                .offset(x: onboardingVM.imageOffset)
-                .animation(.easeInOut(duration: 1.75), value: onboardingVM.imageOffset)
+                .offset(x: onboardingVM.state.imageOffset)
+                .animation(.easeInOut(duration: 1.75), value: onboardingVM.state.imageOffset)
             
             Spacer().frame(height: 50)
             
@@ -47,8 +47,9 @@ struct OnboardingView: View {
         }
         .zIndex(1) // z레이어 우선순위 (높을수록 앞에 옴)
         .padding(15)
+        .transition(.opacity)
         .background(.ultraThinMaterial)
-        .onAppear { onboardingVM.action.send(.onAppear) }
+        .onAppear { onboardingVM.intent.send(.onAppear) }
     }
 }
 
