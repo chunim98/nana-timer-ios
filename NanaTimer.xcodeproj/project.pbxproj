@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		51211BE22D93076E00AE6F67 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 51211BE12D93076E00AE6F67 /* ComposableArchitecture */; };
 		512DF5BF2C36C60800CE7F95 /* rounded-mplus-1c-medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 512DF5BE2C36C60800CE7F95 /* rounded-mplus-1c-medium.ttf */; };
 		51309DA62D0DCC4100660118 /* Color+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51309DA52D0DCC4100660118 /* Color+.swift */; };
 		51309DA82D0DCC4D00660118 /* Int+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51309DA72D0DCC4D00660118 /* Int+.swift */; };
@@ -103,6 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51211BE22D93076E00AE6F67 /* ComposableArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,6 +360,7 @@
 			);
 			mainGroup = 51E982CA2C085339003A7527;
 			packageReferences = (
+				51211BE02D93076E00AE6F67 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
 			);
 			productRefGroup = 51E982D42C085339003A7527 /* Products */;
 			projectDirPath = "";
@@ -650,6 +653,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		51211BE02D93076E00AE6F67 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.18.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		51211BE12D93076E00AE6F67 /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 51211BE02D93076E00AE6F67 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 51E982CB2C085339003A7527 /* Project object */;
 }
