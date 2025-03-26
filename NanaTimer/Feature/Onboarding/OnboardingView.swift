@@ -7,14 +7,28 @@
 
 import SwiftUI
 
+import ComposableArchitecture
+
 struct OnboardingView: View {
     
-    @StateObject private var onboardingVM = OnboardingVM()
+    // MARK: Properties
+    
+    let store: StoreOf<Onboarding>
+    @ObservedObject var viewStore: ViewStoreOf<Onboarding>
+    
+    // MARK: Init
+    
+    init() {
+        self.store = Store(initialState: Onboarding.State()) { Onboarding() }
+        self.viewStore = ViewStoreOf<Onboarding>(self.store, observe: { $0 })
+    }
+    
+    // MARK: View
     
     var body: some View {
-        HideableVStack(onboardingVM.state.isHidden) {
+        HideableVStack(viewStore.isHidden) {
             
-            CircleDismissButton(onboardingVM)
+            CircleDismissButton(store)
             
             Spacer()
             
@@ -29,8 +43,8 @@ struct OnboardingView: View {
                 .foregroundStyle(Color.chuText)
                 .aspectRatio(contentMode: .fit)
                 .frame(height: 80)
-                .offset(x: onboardingVM.state.imageOffset)
-                .animation(.easeInOut(duration: 1.75), value: onboardingVM.state.imageOffset)
+                .offset(x: viewStore.imageOffset)
+                .animation(.easeInOut(duration: 1.75), value: viewStore.imageOffset)
             
             Spacer().frame(height: 50)
             
@@ -41,7 +55,7 @@ struct OnboardingView: View {
             
             Spacer().frame(height: 50)
 
-            CapsuleDismissButton(onboardingVM)
+            CapsuleDismissButton(store)
             
             Spacer()
         }
@@ -49,7 +63,7 @@ struct OnboardingView: View {
         .padding(15)
         .transition(.opacity)
         .background(.ultraThinMaterial)
-        .onAppear { onboardingVM.intent.send(.onAppear) }
+        .onAppear { store.send(.onAppear) }
     }
 }
 
