@@ -16,7 +16,7 @@ struct TimerModel {
         case timerBackground
         case end
         
-        var titleText: String {
+        var titleText: LocalizedStringKey {
             switch self {
             case .idle:
                 "안녕하세요!"

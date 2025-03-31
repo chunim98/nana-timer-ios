@@ -10,8 +10,8 @@ import Combine
 
 struct StatusView: View {
     
-    private let titleText: String
-    private let subTitleText: String
+    private let titleText: LocalizedStringKey
+    private let subTitleText: LocalizedStringKey
     private let intent: PassthroughSubject<Home.Intent, Never>
 
     init(
