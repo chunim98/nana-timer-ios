@@ -15,6 +15,21 @@ struct TimerModel {
         case paused
         case timerBackground
         case end
+        
+        var titleText: String {
+            switch self {
+            case .idle:
+                "안녕하세요!"
+            case .run:
+                "힘내세요!"
+            case .paused:
+                "쉬었다 갈게요!"
+            case .end:
+                "끝! 고생 많았어요."
+            default:
+                ""
+            }
+        }
     }
     
     // MARK: - TimerModel 프로퍼티, 메서드

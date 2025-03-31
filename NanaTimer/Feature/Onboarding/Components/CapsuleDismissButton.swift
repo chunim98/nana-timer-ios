@@ -9,9 +9,9 @@ import SwiftUI
 
 struct CapsuleDismissButton: View {
     
-    @ObservedObject private var onboardingVM: OnboardingVM
+    @ObservedObject private var onboardingVM: Onboarding
     
-    init(_ onboardingVM: OnboardingVM) {
+    init(_ onboardingVM: Onboarding) {
         self.onboardingVM = onboardingVM
     }
     
@@ -47,5 +47,5 @@ struct CapsuleDismissButton: View {
 }
 
 #Preview {
-    CapsuleDismissButton(OnboardingVM())
+    CapsuleDismissButton(Onboarding())
 }

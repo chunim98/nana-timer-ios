@@ -9,7 +9,7 @@ import SwiftUI
 
 struct OnboardingView: View {
     
-    @StateObject private var onboardingVM = OnboardingVM()
+    @StateObject private var onboardingVM = Onboarding()
     
     var body: some View {
         HideableVStack(onboardingVM.state.isHidden) {
@@ -45,7 +45,6 @@ struct OnboardingView: View {
             
             Spacer()
         }
-        .zIndex(1) // z레이어 우선순위 (높을수록 앞에 옴)
         .padding(15)
         .transition(.opacity)
         .background(.ultraThinMaterial)

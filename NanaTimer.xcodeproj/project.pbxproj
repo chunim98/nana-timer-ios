@@ -18,8 +18,9 @@
 		51309DB52D0DCCDF00660118 /* IntArrayStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51309DB42D0DCCDF00660118 /* IntArrayStorage.swift */; };
 		51309DB82D0DCD2400660118 /* ChuUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51309DB72D0DCD2400660118 /* ChuUIButton.swift */; };
 		51309DBC2D0DCD3E00660118 /* ChuUIModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51309DBB2D0DCD3E00660118 /* ChuUIModifier.swift */; };
+		513F7B3D2D9A8838007BEFD0 /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513F7B3C2D9A8831007BEFD0 /* PageView.swift */; };
 		51657B022C31C1C500418325 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51657B012C31C1C500418325 /* OnboardingView.swift */; };
-		517063962D8B3C8D00567612 /* OnboardingVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517063952D8B3C8A00567612 /* OnboardingVM.swift */; };
+		517063962D8B3C8D00567612 /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517063952D8B3C8A00567612 /* Onboarding.swift */; };
 		5172FD452C3FD33000BC3A44 /* PushNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5172FD442C3FD33000BC3A44 /* PushNotificationManager.swift */; };
 		5172FD492C3FFC4400BC3A44 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5172FD482C3FFC4400BC3A44 /* SettingsView.swift */; };
 		5172FD4B2C3FFE0400BC3A44 /* SettingsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5172FD4A2C3FFE0400BC3A44 /* SettingsVM.swift */; };
@@ -49,6 +50,8 @@
 		51E982DB2C08533A003A7527 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51E982DA2C08533A003A7527 /* Assets.xcassets */; };
 		51E982DE2C08533A003A7527 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51E982DD2C08533A003A7527 /* Preview Assets.xcassets */; };
 		51F1A9B12C3E717E00DBFCDE /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 51F1A9B02C3E717E00DBFCDE /* Localizable.xcstrings */; };
+		51FC27DE2D97E4E00080EA17 /* StatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FC27DD2D97E4E00080EA17 /* StatusView.swift */; };
+		51FC27E22D97F8110080EA17 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FC27E12D97F80B0080EA17 /* Home.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,8 +66,9 @@
 		51309DB42D0DCCDF00660118 /* IntArrayStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntArrayStorage.swift; sourceTree = "<group>"; };
 		51309DB72D0DCD2400660118 /* ChuUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChuUIButton.swift; sourceTree = "<group>"; };
 		51309DBB2D0DCD3E00660118 /* ChuUIModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChuUIModifier.swift; sourceTree = "<group>"; };
+		513F7B3C2D9A8831007BEFD0 /* PageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
 		51657B012C31C1C500418325 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
-		517063952D8B3C8A00567612 /* OnboardingVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingVM.swift; sourceTree = "<group>"; };
+		517063952D8B3C8A00567612 /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
 		5172FD442C3FD33000BC3A44 /* PushNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationManager.swift; sourceTree = "<group>"; };
 		5172FD482C3FFC4400BC3A44 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		5172FD4A2C3FFE0400BC3A44 /* SettingsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVM.swift; sourceTree = "<group>"; };
@@ -96,6 +100,8 @@
 		51E982DA2C08533A003A7527 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		51E982DD2C08533A003A7527 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		51F1A9B02C3E717E00DBFCDE /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		51FC27DD2D97E4E00080EA17 /* StatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusView.swift; sourceTree = "<group>"; };
+		51FC27E12D97F80B0080EA17 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,7 +142,7 @@
 			children = (
 				5113EA362D8DAFE600153ECD /* Components */,
 				51657B012C31C1C500418325 /* OnboardingView.swift */,
-				517063952D8B3C8A00567612 /* OnboardingVM.swift */,
+				517063952D8B3C8A00567612 /* Onboarding.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -144,8 +150,10 @@
 		51309D9C2D0DCA8100660118 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				51FC27DC2D97E4BE0080EA17 /* Components */,
 				51E982D82C085339003A7527 /* HomeView.swift */,
 				5172FD4E2C4049A000BC3A44 /* HomeVM.swift */,
+				51FC27E12D97F80B0080EA17 /* Home.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -257,6 +265,14 @@
 			path = Localization;
 			sourceTree = "<group>";
 		};
+		513F7B3E2D9A883F007BEFD0 /* PageView */ = {
+			isa = PBXGroup;
+			children = (
+				513F7B3C2D9A8831007BEFD0 /* PageView.swift */,
+			);
+			path = PageView;
+			sourceTree = "<group>";
+		};
 		519701F52D280EA900B74205 /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -309,6 +325,23 @@
 				51E982DD2C08533A003A7527 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		51FC27DC2D97E4BE0080EA17 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				513F7B3E2D9A883F007BEFD0 /* PageView */,
+				51FC27E32D9800010080EA17 /* StatusView */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		51FC27E32D9800010080EA17 /* StatusView */ = {
+			isa = PBXGroup;
+			children = (
+				51FC27DD2D97E4E00080EA17 /* StatusView.swift */,
+			);
+			path = StatusView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -389,6 +422,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				513F7B3D2D9A8838007BEFD0 /* PageView.swift in Sources */,
 				51E982D92C085339003A7527 /* HomeView.swift in Sources */,
 				5198A8BA2C2DCA1200ECEE0C /* ChartVM.swift in Sources */,
 				51309DB52D0DCCDF00660118 /* IntArrayStorage.swift in Sources */,
@@ -401,17 +435,19 @@
 				51309DA62D0DCC4100660118 /* Color+.swift in Sources */,
 				51CA3B882D900AF0009A7CD4 /* CircleDismissButton.swift in Sources */,
 				51309DB12D0DCCC700660118 /* StringStorage.swift in Sources */,
+				51FC27E22D97F8110080EA17 /* Home.swift in Sources */,
 				5172FD4B2C3FFE0400BC3A44 /* SettingsVM.swift in Sources */,
 				51B26B122C411CEA006502A3 /* HapticManager.swift in Sources */,
 				51CA3B8E2D90340B009A7CD4 /* EdgeInsets+.swift in Sources */,
 				51E982D72C085339003A7527 /* NanaTimerApp.swift in Sources */,
 				51309DB32D0DCCCE00660118 /* StateStorage.swift in Sources */,
 				51309DAA2D0DCC5500660118 /* Font+.swift in Sources */,
+				51FC27DE2D97E4E00080EA17 /* StatusView.swift in Sources */,
 				51B40EFA2C2F07440097A88C /* TimerView.swift in Sources */,
 				51309DAD2D0DCCB000660118 /* IntStorage.swift in Sources */,
 				51D4D6802C2C7D7A0014731D /* ChartModel.swift in Sources */,
 				51AD90E02C283543008E3E67 /* ChartView.swift in Sources */,
-				517063962D8B3C8D00567612 /* OnboardingVM.swift in Sources */,
+				517063962D8B3C8D00567612 /* Onboarding.swift in Sources */,
 				519701FB2D297BFA00B74205 /* TimerMainView.swift in Sources */,
 				51CA3B8C2D902EFF009A7CD4 /* CapsuleDismissButton.swift in Sources */,
 				51309DB82D0DCD2400660118 /* ChuUIButton.swift in Sources */,

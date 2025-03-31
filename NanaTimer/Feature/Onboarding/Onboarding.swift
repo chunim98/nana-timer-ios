@@ -1,5 +1,5 @@
 //
-//  OnboardingVM.swift
+//  Onboarding.swift
 //  NanaTimer
 //
 //  Created by 신정욱 on 3/20/25.
@@ -8,7 +8,7 @@
 import SwiftUI
 import Combine
 
-final class OnboardingVM: ObservableObject {
+final class Onboarding: ObservableObject {
         
     struct State {
         @BoolStorage("isHidden") var isHidden: Bool

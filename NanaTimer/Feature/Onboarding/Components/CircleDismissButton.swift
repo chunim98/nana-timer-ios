@@ -9,9 +9,9 @@ import SwiftUI
 
 struct CircleDismissButton: View {
     
-    @ObservedObject private var onboardingVM: OnboardingVM
+    @ObservedObject private var onboardingVM: Onboarding
     
-    init(_ onboardingVM: OnboardingVM) {
+    init(_ onboardingVM: Onboarding) {
         self.onboardingVM = onboardingVM
     }
     
@@ -44,5 +44,5 @@ struct CircleDismissButton: View {
 }
 
 #Preview {
-    CircleDismissButton(OnboardingVM())
+    CircleDismissButton(Onboarding())
 }
