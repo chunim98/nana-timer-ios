@@ -10,26 +10,42 @@ import Combine
 
 struct StatusView: View {
     
+    // MARK: State
+    
     private let titleText: LocalizedStringKey
     private let subTitleText: LocalizedStringKey
-    private let intent: PassthroughSubject<Home.Intent, Never>
-
+    
+    // MARK: Properties
+    
+    private let intent: PassthroughSubject<HomeVM.Intent, Never>
+    
+    // MARK: Init
+    
     init(
-        _ pageIndex: Int,
-        _ timerState: TimerModel.State,
-        _ intent: PassthroughSubject<Home.Intent, Never>
+        pageIndex: Int,
+        timerState: TimerState,
+        _ intent: PassthroughSubject<HomeVM.Intent, Never>
     ) {
-        self.intent = intent
-        
         if pageIndex == 0 {
-            self.titleText = timerState.titleText
+            self.titleText = switch timerState {
+            case .idle : "안녕하세요!"
+            case .ready: "준비됐나요?"
+            case .running: "힘내세요!"
+            case .paused: "쉬었다 갈게요!"
+            case .finished: "끝! 고생 많았어요."
+            default: ""
+            }
             self.subTitleText = ""
             
         } else { // 페이지 인덱스가 1일 경우
             self.titleText = "단위 (분)"
             self.subTitleText = "공부 현황"
         }
+        
+        self.intent = intent
     }
+    
+    // MARK: View
     
     var body: some View {
         HStack {
@@ -61,5 +77,5 @@ struct StatusView: View {
 }
 
 #Preview {
-    HomeView(homeVM: .init(), timerVM: .init(), chartVM: .init())
+    HomeView(chartVM: .init())
 }

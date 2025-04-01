@@ -8,45 +8,44 @@
 import SwiftUI
 
 struct TimerView: View {
-    @State var timerVM: TimerVM
+    
+    @ObservedObject private var vm: TimerVM
+    
+    init(_ vm: TimerVM) {
+        self.vm = vm
+    }
     
     var body: some View {
-        GeometryReader { geo in
-            VStack {
-                if !timerVM.timerModel.isTimerViewShowing {
-                    VStack {
-                        if !timerVM.timerModel.isSetViewShowing {
-                            // TimerEntryView
-                            TimerEntryView(timerVM: $timerVM)
-                        } else {
-                            // TimerSettingView
-                            TimerSettingView(timerVM: $timerVM)
-                        }
-                    }
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
-                    .modifier(ChuUIModifier())
-                    
-                } else {
-                    // MARK: - Timer View
-                    TimerMainView(timerVM: $timerVM)
-                }
+        VStack {
+            switch vm.state.setupState {
+            case .notConfigured:
+                TimerEntryView(vm.intent)
+                    .transition(.blurReplace)
+                
+            case .configuring:
+                TimerSetupView(vm.intent)
+                    .transition(.blurReplace)
+                
+            case .configured:
+                TimerMainView(vm.state, vm.intent)
+                    .transition(.blurReplace)
             }
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .animation(.bouncy, value: timerVM.timerModel.upTime)
-            .onAppear() {
-                // 24시간 동안 조작하지 않으면 초기화하는 코드 예약
-                RemoteTaskManager.shared.task["timeoutReset"] = {
-                    withAnimation {
-                        timerVM.timerModel.isTimerViewShowing.toggle()
-                    } completion: {
-                        timerVM.reset()
-                    }
-                }
-            }
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .animation(.default, value: vm.state.setupState)
+        .onAppear() {
+            // 24시간 동안 조작하지 않으면 초기화하는 코드 예약
+//            RemoteTaskManager.shared.task["timeoutReset"] = {
+//                withAnimation {
+//                    timerVM.timerModel.isTimerViewShowing.toggle()
+//                } completion: {
+//                    timerVM.reset()
+//                }
+//            }
         }
     }
 }
 
 #Preview {
-    TimerView(timerVM: TimerVM())
+    TimerView(.init())
 }

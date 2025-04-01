@@ -13,36 +13,38 @@ struct PageView<Content: View>: View {
     // MARK: State
     
     private let pageIndex: Int
-    private var colors: [Color]
+    private var indicatorColors: [Color]
     
     // MARK: Properties
     
-    private let intent: PassthroughSubject<Home.Intent, Never>
+    private let parentIntent: PassthroughSubject<HomeVM.Intent, Never>
     private let content: () -> Content
     
     // MARK: Init
     
     init(
-        _ pageIndex: Int,
-        _ intent: PassthroughSubject<Home.Intent, Never>,
+        pageIndex: Int,
+        _ intent: PassthroughSubject<HomeVM.Intent, Never>,
         @ViewBuilder content: @escaping () -> Content
     ) {
+        self.indicatorColors = (0..<2).map {
+            $0 == pageIndex ? .chuText : .chuText.opacity(0.25)
+        }
         self.pageIndex = pageIndex
-        self.colors = (0..<2).map { $0 == pageIndex ? .chuText : .chuText.opacity(0.25) }
-        self.intent = intent
+        self.parentIntent = intent
         self.content = content
     }
     
     // MARK: View
     
     var body: some View {
-        let binding = Binding(
+        let pageSelectionBinding = Binding(
             get: { pageIndex },
-            set: { intent.send(.pageSwiped($0)) }
+            set: { parentIntent.send(.pageSwiped($0)) }
         )
         
         // 페이지 뷰
-        TabView(selection: binding) {
+        TabView(selection: pageSelectionBinding) {
             Group { content() }.padding(15)
         }
         .tabViewStyle(.page(indexDisplayMode: .never))
@@ -52,15 +54,15 @@ struct PageView<Content: View>: View {
         HStack {
             Image(systemName: "clock.fill").resizable()
                 .aspectRatio(contentMode: .fit)
-                .foregroundStyle(colors[0])
-                .onTapGesture { intent.send(.pageIndicatorSelected(0)) }
+                .foregroundStyle(indicatorColors[0])
+                .onTapGesture { parentIntent.send(.pageIndicatorSelected(0)) }
             
             Spacer().frame(width: 30)
             
             Image(systemName: "chart.bar.fill").resizable()
                 .aspectRatio(contentMode: .fit)
-                .foregroundStyle(colors[1])
-                .onTapGesture { intent.send(.pageIndicatorSelected(1)) }
+                .foregroundStyle(indicatorColors[1])
+                .onTapGesture { parentIntent.send(.pageIndicatorSelected(1)) }
         }
         .frame(height: 20)
         .animation(.easeInOut(duration: 0.25), value: pageIndex)
@@ -68,5 +70,5 @@ struct PageView<Content: View>: View {
 }
 
 #Preview {
-    PageView(1, .init(), content: {})
+    PageView(pageIndex: 1, .init(), content: {})
 }

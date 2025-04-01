@@ -8,32 +8,9 @@
 import SwiftUI
 
 struct TimerModel {
-    // 타이머 상태 열거형
-    enum State: String {
-        case idle
-        case run
-        case paused
-        case timerBackground
-        case end
-        
-        var titleText: LocalizedStringKey {
-            switch self {
-            case .idle:
-                "안녕하세요!"
-            case .run:
-                "힘내세요!"
-            case .paused:
-                "쉬었다 갈게요!"
-            case .end:
-                "끝! 고생 많았어요."
-            default:
-                ""
-            }
-        }
-    }
     
     // MARK: - TimerModel 프로퍼티, 메서드
-    @StateStorage private(set) var state: TimerModel.State // 초기값 .idle
+    @TimerStateStorage private(set) var state: TimerState // 초기값 .ready
     @IntStorage("upTime") var upTime: Int // 초기값 0
     @IntStorage("settedTime") private(set) var settedTime: Int // 초기값 0
     @StringStorage("lastDate") var lastDate: String // 초기값 ""
@@ -59,7 +36,7 @@ struct TimerModel {
         return formatter
     }()
     
-    mutating func updateState(to: TimerModel.State) {
+    mutating func updateState(to: TimerState) {
         state = to
     }
     
