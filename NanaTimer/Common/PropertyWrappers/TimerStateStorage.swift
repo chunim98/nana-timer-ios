@@ -9,8 +9,10 @@ import Foundation
 
 @propertyWrapper
 struct TimerStateStorage {
+    private let key = "TimerState"
+    
     var wrappedValue: TimerState {
-        get { TimerState(rawValue: UserDefaults.standard.integer(forKey: "state"))! }
-        set { UserDefaults.standard.set(newValue.rawValue, forKey: "state") }
+        get { TimerState(rawValue: UserDefaults.standard.integer(forKey: key))! }
+        set { UserDefaults.standard.set(newValue.rawValue, forKey: key) }
     }
 }

@@ -9,8 +9,10 @@ import Foundation
 
 @propertyWrapper
 struct SetupStateStorage {
+    private let key = "SetupState"
+    
     var wrappedValue: SetupState {
-        get { SetupState(rawValue: UserDefaults.standard.integer(forKey: "state"))! }
-        set { UserDefaults.standard.set(newValue.rawValue, forKey: "state") }
+        get { SetupState(rawValue: UserDefaults.standard.integer(forKey: key))! }
+        set { UserDefaults.standard.set(newValue.rawValue, forKey: key) }
     }
 }

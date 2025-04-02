@@ -164,6 +164,7 @@
 				5198A8B32C2D759D00ECEE0C /* LegacyTimerVM.swift */,
 				5172FD4E2C4049A000BC3A44 /* LegacyHomeVM.swift */,
 				5198A8B52C2D75D100ECEE0C /* TimerModel.swift */,
+				51309DB42D0DCCDF00660118 /* IntArrayStorage.swift */,
 			);
 			path = Lagacy;
 			sourceTree = "<group>";
@@ -284,10 +285,9 @@
 			children = (
 				5123DEFC2D9D1F7C0034B58B /* SetupStateStorage.swift */,
 				51309DB22D0DCCCE00660118 /* TimerStateStorage.swift */,
-				51309DB42D0DCCDF00660118 /* IntArrayStorage.swift */,
 				51309DB02D0DCCC700660118 /* StringStorage.swift */,
-				51309DAC2D0DCCB000660118 /* IntStorage.swift */,
 				51309DAE2D0DCCBD00660118 /* BoolStorage.swift */,
+				51309DAC2D0DCCB000660118 /* IntStorage.swift */,
 			);
 			path = PropertyWrappers;
 			sourceTree = "<group>";
