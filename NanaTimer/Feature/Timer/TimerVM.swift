@@ -11,12 +11,11 @@ import Combine
 final class TimerVM: ObservableObject {
     
     struct State {
+        @Storage("SetupState", SetupState.notConfigured) var setupState
+        @Storage("TimerState", TimerState.idle) var timerState
+        @Storage("Duration", 0) var duration
+        @Storage("ElapsedTime", 0) var elapsedTime
         let colors = Color.chuColorPalette.shuffled()
-        // @IntStorage("setupState", 0) var setupState: Int
-        var setupState: SetupState = .notConfigured
-        var timerState: TimerState = .idle
-        var duration = 0
-        var elapsedTime = 0
         
         var remainingTime: Int { duration - elapsedTime }
     }

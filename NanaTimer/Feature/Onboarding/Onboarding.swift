@@ -11,7 +11,7 @@ import Combine
 final class Onboarding: ObservableObject {
         
     struct State {
-        @BoolStorage("isHidden") var isHidden: Bool
+        @Storage("isHidden", false) var isHidden: Bool
         var isAlertPresented = false
         var imageOffset = CGFloat(100)
     }

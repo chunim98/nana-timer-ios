@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct SettingsModel {
-    @BoolStorage("isAuthorized") var isAuthorized: Bool // 기본값 false
-    @BoolStorage("isOnNotify", true) var isOnNotify: Bool // 커스텀 기본값 true
-    @BoolStorage("isOnTactile") var isOnTactile: Bool
-    @IntStorage("notiInterval", 60) var notiInterval: Int // 커스텀 기본값 60
+    @Storage("isAuthorized", false) var isAuthorized: Bool // 기본값 false
+    @Storage("isOnNotify", true) var isOnNotify: Bool // 커스텀 기본값 true
+    @Storage("isOnTactile", false) var isOnTactile: Bool
+    @Storage("notiInterval", 60) var notiInterval: Int // 커스텀 기본값 60
     
     var colorPalette: [Color] = Color.chuColorPalette
     

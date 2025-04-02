@@ -10,12 +10,12 @@ import SwiftUI
 struct TimerModel {
     
     // MARK: - TimerModel 프로퍼티, 메서드
-    @TimerStateStorage private(set) var state: TimerState // 초기값 .ready
-    @IntStorage("upTime") var upTime: Int // 초기값 0
-    @IntStorage("settedTime") private(set) var settedTime: Int // 초기값 0
-    @StringStorage("lastDate") var lastDate: String // 초기값 ""
-    @StringStorage("startDay") var startDay: String
-    @BoolStorage("isTimerViewShowing") var isTimerViewShowing // 초기값 false
+    @Storage("state", TimerState.ready) private(set) var state: TimerState // 초기값 .ready
+    @Storage("upTime", 0) var upTime: Int // 초기값 0
+    @Storage("settedTime", 0) private(set) var settedTime: Int // 초기값 0
+    @Storage("lastDate", "") var lastDate: String // 초기값 ""
+    @Storage("startDay", "") var startDay: String
+    @Storage("isTimerViewShowing", false) var isTimerViewShowing // 초기값 false
     
     var isSetViewShowing = false
     var colorPalette: [Color] = Color.chuColorPalette

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ChartModel {
     @IntArrayStorage("weekdayUpTimes") var weekdayUpTimes: [Int] // [0]부터 일 월 화 수 목...
-    @IntStorage("lastWeekday") var lastWeekday: Int
+    @Storage("lastWeekday", 0) var lastWeekday: Int
     
     var colorPalette: [Color] = Color.chuColorPalette
     
