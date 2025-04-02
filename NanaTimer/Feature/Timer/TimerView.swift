@@ -33,16 +33,16 @@ struct TimerView: View {
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .animation(.default, value: vm.state.setupState)
-        .onAppear() {
-            // 24시간 동안 조작하지 않으면 초기화하는 코드 예약
-//            RemoteTaskManager.shared.task["timeoutReset"] = {
-//                withAnimation {
-//                    timerVM.timerModel.isTimerViewShowing.toggle()
-//                } completion: {
-//                    timerVM.reset()
-//                }
-//            }
-        }
+        // .onAppear() {
+        //     // 24시간 동안 조작하지 않으면 초기화하는 코드 예약
+        //     RemoteTaskManager.shared.task["timeoutReset"] = {
+        //         withAnimation {
+        //             timerVM.timerModel.isTimerViewShowing.toggle()
+        //         } completion: {
+        //             timerVM.reset()
+        //         }
+        //     }
+        // }
     }
 }
 

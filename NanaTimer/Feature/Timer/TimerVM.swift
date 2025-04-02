@@ -11,8 +11,8 @@ import Combine
 final class TimerVM: ObservableObject {
     
     struct State {
-        @Storage("SetupState", SetupState.notConfigured) var setupState
-        @Storage("TimerState", TimerState.idle) var timerState
+        @EnumStorage("SetupState", SetupState.notConfigured) var setupState
+        @EnumStorage("TimerState", TimerState.idle) var timerState
         @Storage("Duration", 0) var duration
         @Storage("ElapsedTime", 0) var elapsedTime
         let colors = Color.chuColorPalette.shuffled()
@@ -76,6 +76,8 @@ final class TimerVM: ObservableObject {
             timer.invalidate()
             state.timerState = .idle
             state.setupState = .notConfigured
+            state.duration = 0
+            state.elapsedTime = 0
         }
     }
     

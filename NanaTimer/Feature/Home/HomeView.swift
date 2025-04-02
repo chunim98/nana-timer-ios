@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
     
-    @StateObject var chartVM: ChartVM
+    @StateObject var chartVM: ChartVM // temp
     
     @StateObject private var homeVM = HomeVM()
     @StateObject private var timerVM = TimerVM()

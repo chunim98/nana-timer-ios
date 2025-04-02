@@ -10,7 +10,7 @@ import SwiftUI
 struct TimerModel {
     
     // MARK: - TimerModel 프로퍼티, 메서드
-    @Storage("state", TimerState.ready) private(set) var state: TimerState // 초기값 .ready
+    @EnumStorage("state", TimerState.idle) private(set) var state: TimerState // 초기값 .idle
     @Storage("upTime", 0) var upTime: Int // 초기값 0
     @Storage("settedTime", 0) private(set) var settedTime: Int // 초기값 0
     @Storage("lastDate", "") var lastDate: String // 초기값 ""

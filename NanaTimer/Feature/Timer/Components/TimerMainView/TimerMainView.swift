@@ -67,7 +67,7 @@ struct TimerMainView: View {
                 timerState: timerState,
                 tintColor: colors[2]
             ) {
-                parentIntent.send(.resetAlertAccepted)
+                parentIntent.send(.controlButtonTapped)
             }
             
             Spacer().frame(height: 30)
