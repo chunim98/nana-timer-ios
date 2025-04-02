@@ -47,5 +47,5 @@ struct TimerView: View {
 }
 
 #Preview {
-    TimerView(.init())
+    HomeView()
 }
