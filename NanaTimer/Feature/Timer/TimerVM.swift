@@ -11,6 +11,7 @@ import Combine
 final class TimerVM: ObservableObject {
     
     struct State {
+        @EnumStorage("AppState", AppState.active) var appState
         @EnumStorage("SetupState", SetupState.notConfigured) var setupState
         @EnumStorage("TimerState", TimerState.idle) var timerState
         @Storage("Duration", 0) var duration
@@ -27,6 +28,7 @@ final class TimerVM: ObservableObject {
         case timerTick
         case controlButtonTapped
         case resetAlertAccepted
+        case scenePhaseUpdated(ScenePhase)
     }
     
     // MARK: Properties
@@ -78,6 +80,9 @@ final class TimerVM: ObservableObject {
             state.setupState = .notConfigured
             state.duration = 0
             state.elapsedTime = 0
+            
+        case let .scenePhaseUpdated(scenePhase):
+            state.appState = scenePhase.appState
         }
     }
     

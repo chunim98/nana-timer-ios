@@ -10,6 +10,8 @@
 		5123DEFB2D9D02CE0034B58B /* AchievementRateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5123DEFA2D9D02CE0034B58B /* AchievementRateView.swift */; };
 		5123DF022D9D2CD50034B58B /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5123DF012D9D2CD20034B58B /* Storage.swift */; };
 		5123DF042D9D37DA0034B58B /* EnumStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5123DF032D9D37D10034B58B /* EnumStorage.swift */; };
+		5123DF062D9D477C0034B58B /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5123DF052D9D47790034B58B /* AppState.swift */; };
+		5123DF082D9D47F00034B58B /* ScenePhase+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5123DF072D9D47EE0034B58B /* ScenePhase+.swift */; };
 		512DF5BF2C36C60800CE7F95 /* rounded-mplus-1c-medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 512DF5BE2C36C60800CE7F95 /* rounded-mplus-1c-medium.ttf */; };
 		51309DA62D0DCC4100660118 /* Color+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51309DA52D0DCC4100660118 /* Color+.swift */; };
 		51309DA82D0DCC4D00660118 /* Int+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51309DA72D0DCC4D00660118 /* Int+.swift */; };
@@ -67,6 +69,8 @@
 		5123DEFA2D9D02CE0034B58B /* AchievementRateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementRateView.swift; sourceTree = "<group>"; };
 		5123DF012D9D2CD20034B58B /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		5123DF032D9D37D10034B58B /* EnumStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumStorage.swift; sourceTree = "<group>"; };
+		5123DF052D9D47790034B58B /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		5123DF072D9D47EE0034B58B /* ScenePhase+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScenePhase+.swift"; sourceTree = "<group>"; };
 		512DF5BE2C36C60800CE7F95 /* rounded-mplus-1c-medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "rounded-mplus-1c-medium.ttf"; sourceTree = "<group>"; };
 		51309DA52D0DCC4100660118 /* Color+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+.swift"; sourceTree = "<group>"; };
 		51309DA72D0DCC4D00660118 /* Int+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+.swift"; sourceTree = "<group>"; };
@@ -159,6 +163,7 @@
 				5172FD4E2C4049A000BC3A44 /* LegacyHomeVM.swift */,
 				5198A8B52C2D75D100ECEE0C /* TimerModel.swift */,
 				51309DB42D0DCCDF00660118 /* IntArrayStorage.swift */,
+				5198A8B72C2D92E000ECEE0C /* SceneManager.swift */,
 			);
 			path = Lagacy;
 			sourceTree = "<group>";
@@ -201,6 +206,7 @@
 				519701F52D280EA900B74205 /* Components */,
 				51B40EF92C2F07440097A88C /* TimerView.swift */,
 				513F7B3F2D9AC0FD007BEFD0 /* TimerVM.swift */,
+				5123DF052D9D47790034B58B /* AppState.swift */,
 				513F7B412D9AC241007BEFD0 /* SetupState.swift */,
 				51BC29702D9BD0A700C04EE4 /* TimerState.swift */,
 			);
@@ -255,7 +261,6 @@
 			isa = PBXGroup;
 			children = (
 				51BC297A2D9BF72D00C04EE4 /* TimerHelper.swift */,
-				5198A8B72C2D92E000ECEE0C /* SceneManager.swift */,
 				51B40EF32C2E731C0097A88C /* RemoteTaskManager.swift */,
 				51B26B112C411CEA006502A3 /* HapticManager.swift */,
 				5172FD442C3FD33000BC3A44 /* PushNotificationManager.swift */,
@@ -266,6 +271,7 @@
 		51309DA42D0DCC0F00660118 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				5123DF072D9D47EE0034B58B /* ScenePhase+.swift */,
 				51CA3B8D2D903409009A7CD4 /* EdgeInsets+.swift */,
 				51309DA92D0DCC5500660118 /* Font+.swift */,
 				51309DA72D0DCC4D00660118 /* Int+.swift */,
@@ -531,6 +537,7 @@
 				51CA3B842D9007D0009A7CD4 /* HideableVStack.swift in Sources */,
 				5172FD452C3FD33000BC3A44 /* PushNotificationManager.swift in Sources */,
 				51309DBC2D0DCD3E00660118 /* ChuUIModifier.swift in Sources */,
+				5123DF082D9D47F00034B58B /* ScenePhase+.swift in Sources */,
 				51309DA62D0DCC4100660118 /* Color+.swift in Sources */,
 				51CA3B882D900AF0009A7CD4 /* CircleDismissButton.swift in Sources */,
 				51FC27E22D97F8110080EA17 /* HomeVM.swift in Sources */,
@@ -565,6 +572,7 @@
 				51BC29792D9BF42600C04EE4 /* ResetButton.swift in Sources */,
 				5123DEFB2D9D02CE0034B58B /* AchievementRateView.swift in Sources */,
 				5198A8B82C2D92E000ECEE0C /* SceneManager.swift in Sources */,
+				5123DF062D9D477C0034B58B /* AppState.swift in Sources */,
 				5172FD492C3FFC4400BC3A44 /* SettingsView.swift in Sources */,
 				5198A8B22C2D4A3600ECEE0C /* TimerService.swift in Sources */,
 				519701F92D296A2000B74205 /* TimerSetupView.swift in Sources */,

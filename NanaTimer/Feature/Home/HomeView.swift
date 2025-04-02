@@ -9,8 +9,8 @@ import SwiftUI
 
 struct HomeView: View {
     
-    @StateObject var chartVM: ChartVM // temp
-    
+    @Environment(\.scenePhase) private var scenePhase: ScenePhase
+
     @StateObject private var homeVM = HomeVM()
     @StateObject private var timerVM = TimerVM()
     
@@ -39,12 +39,15 @@ struct HomeView: View {
                         homeVM.intent
                     ) {
                         TimerView(timerVM).tag(0)
-                        ChartView(chartVM: chartVM).tag(1)
+                        ChartView().tag(1)
                     }
                 }
             }
             .background { Color.chuBack.ignoresSafeArea() }
             .onAppear { homeVM.intent.send(.onAppear) }
+            .onChange(of: scenePhase) { _, new in
+                timerVM.intent.send(.scenePhaseUpdated(new))
+            }
             .navigationDestination(for: String.self) {
                 if $0 == "SettingsView" { SettingsView(settingsVM: .init()) }
             }
@@ -56,5 +59,5 @@ struct HomeView: View {
 
 
 #Preview {
-    HomeView(chartVM: .init())
+    HomeView()
 }

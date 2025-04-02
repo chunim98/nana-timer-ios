@@ -77,5 +77,5 @@ struct StatusView: View {
 }
 
 #Preview {
-    HomeView(chartVM: .init())
+    HomeView()
 }

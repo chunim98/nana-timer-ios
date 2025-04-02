@@ -9,17 +9,9 @@ import SwiftUI
 
 @main
 struct NanaTimerApp: App {
-    
-    @Environment(\.scenePhase) private var scenePhase
-    
     var body: some Scene {
         WindowGroup {
-            HomeView(chartVM: .init())
-        }
-        .onChange(of: scenePhase) { oldValue, newValue in
-            // 씬 페이즈 상태에 따라 클로저에 상태만 넘겨주는 메서드, 내부 구현은 뷰 모델 재량
-            SceneManager.shared.distributeScenePhase(scene: newValue)
-            print(scenePhase)
+            HomeView()
         }
     }
 }

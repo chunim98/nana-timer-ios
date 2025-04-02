@@ -10,7 +10,7 @@ import Charts
 
 struct ChartView: View {
     
-    @StateObject var chartVM: ChartVM
+    @StateObject var chartVM: ChartVM = .init()
     
     var body: some View {
         ZStack {
