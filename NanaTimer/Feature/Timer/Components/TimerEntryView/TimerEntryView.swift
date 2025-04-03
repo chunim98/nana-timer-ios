@@ -9,14 +9,27 @@ import SwiftUI
 import Combine
 
 struct TimerEntryView: View {
-
+    
+    // MARK: State
+    
+    private let titleText: LocalizedStringKey
+    private let tintColor: Color
+    
     // MARK: Properties
     
     private let intent: PassthroughSubject<TimerVM.Intent, Never>
     
     // MARK: Init
     
-    init(_ intent: PassthroughSubject<TimerVM.Intent, Never>) {
+    init(
+        timerState: TimerState,
+        tintColor: Color,
+        _ intent: PassthroughSubject<TimerVM.Intent, Never>
+    ) {
+        self.titleText = timerState == .timeout ?
+        "24시간 동안 조작이 없어\n초기화했어요" :
+        "타이머를 설정하려면\n가볍게 탭 하세요"
+        self.tintColor = tintColor
         self.intent = intent
     }
     
@@ -31,9 +44,9 @@ struct TimerEntryView: View {
             VStack(spacing: 15) {
                 Image(systemName: "clock.fill").resizable()
                     .frame(width: 100, height: 100)
-                    .foregroundStyle(Color.chuColorPalette.randomElement()!)
+                    .foregroundStyle(tintColor)
                 
-                Text("타이머를 설정하려면\n가볍게 탭 하세요")
+                Text(titleText)
                     .font(.localizedFont28)
                     .foregroundColor(Color.chuText)
             }
@@ -48,5 +61,9 @@ struct TimerEntryView: View {
 }
 
 #Preview {
-    TimerEntryView(.init())
+    TimerEntryView(
+        timerState: .timeout,
+        tintColor: .chuColorPalette[0],
+        .init()
+    )
 }

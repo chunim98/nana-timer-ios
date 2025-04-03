@@ -7,11 +7,10 @@
 
 import SwiftUI
 
-@Observable
-final class LegacyTimerVM {
+final class LegacyTimerVM: ObservableObject {
     
     var timerModel = TimerModel()
-    @ObservationIgnored var setModel = SettingsModel()
+    var setModel = SettingsModel()
 
 
     
@@ -33,6 +32,8 @@ final class LegacyTimerVM {
         case .finished:
             return "끝! 고생 많았어요."
         case .idle:
+            return ""
+        case .timeout:
             return ""
         }
     }

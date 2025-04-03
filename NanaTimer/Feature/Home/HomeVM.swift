@@ -30,7 +30,7 @@ final class HomeVM: ObservableObject {
     let intent = PassthroughSubject<Intent, Never>()
     private var cancellables = Set<AnyCancellable>()
     
-    private let timer = TimerHelper()
+    private let timer = TimerController()
 
     // MARK: Life Cycle
     

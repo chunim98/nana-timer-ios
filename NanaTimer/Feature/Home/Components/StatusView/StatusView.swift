@@ -38,8 +38,8 @@ struct StatusView: View {
             self.subTitleText = ""
             
         } else { // 페이지 인덱스가 1일 경우
-            self.titleText = "단위 (분)"
-            self.subTitleText = "공부 현황"
+            self.titleText = "공부 현황"
+            self.subTitleText = "단위 (분)"
         }
         
         self.intent = intent

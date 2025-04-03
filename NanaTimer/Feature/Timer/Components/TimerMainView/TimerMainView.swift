@@ -46,6 +46,7 @@ struct TimerMainView: View {
             
             // 설정시간, 현재 잔여시간 표시하는 뷰
             TimeIndicatorView(
+                dutaion: duration,
                 remainingTime: remainingTime,
                 elapsedDay: 1 // temp
             )

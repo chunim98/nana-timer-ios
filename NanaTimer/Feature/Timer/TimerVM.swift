@@ -11,31 +11,21 @@ import Combine
 final class TimerVM: ObservableObject {
     
     struct State {
-        @EnumStorage("AppState", AppState.active)
-        var appState //
-        
-        @EnumStorage("SetupState", SetupState.notConfigured)
-        var setupState // 어떤 화면을 보여줄지에 대해 관여
-        
-        @EnumStorage("TimerState", TimerState.idle)
-        var timerState //
-        
-        @Storage("Duration", 0) var duration
-        @Storage("ElapsedTime", 0) var elapsedTime
+        @EnumStorage("ScreenState", TimerScreenState.entry) var screenState
         let colors = Color.chuColorPalette.shuffled()
-        
-        var remainingTime: Int { duration - elapsedTime }
+        var timerState = TimerState.idle
+        var remainingTime = 0
+        var elapsedTime = 0
+        var duration = 0
     }
     
     enum Intent {
         case setupButtonTapped
         case closeSetupViewButtonTapped
         case confirmButtonTapped(Int)
-        case timerTick
         case controlButtonTapped
         case resetAlertAccepted
         case scenePhaseUpdated(ScenePhase)
-        case timerStateUpdateRequested(TimerState)
     }
     
     // MARK: Properties
@@ -43,97 +33,73 @@ final class TimerVM: ObservableObject {
     @Published private(set) var state = State()
     let intent = PassthroughSubject<Intent, Never>()
     private var cancellables = Set<AnyCancellable>()
+    private let timer = TimerController()
     
-    private let timer = TimerHelper()
-
-    // MARK: Life Cycle
+    // MARK: Init
     
     init() {
-        timer.perform = { [weak self] in
-            self?.intent.send(.timerTick)
-        }
-        
         intent // 인텐트 바인딩
-            .print("TimerVM")
+            .print("타이머 뷰모델")
             .sink { [weak self] in self?.process($0) }
             .store(in: &cancellables)
+        
+        timer.$state // 타이머 상태 바인딩
+            .sink { [weak self] in
+                guard let self else { return }
+                state.timerState = $0.state
+                state.duration = $0.duration
+                state.elapsedTime = $0.elapsedTime
+                state.remainingTime = $0.remainingTime
+            }
+            .store(in: &cancellables)
     }
-
+    
     // MARK: Processing
     
     private func process(_ intent: Intent) {
         switch intent {
         case .setupButtonTapped:
-            state.setupState = .configuring
+            state.screenState = .setup
             
         case .closeSetupViewButtonTapped:
-            state.setupState = .notConfigured
+            state.screenState = .entry
             
         case let .confirmButtonTapped(duration):
-            state.duration = duration
-            state.setupState = .configured
-            updateTimerState(.ready)
-            
-        case .timerTick:
-            state.elapsedTime += 1
-            if state.remainingTime <= 0 { updateTimerState(.finished) }
+            timer.intent.send(.configure(duration))
+            state.screenState = .main
             
         case .controlButtonTapped:
-            requestTimerStateUpdate()
+            handleControlButtonTapped()
             
         case .resetAlertAccepted:
-            state.setupState = .notConfigured
-            updateTimerState(.idle)
+            timer.intent.send(.reset)
+            state.screenState = .entry
             
         case let .scenePhaseUpdated(scenePhase):
-            state.appState = scenePhase.appState
-            
-        case let .timerStateUpdateRequested(timerState):
-            updateTimerState(timerState)
+            handleScenePhaseUpdated(scenePhase)
         }
     }
     
     // MARK: Methods
     
-    /// 타이머의 상태를 변경할 것을 요청합니다.
-    private func requestTimerStateUpdate() {
+    /// 컨트롤 버튼의 탭 이벤트가 발생해, 타이머에 상태를 변경할 것을 요청합니다.
+    private func handleControlButtonTapped() {
         switch state.timerState {
         case .ready, .paused:
-            intent.send(.timerStateUpdateRequested(.running))
-
+            timer.intent.send(.start)
         case .running:
-            intent.send(.timerStateUpdateRequested(.paused))
-
+            timer.intent.send(.pause)
         default:
             break
         }
     }
     
-    /// 타이머의 상태를 업데이트 하고, 뒤이어 TimerMainView의 상태도 업데이트 합니다.
-    private func updateTimerState(_ state: TimerState) {
-        self.state.timerState = state
-        
-        // 각 상태별로 TimerMainView는 어떤 상태여야 하는지 명세
-        switch state {
-        case .idle:
-            timer.invalidate()
-            self.state.elapsedTime = 0
-            self.state.duration = 0
-
-        case .ready:
-            timer.invalidate()
-            
-        case .running:
-            timer.start()
-            
-        case .paused:
-            timer.invalidate()
-            
-        case .backgrounded:
-            timer.invalidate()
-            
-        case .finished:
-            timer.invalidate()
+    /// 앱 상태가 변경되어, 타이머에 상태를 변경할 것을 요청합니다.
+    private func handleScenePhaseUpdated(_ scenePhase: ScenePhase) {
+        if scenePhase == .active {
+            timer.intent.send(.enterForeground)
+        } else if scenePhase == .background {
+            timer.intent.send(.enterBackground)
         }
     }
 }
