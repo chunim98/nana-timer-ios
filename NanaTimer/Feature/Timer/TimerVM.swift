@@ -12,6 +12,7 @@ final class TimerVM: ObservableObject {
     
     struct State {
         @EnumStorage("SS", TimerScreenState.entry) var screenState
+        var dailyStudyTimes = [Int](repeating: 0, count: 7+1)
         let colors = Color.chuColorPalette.shuffled()
         var timerState = TimerState.idle
         var remainingTime = 0
@@ -46,6 +47,7 @@ final class TimerVM: ObservableObject {
         timer.$state // 타이머 상태 바인딩
             .sink { [weak self] in
                 guard let self else { return }
+                state.dailyStudyTimes = $0.dailyStudyTimes
                 state.timerState = $0.timerState
                 state.duration = $0.duration
                 state.elapsedTime = $0.elapsed

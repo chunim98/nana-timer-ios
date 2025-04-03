@@ -38,8 +38,16 @@ struct HomeView: View {
                         pageIndex: homeVM.state.currentPageIndex,
                         homeVM.intent
                     ) {
+                        // 도메인 로직과 직결된 핵심 뷰, TimerVM이 존재하는 이유
                         TimerView(timerVM).tag(0)
-                        ChartView().tag(1)
+                        
+                        // 차트를 표시하는 뷰
+                        ChartView(
+                            screenState: timerVM.state.screenState,
+                            dailyStudyTimes: timerVM.state.dailyStudyTimes,
+                            tintColors: timerVM.state.colors
+                        )
+                        .tag(1)
                     }
                 }
             }
@@ -49,7 +57,7 @@ struct HomeView: View {
                 timerVM.intent.send(.scenePhaseUpdated(new))
             }
             .navigationDestination(for: String.self) {
-                if $0 == "SettingsView" { SettingsView(settingsVM: .init()) }
+                if $0 == "SV" { SettingsView(settingsVM: .init()) }
             }
         }
         .tint(.chuText) // 네비게이션 백 버튼 색상에 관여

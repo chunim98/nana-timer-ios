@@ -54,7 +54,7 @@
 		51CA3B882D900AF0009A7CD4 /* CircleDismissButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CA3B872D900AF0009A7CD4 /* CircleDismissButton.swift */; };
 		51CA3B8C2D902EFF009A7CD4 /* CapsuleDismissButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CA3B8B2D902EFF009A7CD4 /* CapsuleDismissButton.swift */; };
 		51CA3B8E2D90340B009A7CD4 /* EdgeInsets+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CA3B8D2D903409009A7CD4 /* EdgeInsets+.swift */; };
-		51D4D6802C2C7D7A0014731D /* ChartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D4D67F2C2C7D7A0014731D /* ChartModel.swift */; };
+		51D4D6802C2C7D7A0014731D /* LegacyChartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D4D67F2C2C7D7A0014731D /* LegacyChartModel.swift */; };
 		51E982D72C085339003A7527 /* NanaTimerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E982D62C085339003A7527 /* NanaTimerApp.swift */; };
 		51E982D92C085339003A7527 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E982D82C085339003A7527 /* HomeView.swift */; };
 		51E982DB2C08533A003A7527 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51E982DA2C08533A003A7527 /* Assets.xcassets */; };
@@ -62,8 +62,9 @@
 		51F1A9B12C3E717E00DBFCDE /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 51F1A9B02C3E717E00DBFCDE /* Localizable.xcstrings */; };
 		51FC27DE2D97E4E00080EA17 /* StatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FC27DD2D97E4E00080EA17 /* StatusView.swift */; };
 		51FC27E22D97F8110080EA17 /* HomeVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FC27E12D97F80B0080EA17 /* HomeVM.swift */; };
-		51FD3CF62D9E9AFB00969B60 /* ChartVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FD3CF52D9E9AF900969B60 /* ChartVM.swift */; };
 		51FD3CF82D9EA16000969B60 /* Calendar+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FD3CF72D9EA15F00969B60 /* Calendar+.swift */; };
+		51FD3CFC2D9ED07F00969B60 /* ChartEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FD3CFB2D9ED07F00969B60 /* ChartEmptyView.swift */; };
+		51FD3CFE2D9ED23100969B60 /* ChartData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FD3CFD2D9ED23100969B60 /* ChartData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -114,7 +115,7 @@
 		51CA3B872D900AF0009A7CD4 /* CircleDismissButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleDismissButton.swift; sourceTree = "<group>"; };
 		51CA3B8B2D902EFF009A7CD4 /* CapsuleDismissButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsuleDismissButton.swift; sourceTree = "<group>"; };
 		51CA3B8D2D903409009A7CD4 /* EdgeInsets+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EdgeInsets+.swift"; sourceTree = "<group>"; };
-		51D4D67F2C2C7D7A0014731D /* ChartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartModel.swift; sourceTree = "<group>"; };
+		51D4D67F2C2C7D7A0014731D /* LegacyChartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegacyChartModel.swift; sourceTree = "<group>"; };
 		51E3E2472C3064C500130BD3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		51E982D32C085339003A7527 /* NanaTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NanaTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		51E982D62C085339003A7527 /* NanaTimerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NanaTimerApp.swift; sourceTree = "<group>"; };
@@ -124,8 +125,9 @@
 		51F1A9B02C3E717E00DBFCDE /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		51FC27DD2D97E4E00080EA17 /* StatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusView.swift; sourceTree = "<group>"; };
 		51FC27E12D97F80B0080EA17 /* HomeVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVM.swift; sourceTree = "<group>"; };
-		51FD3CF52D9E9AF900969B60 /* ChartVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartVM.swift; sourceTree = "<group>"; };
 		51FD3CF72D9EA15F00969B60 /* Calendar+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Calendar+.swift"; sourceTree = "<group>"; };
+		51FD3CFB2D9ED07F00969B60 /* ChartEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartEmptyView.swift; sourceTree = "<group>"; };
+		51FD3CFD2D9ED23100969B60 /* ChartData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +169,8 @@
 				51309DB42D0DCCDF00660118 /* IntArrayStorage.swift */,
 				5198A8B72C2D92E000ECEE0C /* SceneManager.swift */,
 				5123DF052D9D47790034B58B /* AppState.swift */,
+				51D4D67F2C2C7D7A0014731D /* LegacyChartModel.swift */,
+				5198A8B92C2DCA1200ECEE0C /* LegacyChartVM.swift */,
 			);
 			path = Lagacy;
 			sourceTree = "<group>";
@@ -218,10 +222,9 @@
 		51309D9E2D0DCAA400660118 /* Chart */ = {
 			isa = PBXGroup;
 			children = (
-				51D4D67F2C2C7D7A0014731D /* ChartModel.swift */,
+				51FD3CFA2D9ED07800969B60 /* ChartEmptyView */,
 				51AD90DF2C283543008E3E67 /* ChartView.swift */,
-				51FD3CF52D9E9AF900969B60 /* ChartVM.swift */,
-				5198A8B92C2DCA1200ECEE0C /* LegacyChartVM.swift */,
+				51FD3CFD2D9ED23100969B60 /* ChartData.swift */,
 			);
 			path = Chart;
 			sourceTree = "<group>";
@@ -460,6 +463,14 @@
 			path = StatusView;
 			sourceTree = "<group>";
 		};
+		51FD3CFA2D9ED07800969B60 /* ChartEmptyView */ = {
+			isa = PBXGroup;
+			children = (
+				51FD3CFB2D9ED07F00969B60 /* ChartEmptyView.swift */,
+			);
+			path = ChartEmptyView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -547,7 +558,6 @@
 				519701F72D280F0700B74205 /* TimerEntryView.swift in Sources */,
 				51CA3B842D9007D0009A7CD4 /* HideableVStack.swift in Sources */,
 				5172FD452C3FD33000BC3A44 /* PushNotificationManager.swift in Sources */,
-				51FD3CF62D9E9AFB00969B60 /* ChartVM.swift in Sources */,
 				51309DBC2D0DCD3E00660118 /* ChuUIModifier.swift in Sources */,
 				51309DA62D0DCC4100660118 /* Color+.swift in Sources */,
 				51CA3B882D900AF0009A7CD4 /* CircleDismissButton.swift in Sources */,
@@ -564,7 +574,8 @@
 				5123DF042D9D37DA0034B58B /* EnumStorage.swift in Sources */,
 				5123DF022D9D2CD50034B58B /* Storage.swift in Sources */,
 				513F7B482D9AF260007BEFD0 /* TimerSetupVM.swift in Sources */,
-				51D4D6802C2C7D7A0014731D /* ChartModel.swift in Sources */,
+				51D4D6802C2C7D7A0014731D /* LegacyChartModel.swift in Sources */,
+				51FD3CFC2D9ED07F00969B60 /* ChartEmptyView.swift in Sources */,
 				51AD90E02C283543008E3E67 /* ChartView.swift in Sources */,
 				517063962D8B3C8D00567612 /* Onboarding.swift in Sources */,
 				519701FB2D297BFA00B74205 /* TimerMainView.swift in Sources */,
@@ -580,6 +591,7 @@
 				51309DA82D0DCC4D00660118 /* Int+.swift in Sources */,
 				51BC29762D9BE47300C04EE4 /* ControlButtonState.swift in Sources */,
 				5198A8B62C2D75D100ECEE0C /* TimerModel.swift in Sources */,
+				51FD3CFE2D9ED23100969B60 /* ChartData.swift in Sources */,
 				51BC29792D9BF42600C04EE4 /* ResetButton.swift in Sources */,
 				5123DEFB2D9D02CE0034B58B /* AchievementRateView.swift in Sources */,
 				5198A8B82C2D92E000ECEE0C /* SceneManager.swift in Sources */,

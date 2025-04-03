@@ -11,8 +11,8 @@ import Combine
 final class TimerController {
     
     struct State {
+        @Storage("DST", [Int](repeating: 0, count: 7+1)) var dailyStudyTimes
         @EnumStorage("TS", TimerState.idle) var timerState
-        @Storage("DST", [Int]()) var dailyStudyTimes
         @Storage("BEA", Date()) var backgroundEnterAt
         @Storage("IA", Date()) var initializedAt
         @Storage("D", 0) var duration

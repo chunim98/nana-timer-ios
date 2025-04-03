@@ -10,7 +10,7 @@ import SwiftUI
 final class LegacyChartVM: ObservableObject {
     
     @Published
-    var chartModel = ChartModel()
+    var chartModel = LegacyChartModel()
     var timerModel = TimerModel()
     
     

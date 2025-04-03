@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ChartModel {
+struct LegacyChartModel {
     @IntArrayStorage("weekdayUpTimes") var weekdayUpTimes: [Int] // [0]부터 일 월 화 수 목...
     @Storage("lastWeekday", 0) var lastWeekday: Int
     

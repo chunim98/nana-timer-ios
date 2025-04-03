@@ -93,6 +93,9 @@
         }
       }
     },
+    "dailyStudied" : {
+
+    },
     "Tip. 7일 동안 공부할 시간을 설정하면 돼요" : {
       "localizations" : {
         "en" : {
@@ -108,6 +111,9 @@
           }
         }
       }
+    },
+    "weakdayText" : {
+
     },
     "결정" : {
       "localizations" : {

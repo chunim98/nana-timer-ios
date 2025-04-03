@@ -52,7 +52,7 @@ final class HomeVM: ObservableObject {
             state.currentPageIndex = idx
             
         case .settingsButtonTapped:
-            state.navigationPath = ["SettingsView"]
+            state.navigationPath = ["SV"]
             
         case .setttingsViewClosed:
             state.navigationPath.removeAll()
