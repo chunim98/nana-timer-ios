@@ -92,7 +92,7 @@ final class TimerController {
             handleEnterForeground()
 
         case .tick:
-            state.elapsedTime += 1
+            handleTick()
             
         case .reset:
             state.elapsedTime = 0
@@ -121,6 +121,11 @@ final class TimerController {
         } else {
             intent.send(.resume(elapsed)) // 3
         }
+    }
+    
+    private func handleTick() {
+        if state.elapsedTime >= state.duration { intent.send(.complete) }
+        state.elapsedTime += 1
     }
     
     // MARK: Timer Handle Methods
