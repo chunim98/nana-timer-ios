@@ -32,9 +32,14 @@ final class TimerController {
         case reset           // 타이머 초기화
     }
     
+    // MARK: Properties
+    
     @Published private(set) var state = State()
     let intent = PassthroughSubject<Intent, Never>()
     private var cancellables = Set<AnyCancellable>()
+    private weak var timer: Timer?
+    
+    // MARK: Init
     
     init() {
         intent
@@ -97,36 +102,30 @@ final class TimerController {
         }
     }
     
-    // MARK: Event Handle
+    // MARK: Intent Handle Methods
     
     private func handleEnterForeground() {
+        
+        /// 1. 백그라운드에서 24시간(86400초) 이상 경과 -> 타임아웃 처리
+        /// 2. 타이머가 종료될 만큼 시간이 지남 -> 완료 처리
+        /// 3. 백그라운드에서 경과한 시간만큼 반영하여 타이머 재개
+        
         guard state.state == .backgrounded else { return }
         
-        // 백그라운드 상태로 경과된 시간
-        let backgroundElapsedTime = Int(
-            state.backgroundEntryTimeStamp.distance(to: Date())
-        )
+        let elapsed = Int(state.backgroundEntryTimeStamp.distance(to: Date()))
         
-        switch backgroundElapsedTime {
-        // 백그라운드 상태에서 24시간 이상 방치된 경우, 초기화(타임아웃) 처리
-        case let time where time >= 86400:
-            intent.send(.cancel)
-            
-        // 백그라운드 상태에서 타이머가 완료된 경우, 완료 처리
-        case let time where time >= state.remainingTime:
-            intent.send(.complete)
-            
-        // 이외의 경우, 백그라운드 경과시간을 현재 경과시간에 더해서 재개
-        default:
-            intent.send(.resume(backgroundElapsedTime))
+        if elapsed >= 86400 {
+            intent.send(.cancel) // 1
+        } else if elapsed >= state.remainingTime {
+            intent.send(.complete) // 2
+        } else {
+            intent.send(.resume(elapsed)) // 3
         }
     }
     
-    // MARK: - Timer Handle
-    
-    private weak var timer: Timer?
+    // MARK: Timer Handle Methods
 
-    func start() {
+    private func start() {
         guard timer == nil else { return }
         
         timer = .scheduledTimer(
@@ -137,7 +136,7 @@ final class TimerController {
         }
     }
     
-    func invalidate() {
+    private func invalidate() {
         timer?.invalidate()
         timer = nil
     }
