@@ -37,7 +37,7 @@
 		5198A8B42C2D759D00ECEE0C /* LegacyTimerVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5198A8B32C2D759D00ECEE0C /* LegacyTimerVM.swift */; };
 		5198A8B62C2D75D100ECEE0C /* TimerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5198A8B52C2D75D100ECEE0C /* TimerModel.swift */; };
 		5198A8B82C2D92E000ECEE0C /* SceneManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5198A8B72C2D92E000ECEE0C /* SceneManager.swift */; };
-		5198A8BA2C2DCA1200ECEE0C /* ChartVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5198A8B92C2DCA1200ECEE0C /* ChartVM.swift */; };
+		5198A8BA2C2DCA1200ECEE0C /* LegacyChartVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5198A8B92C2DCA1200ECEE0C /* LegacyChartVM.swift */; };
 		51A08A9A2C2F2588008225FB /* NanumSquareRoundOTFB.otf in Resources */ = {isa = PBXBuildFile; fileRef = 51A08A992C2F2588008225FB /* NanumSquareRoundOTFB.otf */; };
 		51AD90E02C283543008E3E67 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51AD90DF2C283543008E3E67 /* ChartView.swift */; };
 		51B26B122C411CEA006502A3 /* HapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B26B112C411CEA006502A3 /* HapticManager.swift */; };
@@ -62,6 +62,8 @@
 		51F1A9B12C3E717E00DBFCDE /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 51F1A9B02C3E717E00DBFCDE /* Localizable.xcstrings */; };
 		51FC27DE2D97E4E00080EA17 /* StatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FC27DD2D97E4E00080EA17 /* StatusView.swift */; };
 		51FC27E22D97F8110080EA17 /* HomeVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FC27E12D97F80B0080EA17 /* HomeVM.swift */; };
+		51FD3CF62D9E9AFB00969B60 /* ChartVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FD3CF52D9E9AF900969B60 /* ChartVM.swift */; };
+		51FD3CF82D9EA16000969B60 /* Calendar+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FD3CF72D9EA15F00969B60 /* Calendar+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -95,7 +97,7 @@
 		5198A8B32C2D759D00ECEE0C /* LegacyTimerVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegacyTimerVM.swift; sourceTree = "<group>"; };
 		5198A8B52C2D75D100ECEE0C /* TimerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerModel.swift; sourceTree = "<group>"; };
 		5198A8B72C2D92E000ECEE0C /* SceneManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneManager.swift; sourceTree = "<group>"; };
-		5198A8B92C2DCA1200ECEE0C /* ChartVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartVM.swift; sourceTree = "<group>"; };
+		5198A8B92C2DCA1200ECEE0C /* LegacyChartVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegacyChartVM.swift; sourceTree = "<group>"; };
 		51A08A992C2F2588008225FB /* NanumSquareRoundOTFB.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareRoundOTFB.otf; sourceTree = "<group>"; };
 		51AD90DF2C283543008E3E67 /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
 		51B26B112C411CEA006502A3 /* HapticManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticManager.swift; sourceTree = "<group>"; };
@@ -122,6 +124,8 @@
 		51F1A9B02C3E717E00DBFCDE /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		51FC27DD2D97E4E00080EA17 /* StatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusView.swift; sourceTree = "<group>"; };
 		51FC27E12D97F80B0080EA17 /* HomeVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVM.swift; sourceTree = "<group>"; };
+		51FD3CF52D9E9AF900969B60 /* ChartVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartVM.swift; sourceTree = "<group>"; };
+		51FD3CF72D9EA15F00969B60 /* Calendar+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Calendar+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,7 +220,8 @@
 			children = (
 				51D4D67F2C2C7D7A0014731D /* ChartModel.swift */,
 				51AD90DF2C283543008E3E67 /* ChartView.swift */,
-				5198A8B92C2DCA1200ECEE0C /* ChartVM.swift */,
+				51FD3CF52D9E9AF900969B60 /* ChartVM.swift */,
+				5198A8B92C2DCA1200ECEE0C /* LegacyChartVM.swift */,
 			);
 			path = Chart;
 			sourceTree = "<group>";
@@ -269,6 +274,7 @@
 		51309DA42D0DCC0F00660118 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				51FD3CF72D9EA15F00969B60 /* Calendar+.swift */,
 				51CA3B8D2D903409009A7CD4 /* EdgeInsets+.swift */,
 				51309DA92D0DCC5500660118 /* Font+.swift */,
 				51309DA72D0DCC4D00660118 /* Int+.swift */,
@@ -534,13 +540,14 @@
 			files = (
 				513F7B3D2D9A8838007BEFD0 /* PageView.swift in Sources */,
 				51E982D92C085339003A7527 /* HomeView.swift in Sources */,
-				5198A8BA2C2DCA1200ECEE0C /* ChartVM.swift in Sources */,
+				5198A8BA2C2DCA1200ECEE0C /* LegacyChartVM.swift in Sources */,
 				51309DB52D0DCCDF00660118 /* IntArrayStorage.swift in Sources */,
 				51B40EF42C2E731D0097A88C /* RemoteTaskManager.swift in Sources */,
 				513F7B4A2D9AF76C007BEFD0 /* ComfirmButton.swift in Sources */,
 				519701F72D280F0700B74205 /* TimerEntryView.swift in Sources */,
 				51CA3B842D9007D0009A7CD4 /* HideableVStack.swift in Sources */,
 				5172FD452C3FD33000BC3A44 /* PushNotificationManager.swift in Sources */,
+				51FD3CF62D9E9AFB00969B60 /* ChartVM.swift in Sources */,
 				51309DBC2D0DCD3E00660118 /* ChuUIModifier.swift in Sources */,
 				51309DA62D0DCC4100660118 /* Color+.swift in Sources */,
 				51CA3B882D900AF0009A7CD4 /* CircleDismissButton.swift in Sources */,
@@ -578,6 +585,7 @@
 				5198A8B82C2D92E000ECEE0C /* SceneManager.swift in Sources */,
 				5123DF062D9D477C0034B58B /* AppState.swift in Sources */,
 				5172FD492C3FFC4400BC3A44 /* SettingsView.swift in Sources */,
+				51FD3CF82D9EA16000969B60 /* Calendar+.swift in Sources */,
 				5198A8B22C2D4A3600ECEE0C /* TimerService.swift in Sources */,
 				519701F92D296A2000B74205 /* TimerSetupView.swift in Sources */,
 				51BC298B2D9C42D200C04EE4 /* TimeIndicatorView.swift in Sources */,

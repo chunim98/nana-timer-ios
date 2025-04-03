@@ -11,7 +11,7 @@ import Combine
 final class TimerVM: ObservableObject {
     
     struct State {
-        @EnumStorage("ScreenState", TimerScreenState.entry) var screenState
+        @EnumStorage("SS", TimerScreenState.entry) var screenState
         let colors = Color.chuColorPalette.shuffled()
         var timerState = TimerState.idle
         var remainingTime = 0
@@ -46,10 +46,10 @@ final class TimerVM: ObservableObject {
         timer.$state // 타이머 상태 바인딩
             .sink { [weak self] in
                 guard let self else { return }
-                state.timerState = $0.state
+                state.timerState = $0.timerState
                 state.duration = $0.duration
-                state.elapsedTime = $0.elapsedTime
-                state.remainingTime = $0.remainingTime
+                state.elapsedTime = $0.elapsed
+                state.remainingTime = $0.remaining
             }
             .store(in: &cancellables)
     }

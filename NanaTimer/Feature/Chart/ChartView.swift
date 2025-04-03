@@ -10,7 +10,7 @@ import Charts
 
 struct ChartView: View {
     
-    @StateObject var chartVM: ChartVM = .init()
+    @StateObject var chartVM: LegacyChartVM = .init()
     
     var body: some View {
         ZStack {
@@ -92,5 +92,5 @@ struct ChartView: View {
 
 
 #Preview {
-    ChartView(chartVM: ChartVM())
+    ChartView(chartVM: LegacyChartVM())
 }
