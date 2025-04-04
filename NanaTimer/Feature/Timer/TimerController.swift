@@ -90,6 +90,7 @@ final class TimerController {
             invalidate()
 
         case .cancel:
+            state.dailyStudyTimes = [Int](repeating: 0, count: 7+1)
             state.timerState = .timeout
             state.duration = 0
             state.elapsed = 0
@@ -108,6 +109,7 @@ final class TimerController {
             handleTick()
             
         case .reset:
+            state.dailyStudyTimes = [Int](repeating: 0, count: 7+1)
             state.timerState = .idle
             state.duration = 0
             state.elapsed = 0

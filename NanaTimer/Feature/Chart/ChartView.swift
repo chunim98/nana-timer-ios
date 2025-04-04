@@ -62,12 +62,11 @@ struct ChartView: View {
     }
 }
 
-
-
 #Preview {
     ChartView(
         screenState: .main,
-        dailyStudyTimes: [Int](repeating: 0, count: 8).map { _ in Int.random(in: 10...50) },
+        dailyStudyTimes: [Int](repeating: 0, count: 8)
+            .map { _ in Int.random(in: 10...50) },
         tintColors: Color.chuColorPalette.shuffled()
     )
 }
