@@ -52,12 +52,12 @@ struct StatusView: View {
             // 타이틀 텍스트
             Text(titleText)
                 .font(.localizedFont28)
-                .foregroundColor(Color.chuText)
+                .foregroundStyle(Color.textBlack)
             
             // 서브타이틀 텍스트
             Text(subTitleText)
                 .font(.localizedFont14)
-                .foregroundColor(Color.chuText.opacity(0.5))
+                .foregroundStyle(Color.textGray)
             
             Spacer()
             
@@ -68,7 +68,7 @@ struct StatusView: View {
             } label: {
                 Image(systemName: "gearshape.fill").resizable()
                     .aspectRatio(contentMode: .fit)
-                    .foregroundStyle(Color.chuText)
+                    .foregroundStyle(Color.textBlack)
             }
         }
         .frame(height: 34)

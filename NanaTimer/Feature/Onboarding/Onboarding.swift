@@ -11,9 +11,9 @@ import Combine
 final class Onboarding: ObservableObject {
         
     struct State {
-        @Storage("isHidden", false) var isHidden: Bool
-        var isAlertPresented = false
+        @Storage("IH", false) var isHidden: Bool
         var imageOffset = CGFloat(100)
+        var isAlertPresented = false
     }
     
     enum Intent {
@@ -31,7 +31,7 @@ final class Onboarding: ObservableObject {
     private var cancellables = Set<AnyCancellable>()
     private var animationTimer: Timer?
 
-    // MARK: Life Cycle
+    // MARK: Init
     
     init() {
         intent
@@ -39,7 +39,7 @@ final class Onboarding: ObservableObject {
             .store(in: &cancellables)
     }
     
-    // MARK: Binding
+    // MARK: Processing
     
     private func process(_ intent: Intent) {
         switch intent {

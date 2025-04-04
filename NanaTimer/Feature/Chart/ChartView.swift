@@ -56,8 +56,8 @@ struct ChartView: View {
         .padding()
         .background {
             RoundedRectangle(cornerRadius: 25)
-                .fill(Color.chuSubBack)
-                .stroke(Color.chuSubBackShade, lineWidth: 0.5)
+                .fill(Color.pageIvory)
+                .stroke(Color.pageDarkIvory, lineWidth: 0.5)
         }
     }
 }
@@ -67,6 +67,6 @@ struct ChartView: View {
         screenState: .main,
         dailyStudyTimes: [Int](repeating: 0, count: 8)
             .map { _ in Int.random(in: 10...50) },
-        tintColors: Color.chuColorPalette.shuffled()
+        tintColors: Color.palette.shuffled()
     )
 }

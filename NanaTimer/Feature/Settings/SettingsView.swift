@@ -27,7 +27,7 @@ struct SettingsView: View {
                             .padding(.top, 3)
                             .foregroundStyle(Color.gray)
                     }
-                    .listRowBackground(Color.chuSubBack)
+                    .listRowBackground(Color.pageIvory)
                     .disabled(!settingsVM.settingsModel.isAuthorized)
 
                     VStack(alignment: .leading) {
@@ -36,7 +36,7 @@ struct SettingsView: View {
                             ForEach(interval, id: \.self) { Text("\($0)분마다") }
                         }
                     }
-                    .listRowBackground(Color.chuSubBack)
+                    .listRowBackground(Color.pageIvory)
                     .disabled(!settingsVM.settingsModel.isAuthorized || !settingsVM.settingsModel.isOnNotify)
                 }
                 
@@ -51,7 +51,7 @@ struct SettingsView: View {
                             .padding(.top, 3)
                             .foregroundStyle(Color.gray)
                     }
-                    .listRowBackground(Color.chuSubBack)
+                    .listRowBackground(Color.pageIvory)
                 }
                 
                 //MARK: -  If Not Authorized
@@ -78,7 +78,7 @@ struct SettingsView: View {
                 }
             }
             .scrollContentBackground(.hidden)
-            .background(Color.chuBack.ignoresSafeArea())
+            .background(Color.backgroundBeige.ignoresSafeArea())
             .onAppear() { settingsVM.checkAuthorized() }
             
             // 네비게이션 바 설정

@@ -23,12 +23,12 @@ struct CapsuleDismissButton: View {
         } label: {
             Text("닫기")
                 .font(.localizedFont28)
-                .foregroundColor(Color.init(hex: 0xefedeb))
+                .foregroundStyle(Color.init(hex: 0xefedeb))
         }
         .padding(EdgeInsets(horizontal: 15, vertical: 7.5))
         .background {
             RoundedRectangle(cornerRadius: .greatestFiniteMagnitude)
-                .fill(Color.chuColorPalette[0])
+                .fill(Color.palette[0])
         }
         
         .alert(

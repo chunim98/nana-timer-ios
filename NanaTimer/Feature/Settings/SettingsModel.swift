@@ -13,7 +13,7 @@ struct SettingsModel {
     @Storage("isOnTactile", false) var isOnTactile: Bool
     @Storage("notiInterval", 60) var notiInterval: Int // 커스텀 기본값 60
     
-    var colorPalette: [Color] = Color.chuColorPalette
+    var colorPalette: [Color] = Color.palette
     
     init() {
         self.colorPalette.shuffle()

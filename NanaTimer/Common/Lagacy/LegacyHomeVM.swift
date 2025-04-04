@@ -21,7 +21,7 @@ final class LegacyHomeVM: ObservableObject {
         let navigationBarAppearance = UINavigationBarAppearance()
         navigationBarAppearance.configureWithOpaqueBackground()
         navigationBarAppearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.black]
-        navigationBarAppearance.backgroundColor = UIColor(Color.chuBack)// 이게 되네..
+        navigationBarAppearance.backgroundColor = UIColor(Color.backgroundBeige)// 이게 되네..
         UINavigationBar.appearance().standardAppearance = navigationBarAppearance
         UINavigationBar.appearance().compactAppearance = navigationBarAppearance
         UINavigationBar.appearance().scrollEdgeAppearance = navigationBarAppearance

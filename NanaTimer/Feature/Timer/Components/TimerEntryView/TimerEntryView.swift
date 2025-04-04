@@ -48,13 +48,14 @@ struct TimerEntryView: View {
                 
                 Text(titleText)
                     .font(.localizedFont28)
-                    .foregroundColor(Color.chuText)
+                    .foregroundStyle(Color.textBlack)
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background {
                 RoundedRectangle(cornerRadius: 25)
-                    .fill(Color.chuSubBack)
-                    .stroke(Color.chuSubBackShade, lineWidth: 0.5)
+                    .fill(Color.pageIvory)
+                    .stroke(.black.opacity(0.20), lineWidth: 0.5)
+
             }
         }
     }
@@ -63,7 +64,7 @@ struct TimerEntryView: View {
 #Preview {
     TimerEntryView(
         timerState: .timeout,
-        tintColor: .chuColorPalette[0],
+        tintColor: .palette[0],
         .init()
     )
 }

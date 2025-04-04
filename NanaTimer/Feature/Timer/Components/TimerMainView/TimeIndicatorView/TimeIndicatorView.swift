@@ -30,14 +30,14 @@ struct TimeIndicatorView: View {
         self.remainingHour = remainingTime.cutHour
         self.remainingMinute = remainingTime.cutMinute
         self.remainingSecond = remainingTime.cutSecond
-        self.textColor = elapsedDay <= 7 ? .chuText : .chuText.opacity(0.5)
+        self.textColor = elapsedDay <= 7 ? .textBlack : .textGray
     }
     
     // MARK: View
     
     var body: some View {
         Text("설정시간: \(durationHour)시간 \(durationMinute)분")
-            .foregroundColor(Color.chuText.opacity(0.5))
+            .foregroundStyle(Color.textGray)
             .font(.localizedFont18)
 
         Text(String(
@@ -47,7 +47,7 @@ struct TimeIndicatorView: View {
             remainingSecond
         ))
         .font(.localizedFont48)
-        .foregroundColor(textColor)
+        .foregroundStyle(textColor)
     }
 }
 

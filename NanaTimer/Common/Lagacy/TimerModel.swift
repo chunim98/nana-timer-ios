@@ -18,7 +18,7 @@ struct TimerModel {
     @Storage("isTimerViewShowing", false) var isTimerViewShowing // 초기값 false
     
     var isSetViewShowing = false
-    var colorPalette: [Color] = Color.chuColorPalette
+    var colorPalette: [Color] = Color.palette
     var infoText: LocalizedStringKey = "타이머를 설정하려면\n가볍게 탭 하세요"
     
     init() { self.colorPalette.shuffle() }

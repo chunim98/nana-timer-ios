@@ -42,7 +42,7 @@ struct ControlButton: View {
                     .frame(width: 50, height: 50)
                 
                 Text(state.text)
-                    .foregroundColor(state.textColor)
+                    .foregroundStyle(state.textColor)
                     .font(.localizedFont28)
             }
         }
@@ -55,7 +55,7 @@ struct ControlButton: View {
 #Preview {
     ControlButton(
         timerState: .finished,
-        tintColor: .chuBack,
+        tintColor: .backgroundBeige,
         action: {}
     )
 }

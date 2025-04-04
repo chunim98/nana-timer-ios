@@ -28,7 +28,7 @@ struct PageView<Content: View>: View {
         @ViewBuilder content: @escaping () -> Content
     ) {
         self.indicatorColors = (0..<2).map {
-            $0 == pageIndex ? .chuText : .chuText.opacity(0.25)
+            $0 == pageIndex ? .textBlack : .textBlack.opacity(0.25)
         }
         self.pageIndex = pageIndex
         self.parentIntent = intent

@@ -11,7 +11,7 @@ struct LegacyChartModel {
     @IntArrayStorage("weekdayUpTimes") var weekdayUpTimes: [Int] // [0]부터 일 월 화 수 목...
     @Storage("lastWeekday", 0) var lastWeekday: Int
     
-    var colorPalette: [Color] = Color.chuColorPalette
+    var colorPalette: [Color] = Color.palette
     
     var currentWeekday: Int {
         Calendar.current.component(.weekday, from: Date())

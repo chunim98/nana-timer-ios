@@ -51,7 +51,7 @@ struct HomeView: View {
                     }
                 }
             }
-            .background { Color.chuBack.ignoresSafeArea() }
+            .background { Color.backgroundBeige.ignoresSafeArea() }
             .onAppear { homeVM.intent.send(.onAppear) }
             .onChange(of: scenePhase) { _, new in
                 timerVM.intent.send(.scenePhaseUpdated(new))
@@ -60,7 +60,7 @@ struct HomeView: View {
                 if $0 == "SV" { SettingsView(settingsVM: .init()) }
             }
         }
-        .tint(.chuText) // 네비게이션 백 버튼 색상에 관여
+        .tint(.textBlack) // 네비게이션 백 버튼 색상에 관여
     }
 }
 

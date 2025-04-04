@@ -11,7 +11,7 @@ import Combine
 final class TimerSetupVM: ObservableObject {
     
     struct State {
-        let tintColor = Color.chuColorPalette.randomElement()!
+        let tintColor = Color.palette.randomElement()!
         let hours = Array(0..<112)
         let minutes = Array(stride(from: 0, through: 50, by: 10))
         var hourSelection = 1

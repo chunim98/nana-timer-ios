@@ -9,46 +9,48 @@ import SwiftUI
 
 struct OnboardingView: View {
     
-    @StateObject private var onboardingVM = Onboarding()
+    @StateObject private var vm = Onboarding()
     
     var body: some View {
-        HideableVStack(onboardingVM.state.isHidden) {
-            
-            CircleDismissButton(onboardingVM)
+        HideableVStack(vm.state.isHidden) {
+            CircleDismissButton(vm)
             
             Spacer()
             
             Text("반가워요!")
                 .font(.localizedFont36)
-                .foregroundStyle(Color.chuText)
+                .foregroundStyle(Color.textBlack)
                 .frame(maxWidth: .infinity, alignment: .leading)
             
             Spacer().frame(height: 100)
             
             Image(systemName: "hand.point.up.fill").resizable()
-                .foregroundStyle(Color.chuText)
+                .foregroundStyle(Color.textBlack)
                 .aspectRatio(contentMode: .fit)
                 .frame(height: 80)
-                .offset(x: onboardingVM.state.imageOffset)
-                .animation(.easeInOut(duration: 1.75), value: onboardingVM.state.imageOffset)
+                .offset(x: vm.state.imageOffset)
+                .animation(
+                    .easeInOut(duration: 1.75),
+                    value: vm.state.imageOffset
+                )
             
             Spacer().frame(height: 50)
             
             Text("좌우로 밀어서 추가 화면을 볼 수 있어요 :)")
                 .font(.localizedFont18)
-                .foregroundStyle(Color.chuText)
+                .foregroundStyle(Color.textBlack)
                 .multilineTextAlignment(.center)
             
             Spacer().frame(height: 50)
 
-            CapsuleDismissButton(onboardingVM)
+            CapsuleDismissButton(vm)
             
             Spacer()
         }
         .padding(15)
         .transition(.opacity)
         .background(.ultraThinMaterial)
-        .onAppear { onboardingVM.intent.send(.onAppear) }
+        .onAppear { vm.intent.send(.onAppear) }
     }
 }
 

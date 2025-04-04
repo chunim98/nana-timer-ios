@@ -58,7 +58,7 @@ struct AchievementRateView: View {
             Text("\(achievementRate)%")
                 .padding(10)
                 .font(.localizedFont18)
-                .foregroundColor(Color.chuBack)
+                .foregroundStyle(Color.backgroundBeige)
                 .background {
                     RoundedRectangle(cornerRadius: 25)
                         .fill(tintColor1)
@@ -67,7 +67,7 @@ struct AchievementRateView: View {
             Text(elapsedDayText)
                 .padding(10)
                 .font(.localizedFont18)
-                .foregroundColor(Color.chuBack)
+                .foregroundStyle(Color.backgroundBeige)
                 .background {
                     RoundedRectangle(cornerRadius: 25)
                         .fill(tintColor2)
@@ -82,7 +82,7 @@ struct AchievementRateView: View {
         elapsedTime: 8.999,
         elapsedDay: 7,
         timerState: .finished,
-        tintColor1: .chuColorPalette[1],
-        tintColor2: .chuColorPalette[2]
+        tintColor1: .palette[1],
+        tintColor2: .palette[2]
     )
 }

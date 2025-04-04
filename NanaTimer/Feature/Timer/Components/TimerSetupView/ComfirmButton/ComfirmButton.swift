@@ -28,7 +28,7 @@ struct ComfirmButton: View {
         } label: {
             Text("결정")
                 .font(.localizedFont28)
-                .foregroundColor(Color.chuSubBack)
+                .foregroundStyle(Color.pageIvory)
                 .padding(EdgeInsets(horizontal: 15, vertical: 10))
                 .background {
                     let opacity: Double = state.isConfirmButtonDiabled ? 0.5 : 1.0

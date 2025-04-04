@@ -15,12 +15,12 @@ struct ChuUIButton: ButtonStyle {
             .background(
                 ZStack{
                     RoundedRectangle(cornerRadius: 25)
-                        .fill(Color.chuSubBackShade)
-                        .stroke(Color.chuSubBackShade, lineWidth: 0.5)
+                        .fill(Color.pageDarkIvory)
+                        .stroke(Color.pageDarkIvory, lineWidth: 0.5)
                         .offset(y: configuration.isPressed ? 0 : 5)
                     RoundedRectangle(cornerRadius: 25)
-                        .fill(Color.chuSubBack)
-                        .stroke(Color.chuSubBackShade, lineWidth: 0.5)
+                        .fill(Color.pageIvory)
+                        .stroke(Color.pageDarkIvory, lineWidth: 0.5)
                 })
             .offset(y: configuration.isPressed ? 5 : 0)
             .offset(y: -5)

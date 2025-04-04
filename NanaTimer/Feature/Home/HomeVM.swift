@@ -69,9 +69,9 @@ final class HomeVM: ObservableObject {
         let navigationBarAppearance = UINavigationBarAppearance()
         navigationBarAppearance.configureWithOpaqueBackground()
         navigationBarAppearance.titleTextAttributes = [
-            NSAttributedString.Key.foregroundColor : UIColor(Color.chuText)
+            NSAttributedString.Key.foregroundColor : UIColor(Color.textBlack)
         ]
-        navigationBarAppearance.backgroundColor = UIColor(Color.chuBack)
+        navigationBarAppearance.backgroundColor = UIColor(Color.backgroundBeige)
         
         UINavigationBar.appearance().standardAppearance = navigationBarAppearance
         UINavigationBar.appearance().compactAppearance = navigationBarAppearance

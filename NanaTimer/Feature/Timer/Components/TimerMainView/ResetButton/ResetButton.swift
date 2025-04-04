@@ -56,5 +56,5 @@ struct ResetButton: View {
 }
 
 #Preview {
-    ResetButton(tintColor: .chuBack, action: {})
+    ResetButton(tintColor: .backgroundBeige, action: {})
 }

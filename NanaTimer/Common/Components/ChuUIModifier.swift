@@ -14,8 +14,8 @@ struct ChuUIModifier: ViewModifier {
             .background(
                 ZStack{
                     RoundedRectangle(cornerRadius: 25)
-                        .fill(Color.chuSubBack)
-                        .stroke(Color.chuSubBackShade, lineWidth: 0.5)
+                        .fill(Color.pageIvory)
+                        .stroke(Color.pageDarkIvory, lineWidth: 0.5)
                 })
     }
 }

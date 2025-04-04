@@ -22,7 +22,7 @@ struct CircleDismissButton: View {
             
         } label: {
             Image(systemName: "multiply.circle.fill").resizable()
-                .foregroundStyle(Color.chuColorPalette[0])
+                .foregroundStyle(Color.palette[0])
                 .aspectRatio(contentMode: .fit)
                 .frame(height: 50)
         }

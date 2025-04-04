@@ -53,7 +53,7 @@ struct TimerSetupView: View {
                     .pickerStyle(.wheel)
                     
                     Text("\(vm.state.hourSelection)시간")
-                        .foregroundColor(Color.chuText)
+                        .foregroundStyle(Color.textBlack)
                         .font(.localizedFont24)
                 }
                 
@@ -70,7 +70,7 @@ struct TimerSetupView: View {
                     .pickerStyle(.wheel)
                     
                     Text("\(vm.state.minuteSelection)분")
-                        .foregroundColor(Color.chuText)
+                        .foregroundStyle(Color.textBlack)
                         .font(.localizedFont24)
                 }
             }
@@ -86,15 +86,15 @@ struct TimerSetupView: View {
             
             // 사용 안내 텍스트
             Text("Tip. 7일 동안 공부할 시간을 설정하면 돼요")
-                .foregroundColor(Color.chuText.opacity(0.5))
+                .foregroundStyle(Color.textGray)
                 .multilineTextAlignment(.center)
                 .font(.localizedFont16)
         }
         .padding(15)
         .background {
             RoundedRectangle(cornerRadius: 25)
-                .fill(Color.chuSubBack)
-                .stroke(Color.chuSubBackShade, lineWidth: 0.5)
+                .fill(Color.pageIvory)
+                .stroke(Color.pageDarkIvory, lineWidth: 0.5)
         }
     }
 }

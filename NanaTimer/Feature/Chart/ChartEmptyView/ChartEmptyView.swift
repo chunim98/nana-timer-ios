@@ -30,7 +30,7 @@ struct ChartEmptyView: View {
                 .padding()
             
             Text("아직 공부 현황이 없는 것 같아요")
-                .foregroundColor(Color.chuText.opacity(0.5))
+                .foregroundStyle(Color.textGray)
                 .multilineTextAlignment(.center)
                 .font(.localizedFont18)
         }

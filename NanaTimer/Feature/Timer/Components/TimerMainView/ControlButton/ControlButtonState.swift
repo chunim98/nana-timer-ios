@@ -20,35 +20,35 @@ struct ControlButtonState {
             self.iconName = "play.fill"
             self.iconColor = tintColor
             self.text = "시작"
-            self.textColor = .chuText
+            self.textColor = .textBlack
             self.isDisabled = false
             
         case .running:
             self.iconName = "pause.fill"
             self.iconColor = tintColor
             self.text = "일시정지"
-            self.textColor = .chuText
+            self.textColor = .textBlack
             self.isDisabled = false
             
         case .paused:
             self.iconName = "playpause.fill"
             self.iconColor = tintColor
             self.text = "재시작"
-            self.textColor = .chuText
+            self.textColor = .textBlack
             self.isDisabled = false
             
         case .finished:
             self.iconName = "clock.fill"
-            self.iconColor = .chuText.opacity(0.5)
+            self.iconColor = .textGray
             self.text = "타이머 종료"
-            self.textColor = .chuText.opacity(0.5)
+            self.textColor = .textGray
             self.isDisabled = true
             
         default:
             self.iconName = ""
             self.iconColor = tintColor
             self.text = ""
-            self.textColor = .chuText
+            self.textColor = .textBlack
             self.isDisabled = false
         }
     }
