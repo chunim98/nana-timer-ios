@@ -46,7 +46,7 @@ final class LegacyChartVM: ObservableObject {
     
     private func increaseWithWeekdayTime() {
         let weekday = chartModel.currentWeekday
-        chartModel.weekdayUpTimes[weekday.minus1] += 1
+        chartModel.weekdayUpTimes[weekday-1] += 1
     }
     
     // 잠수시간 > 남은시간: offset = 남은시간, date = 종료예정시간
@@ -56,13 +56,13 @@ final class LegacyChartVM: ObservableObject {
         
         if chartModel.lastWeekday != new.weekday {
             // 새로운 요일 차트 반영
-            chartModel.weekdayUpTimes[new.weekday.minus1] += (new.hour.hToSeond + new.minute.mToSecond + new.second)
+            chartModel.weekdayUpTimes[new.weekday-1] += (new.hour.hourToSec + new.minute.minToSec + new.second)
             // 지난 요일 차트 반영
-            chartModel.weekdayUpTimes[chartModel.lastWeekday.minus1] += (offset - (new.hour.hToSeond + new.minute.mToSecond + new.second))
+            chartModel.weekdayUpTimes[chartModel.lastWeekday-1] += (offset - (new.hour.hourToSec + new.minute.minToSec + new.second))
             
         } else {
             // 딱히 날짜가 바뀐 게 아니면 오차만 보정
-            chartModel.weekdayUpTimes[new.weekday.minus1] += offset
+            chartModel.weekdayUpTimes[new.weekday-1] += offset
         }
     }
     

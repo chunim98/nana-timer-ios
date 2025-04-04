@@ -18,7 +18,7 @@ final class TimerSetupVM: ObservableObject {
         var minuteSelection = 0
         
         var isConfirmButtonDiabled: Bool { hourSelection == 0 && minuteSelection == 0 }
-        var selectionSum: Int { hourSelection.hToSeond + minuteSelection.mToSecond }
+        var selectionSum: Int { hourSelection.hourToSec + minuteSelection.minToSec }
     }
     
     enum Intent {

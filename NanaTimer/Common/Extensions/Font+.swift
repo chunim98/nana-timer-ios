@@ -8,19 +8,19 @@
 import SwiftUI
 
 extension Font {
-    static func chuCustomFont(size: Float) -> Font {
+    static func getLocalizedFont(size: CGFloat) -> Font {
         let languageCode = Locale.current.language.languageCode?.identifier ?? ""
         
         return languageCode == "ja" ?
-        Font.custom("rounded-mplus-1c-medium", size: CGFloat(size - 2)) :
-        Font.custom("NanumSquareRoundOTFB", size: CGFloat(size))
+        Font.custom("rounded-mplus-1c-medium", size: size-2) :
+        Font.custom("NanumSquareRoundOTFB", size: size)
     }
     
-    static let localizedFont14 = chuCustomFont(size: 14)
-    static let localizedFont16 = chuCustomFont(size: 16)
-    static let localizedFont18 = chuCustomFont(size: 18)
-    static let localizedFont24 = chuCustomFont(size: 24)
-    static let localizedFont28 = chuCustomFont(size: 28)
-    static let localizedFont36 = chuCustomFont(size: 36)
-    static let localizedFont48 = chuCustomFont(size: 48)
+    static let localizedFont14 = getLocalizedFont(size: 14)
+    static let localizedFont16 = getLocalizedFont(size: 16)
+    static let localizedFont18 = getLocalizedFont(size: 18)
+    static let localizedFont24 = getLocalizedFont(size: 24)
+    static let localizedFont28 = getLocalizedFont(size: 28)
+    static let localizedFont36 = getLocalizedFont(size: 36)
+    static let localizedFont48 = getLocalizedFont(size: 48)
 }

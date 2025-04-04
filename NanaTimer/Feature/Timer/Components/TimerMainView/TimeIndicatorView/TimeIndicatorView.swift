@@ -25,11 +25,11 @@ struct TimeIndicatorView: View {
         remainingTime: Int,
         elapsedDay: Int
     ) {
-        self.durationHour = dutaion.cutHour
-        self.durationMinute = dutaion.cutMinute
-        self.remainingHour = remainingTime.cutHour
-        self.remainingMinute = remainingTime.cutMinute
-        self.remainingSecond = remainingTime.cutSecond
+        self.durationHour = dutaion.hourCmp
+        self.durationMinute = dutaion.minCmp
+        self.remainingHour = remainingTime.hourCmp
+        self.remainingMinute = remainingTime.minCmp
+        self.remainingSecond = remainingTime.secCmp
         self.textColor = elapsedDay <= 7 ? .textBlack : .textGray
     }
     

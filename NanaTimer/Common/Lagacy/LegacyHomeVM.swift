@@ -42,7 +42,7 @@ final class LegacyHomeVM: ObservableObject {
                 title: "나나타이머",
                 body: "타이머가 실행중이에요.",
                 interval: Double(
-                    settingsModel.notiInterval.mToSecond
+                    settingsModel.notiInterval.minToSec
                 )
             )
 
