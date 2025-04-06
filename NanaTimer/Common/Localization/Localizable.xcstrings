@@ -4,9 +4,6 @@
     "" : {
 
     },
-    " " : {
-
-    },
     "%lld" : {
 
     },
@@ -196,6 +193,7 @@
       }
     },
     "나나타이머" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -799,6 +797,7 @@
       }
     },
     "타이머가 실행중이에요." : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {

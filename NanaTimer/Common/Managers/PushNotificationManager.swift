@@ -8,16 +8,18 @@
 import SwiftUI
 
 final class PushNotificationManager {
-    static let shared = PushNotificationManager()
     
-    private let center = UNUserNotificationCenter.current() // 굳이 변수에 할당 안해도 될텐데 일단 깔끔하니까
+    static let shared = PushNotificationManager()
+    private let center = UNUserNotificationCenter.current()
     
     private init() {}
     
-    // 권한 요청하는 함수
+    // 권한 요청하기
     func requestAuthorization() {
-        let options: UNAuthorizationOptions = [.alert, .sound, .badge]
-        center.requestAuthorization(options: options) { (success, error) in
+        center.requestAuthorization(
+            options: [.alert, .sound, .badge]
+        ) { success, error in
+            
             if let error = error {
                 print(error.localizedDescription)
             } else {
@@ -26,30 +28,39 @@ final class PushNotificationManager {
         }
     }
     
-    // 알림 구성하는 함수
-    func requestScheduleNotification(title: String.LocalizationValue, body: String.LocalizationValue, interval: TimeInterval) {
-        let content = UNMutableNotificationContent() // 알림 내용 구성
+    // 알림 구성하기
+    func requestScheduleNotification(
+        title: String.LocalizationValue,
+        body: String.LocalizationValue,
+        interval: TimeInterval
+    ) {
+        let content = UNMutableNotificationContent()
         content.title = String(localized: title)
-//        content.subtitle = String(localized: subTitle)
         content.body = String(localized: body)
         content.sound = .default
         content.badge = 1
+        // content.subtitle = String(localized: subTitle)
         
         print("알림 간격:", interval)
         
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: interval, repeats: true) // 알림 발생 조건 구성
+        // 알림 발생 조건 구성
+        let trigger = UNTimeIntervalNotificationTrigger(
+            timeInterval: interval,
+            repeats: true
+        )
         
         // 알림 내용과 조건을 한데 모아서 리퀘스트 작성
         let request = UNNotificationRequest(
             identifier: UUID().uuidString,
             content: content,
-            trigger: trigger)
+            trigger: trigger
+        )
         
         // 내 앱의 알림센터 객체에 추가
         center.add(request)
     }
     
-    // 알림 취소하는 함수
+    // 등록된 알림 취소
     func cancelNotification() {
         // 곧 다가올 알림 지우기
         center.removeAllPendingNotificationRequests()
@@ -59,7 +70,7 @@ final class PushNotificationManager {
         center.setBadgeCount(0)
     }
     
-    // 알림설정이 허가되었는지 확인하는 함수
+    // 알림 설정이 허가되었는지 확인
     func getNotificationSettings() async -> UNNotificationSettings {
        return await center.notificationSettings()
     }

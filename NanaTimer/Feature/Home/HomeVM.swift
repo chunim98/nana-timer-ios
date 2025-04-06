@@ -29,10 +29,8 @@ final class HomeVM: ObservableObject {
     @Published private(set) var state = State()
     let intent = PassthroughSubject<Intent, Never>()
     private var cancellables = Set<AnyCancellable>()
-    
-    private let timer = TimerController()
 
-    // MARK: Life Cycle
+    // MARK: Init
     
     init() {
         intent // 인텐트 바인딩

@@ -15,7 +15,6 @@ final class HapticManager {
     private let successFeedback = UINotificationFeedbackGenerator()
     private let selectFeedback = UISelectionFeedbackGenerator()
     
-    
     private init() {}
     
     func occurLight() {
@@ -33,6 +32,5 @@ final class HapticManager {
     func occurSelect() {
         selectFeedback.selectionChanged()
     }
-    
 }
 

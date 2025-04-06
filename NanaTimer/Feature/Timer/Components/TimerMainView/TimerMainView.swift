@@ -17,7 +17,6 @@ struct TimerMainView: View {
     private let duration: Int
     private let elapsedTime: Int
     private let remainingTime: Int
-    private let elapsedDay: Int
     
     // MARK: Properties
     
@@ -32,9 +31,8 @@ struct TimerMainView: View {
         self.colors = state.colors
         self.timerState = state.timerState
         self.duration = state.duration
-        self.elapsedTime = state.elapsedTime
-        self.remainingTime = state.remainingTime
-        self.elapsedDay = state.elapsedTime
+        self.elapsedTime = state.elapsed
+        self.remainingTime = state.remaining
         self.parentIntent = intent
     }
     
