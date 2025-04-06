@@ -522,6 +522,7 @@
       }
     },
     "알림을 사용할 수 없어요." : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -538,6 +539,7 @@
       }
     },
     "앱 설정에서 알림을 허용하고 다시 시도해 주세요." : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -552,6 +554,9 @@
           }
         }
       }
+    },
+    "앱 설정에서 알림을 허용해주세요." : {
+
     },
     "월" : {
       "localizations" : {

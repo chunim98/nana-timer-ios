@@ -10,7 +10,7 @@ import SwiftUI
 struct HomeView: View {
     
     @Environment(\.scenePhase) private var scenePhase: ScenePhase
-
+    
     @StateObject private var homeVM = HomeVM()
     @StateObject private var timerVM = TimerVM()
     
@@ -20,11 +20,8 @@ struct HomeView: View {
             set: { _ in homeVM.intent.send(.setttingsViewClosed) }
         )
         
-        NavigationStack(path: pathBindig) {
-            ZStack {
-                // 최초 실행 시, 노출되는 온보딩 화면
-                OnboardingView().zIndex(999) // z레이어 우선순위 (높을수록 앞에 옴)
-                
+        ZStack {
+            NavigationStack(path: pathBindig) {
                 VStack {
                     // 네비게이션 바와 비슷한 역할의 뷰
                     StatusView(
@@ -50,17 +47,22 @@ struct HomeView: View {
                         .tag(1)
                     }
                 }
+                .tint(.blue) // 상위 뷰의 틴트가 하위뷰로 전파되기 때문에 다시 초기화
+                .background { Color.backgroundBeige.ignoresSafeArea() }
+                .navigationDestination(for: String.self) { if $0 == "SV" { SettingsView() } }
             }
-            .background { Color.backgroundBeige.ignoresSafeArea() }
-            .onAppear { homeVM.intent.send(.onAppear) }
-            .onChange(of: scenePhase) { _, new in
-                timerVM.intent.send(.scenePhaseUpdated(new))
-            }
-            .navigationDestination(for: String.self) {
-                if $0 == "SV" { SettingsView(settingsVM: .init()) }
-            }
+            .tint(.textBlack) // 네비게이션 바 백버튼 색상 변경 용도
+            
+            // 최초 실행 시, 노출되는 온보딩 화면
+            OnboardingView()
+                .zIndex(999) // z레이어 우선순위 (높을수록 앞에 옴)
         }
-        .tint(.textBlack) // 네비게이션 백 버튼 색상에 관여
+        .onAppear {
+            homeVM.intent.send(.onAppear)
+        }
+        .onChange(of: scenePhase) { _, new in
+            timerVM.intent.send(.scenePhaseUpdated(new))
+        }
     }
 }
 

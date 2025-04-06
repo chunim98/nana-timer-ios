@@ -12,6 +12,7 @@ final class TimerController {
     
     struct State {
         @Storage("DST", [Int](repeating: 0, count: 7+1)) var dailyStudyTimes
+        @Storage("S.IHPE", false) private(set) var isHapticPulseEnabled
         @EnumStorage("TS", TimerState.idle) var timerState
         @Storage("BEA", Date()) var backgroundEnterAt
         @Storage("IA", Date()) var initializedAt
@@ -143,9 +144,8 @@ final class TimerController {
         state.dailyStudyTimes[weekday] += 1
         state.elapsed += 1
         
-        if state.elapsed >= state.duration {
-            intent.send(.complete)
-        }
+        if state.isHapticPulseEnabled { HapticManager.shared.occurRigid() }
+        if state.elapsed >= state.duration { intent.send(.complete) }
     }
     
     private func updateDailyStudyTimes(
