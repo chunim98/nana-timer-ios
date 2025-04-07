@@ -148,7 +148,6 @@
 				51309D9B2D0DCA6F00660118 /* Onboarding */,
 				51309D9C2D0DCA8100660118 /* Home */,
 				51309D9D2D0DCA9400660118 /* Timer */,
-				51309D9E2D0DCAA400660118 /* Chart */,
 				51309D9F2D0DCAAA00660118 /* Settings */,
 			);
 			path = Feature;
@@ -184,14 +183,14 @@
 			path = Timer;
 			sourceTree = "<group>";
 		};
-		51309D9E2D0DCAA400660118 /* Chart */ = {
+		51309D9E2D0DCAA400660118 /* ChartView */ = {
 			isa = PBXGroup;
 			children = (
-				51FD3CFA2D9ED07800969B60 /* ChartEmptyView */,
 				51AD90DF2C283543008E3E67 /* ChartView.swift */,
+				51FD3CFB2D9ED07F00969B60 /* ChartEmptyView.swift */,
 				51FD3CFD2D9ED23100969B60 /* ChartData.swift */,
 			);
-			path = Chart;
+			path = ChartView;
 			sourceTree = "<group>";
 		};
 		51309D9F2D0DCAAA00660118 /* Settings */ = {
@@ -387,18 +386,11 @@
 		51FC27DC2D97E4BE0080EA17 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				51309D9E2D0DCAA400660118 /* ChartView */,
 				51FC27DD2D97E4E00080EA17 /* StatusView.swift */,
 				513F7B3C2D9A8831007BEFD0 /* PageView.swift */,
 			);
 			path = Components;
-			sourceTree = "<group>";
-		};
-		51FD3CFA2D9ED07800969B60 /* ChartEmptyView */ = {
-			isa = PBXGroup;
-			children = (
-				51FD3CFB2D9ED07F00969B60 /* ChartEmptyView.swift */,
-			);
-			path = ChartEmptyView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

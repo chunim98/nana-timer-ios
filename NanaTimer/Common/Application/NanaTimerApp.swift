@@ -1,6 +1,6 @@
 //
 //  NanaTimerApp.swift
-//  ReverseStopWatch
+//  NanaTimer
 //
 //  Created by 신정욱 on 5/30/24.
 //

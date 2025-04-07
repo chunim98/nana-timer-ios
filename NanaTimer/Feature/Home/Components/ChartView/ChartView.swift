@@ -1,6 +1,6 @@
 //
 //  ChartView.swift
-//  ReverseStopWatch
+//  NanaTimer
 //
 //  Created by 신정욱 on 6/23/24.
 //
