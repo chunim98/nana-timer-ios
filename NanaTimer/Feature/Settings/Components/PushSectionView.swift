@@ -10,19 +10,18 @@ import Combine
 
 struct PushSectionView: View {
     
+    // MARK: Properties
+    
     @Environment(\.dismiss) private var dismiss
-    
-    // MARK: State
-    
     private let isPushEnabled: Bool
     private let isAuthorized: Bool
     private let isToggleDisabled: Bool
     private let isPickerDisabled: Bool
     private let pushInterval: Int
     private let tintColor: Color
-    private let parentIntent: PassthroughSubject<SettingsVM.Intent, Never>
+    private let intent: PassthroughSubject<SettingsVM.Intent, Never>
     
-    // MARK: Init
+    // MARK: Initializer
     
     init(
         isPushEnabled: Bool,
@@ -37,31 +36,28 @@ struct PushSectionView: View {
         self.isPickerDisabled = !(isAuthorized && isPushEnabled)
         self.pushInterval = pushInterval
         self.tintColor = tintColor
-        self.parentIntent = intent
+        self.intent = intent
     }
     
     // MARK: View
     
     var body: some View {
-        
-        // MARK: Properties
-        
+        // Properties
         let isOnBinding = Binding(
             get: { isPushEnabled },
-            set: { parentIntent.send(.pushToggleTapped($0)) }
+            set: { intent.send(.pushToggleTapped($0)) }
         )
         let selectionBinding = Binding(
             get: { pushInterval },
-            set: { parentIntent.send(.pushIntervalSelected($0)) }
+            set: { intent.send(.pushIntervalSelected($0)) }
         )
         let headerView = Text("알림").bold()
         let footerView = PushSectionFooterView(isAuthorized: isAuthorized) {
             dismiss()
-            parentIntent.send(.redirectionButtonTapped)
+            intent.send(.redirectionButtonTapped)
         }
         
-        // MARK: ViewBuilder
-        
+        // View
         Section(header: headerView, footer: footerView) {
             VStack(alignment: .leading) {
                 Toggle(isOn: isOnBinding) { Text("타이머 상태 알림") }
@@ -73,7 +69,7 @@ struct PushSectionView: View {
             }
             .listRowBackground(Color.pageIvory)
             .disabled(isToggleDisabled)
-
+            
             VStack(alignment: .leading) {
                 Picker("반복", selection: selectionBinding) {
                     ForEach([30, 60, 90, 120], id: \.self) {

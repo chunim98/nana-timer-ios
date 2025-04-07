@@ -10,6 +10,8 @@ import Combine
 
 final class SettingsVM: ObservableObject {
     
+    // MARK: State & Intent
+    
     struct State {
         @Storage("S.IHPE", false) var isHapticPulseEnabled: Bool
         @Storage("S.IPE", true) var isPushEnabled: Bool
@@ -32,16 +34,15 @@ final class SettingsVM: ObservableObject {
     let intent = PassthroughSubject<Intent, Never>()
     private var cancellables = Set<AnyCancellable>()
     
-    // MARK: Init
+    // MARK: Initializer
     
     init() {
-        intent // 인텐트 바인딩
-            .print("SettingsVM")
+        intent
             .sink { [weak self] in self?.process($0) }
             .store(in: &cancellables)
     }
     
-    // MARK: Processing
+    // MARK: Intent Handling
     
     private func process(_ intent: Intent) {
         switch intent {

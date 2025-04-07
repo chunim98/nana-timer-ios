@@ -9,8 +9,8 @@ import SwiftUI
 
 struct TimeIndicatorView: View {
     
-    // MARK: State
-
+    // MARK: Properties
+    
     private let durationHour: Int
     private let durationMinute: Int
     private let remainingHour: Int
@@ -18,7 +18,7 @@ struct TimeIndicatorView: View {
     private let remainingSecond: Int
     private let textColor: Color
     
-    // MARK: Init
+    // MARK: Initializer
     
     init(
         dutaion: Int,
@@ -39,7 +39,7 @@ struct TimeIndicatorView: View {
         Text("설정시간: \(durationHour)시간 \(durationMinute)분")
             .foregroundStyle(Color.textGray)
             .font(.localizedFont18)
-
+        
         Text(String(
             format: "%02d : %02d : %02d",
             remainingHour,

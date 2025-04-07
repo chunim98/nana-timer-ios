@@ -9,11 +9,18 @@ import SwiftUI
 
 struct OnboardingView: View {
     
-    @StateObject private var vm = Onboarding()
+    // MARK: Properties
+    
+    @StateObject private var vm = OnboardingVM()
+    
+    // MARK: View
     
     var body: some View {
-        HideableVStack(vm.state.isHidden) {
-            CircleDismissButton(vm)
+        HideableVStack(isHidden: vm.state.isHidden) {
+            CircleDismissButton(
+                isAlertPresented: vm.state.isAlertPresented,
+                intent: vm.intent
+            )
             
             Spacer()
             
@@ -43,7 +50,10 @@ struct OnboardingView: View {
             
             Spacer().frame(height: 50)
 
-            CapsuleDismissButton(vm)
+            CapsuleDismissButton(
+                isAlertPresented: vm.state.isAlertPresented,
+                intent: vm.intent
+            )
             
             Spacer()
         }

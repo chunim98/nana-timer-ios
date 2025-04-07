@@ -10,13 +10,13 @@ import Charts
 
 struct ChartView: View {
     
-    // MARK: State
+    // MARK: Properties
     
     private let screenState: TimerScreenState
     private let dataArr: [ChartData]
     private let tintColors: [Color]
     
-    // MARK: Init
+    // MARK: Initializer
     
     init(
         screenState: TimerScreenState,
@@ -65,8 +65,7 @@ struct ChartView: View {
 #Preview {
     ChartView(
         screenState: .main,
-        dailyStudyTimes: [Int](repeating: 0, count: 8)
-            .map { _ in Int.random(in: 10...50) },
+        dailyStudyTimes: (0...8).map { _ in Int.random(in: 10...50) },
         tintColors: Color.palette.shuffled()
     )
 }

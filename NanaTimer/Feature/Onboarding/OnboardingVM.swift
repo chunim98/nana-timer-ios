@@ -1,5 +1,5 @@
 //
-//  Onboarding.swift
+//  OnboardingVM.swift
 //  NanaTimer
 //
 //  Created by 신정욱 on 3/20/25.
@@ -8,10 +8,12 @@
 import SwiftUI
 import Combine
 
-final class Onboarding: ObservableObject {
+final class OnboardingVM: ObservableObject {
+    
+    // MARK: State & Intent
         
     struct State {
-        @Storage("IH", false) var isHidden: Bool
+        @Storage("O.IH", false) var isHidden: Bool
         var imageOffset = CGFloat(100)
         var isAlertPresented = false
     }
@@ -31,7 +33,7 @@ final class Onboarding: ObservableObject {
     private var cancellables = Set<AnyCancellable>()
     private var animationTimer: Timer?
 
-    // MARK: Init
+    // MARK: Initalizer (Intent Binding)
     
     init() {
         intent
@@ -39,7 +41,7 @@ final class Onboarding: ObservableObject {
             .store(in: &cancellables)
     }
     
-    // MARK: Processing
+    // MARK: Intent Handling
     
     private func process(_ intent: Intent) {
         switch intent {

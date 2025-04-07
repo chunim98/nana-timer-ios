@@ -6,43 +6,62 @@
 //
 
 import SwiftUI
+import Combine
 
 struct CircleDismissButton: View {
     
-    @ObservedObject private var onboardingVM: Onboarding
+    // MARK: Properties
     
-    init(_ onboardingVM: Onboarding) {
-        self.onboardingVM = onboardingVM
+    private let isAlertPresented: Bool
+    private let intent: PassthroughSubject<OnboardingVM.Intent, Never>
+    
+    // MARK: Initializer
+    
+    init(
+        isAlertPresented: Bool,
+        intent: PassthroughSubject<OnboardingVM.Intent, Never>
+    ) {
+        self.isAlertPresented = isAlertPresented
+        self.intent = intent
     }
     
+    // MARK: View
+    
     var body: some View {
+        // Properties
+        let isPresentedBinding = Binding(
+            get: { isAlertPresented },
+            set: { _ in }
+        )
+        
+        // View
         Button {
             HapticManager.shared.occurLight()
-            onboardingVM.intent.send(.presentAlert)
+            intent.send(.presentAlert)
             
         } label: {
             Image(systemName: "multiply.circle.fill").resizable()
-                .foregroundStyle(Color.palette[0])
+                .foregroundStyle(Color.textBlack)
                 .aspectRatio(contentMode: .fit)
                 .frame(height: 50)
         }
         .frame(maxWidth: .infinity, alignment: .trailing)
-        
         .alert(
             "창을 닫을까요?\n이 창은 다시 볼 수 없어요",
-            isPresented: Binding(get: { onboardingVM.state.isAlertPresented }, set: { _,_ in })
+            isPresented: isPresentedBinding
         ) {
             Button("취소", role: .cancel) {
-                onboardingVM.intent.send(.dismissAlert)
+                intent.send(.dismissAlert)
             }
+            
             Button("닫기") {
                 HapticManager.shared.occurLight()
-                withAnimation { onboardingVM.intent.send(.dismissView) }
+                withAnimation { intent.send(.dismissView) }
             }
         }
     }
 }
 
 #Preview {
-    CircleDismissButton(Onboarding())
+    CircleDismissButton(isAlertPresented: false, intent: .init())
 }

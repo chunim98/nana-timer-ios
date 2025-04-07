@@ -9,12 +9,12 @@ import SwiftUI
 
 struct PushSectionFooterView: View {
     
-    // MARK: State
+    // MARK: Properties
     
     private let isAuthorized: Bool
     private let perform: () -> Void
     
-    // MARK: Init
+    // MARK: Initializer
     
     init(
         isAuthorized: Bool,

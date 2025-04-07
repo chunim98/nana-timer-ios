@@ -11,6 +11,8 @@ import Combine
 
 final class HomeVM: ObservableObject {
     
+    // MARK: State & Intent
+    
     struct State {
         var currentPageIndex = 0
         var navigationPath = [String]()
@@ -30,7 +32,7 @@ final class HomeVM: ObservableObject {
     let intent = PassthroughSubject<Intent, Never>()
     private var cancellables = Set<AnyCancellable>()
 
-    // MARK: Init
+    // MARK: Init(Intent Binding)
     
     init() {
         intent // 인텐트 바인딩
@@ -39,7 +41,7 @@ final class HomeVM: ObservableObject {
             .store(in: &cancellables)
     }
 
-    // MARK: Processing
+    // MARK: Intent Handling
     
     private func process(_ intent: Intent) {
         switch intent {

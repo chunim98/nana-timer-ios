@@ -22,7 +22,7 @@
 		513F7B482D9AF260007BEFD0 /* TimerSetupVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513F7B472D9AF25E007BEFD0 /* TimerSetupVM.swift */; };
 		513F7B4A2D9AF76C007BEFD0 /* ComfirmButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513F7B492D9AF76C007BEFD0 /* ComfirmButton.swift */; };
 		51657B022C31C1C500418325 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51657B012C31C1C500418325 /* OnboardingView.swift */; };
-		517063962D8B3C8D00567612 /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517063952D8B3C8A00567612 /* Onboarding.swift */; };
+		517063962D8B3C8D00567612 /* OnboardingVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517063952D8B3C8A00567612 /* OnboardingVM.swift */; };
 		5172FD452C3FD33000BC3A44 /* PushNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5172FD442C3FD33000BC3A44 /* PushNotificationManager.swift */; };
 		5172FD492C3FFC4400BC3A44 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5172FD482C3FFC4400BC3A44 /* SettingsView.swift */; };
 		51732CA22DA1675500668C41 /* SettingsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51732CA12DA1675200668C41 /* SettingsVM.swift */; };
@@ -39,7 +39,6 @@
 		51B40EFA2C2F07440097A88C /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B40EF92C2F07440097A88C /* TimerView.swift */; };
 		51BC29712D9BD0A700C04EE4 /* TimerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BC29702D9BD0A700C04EE4 /* TimerState.swift */; };
 		51BC29742D9BE3F500C04EE4 /* ControlButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BC29732D9BE3F500C04EE4 /* ControlButton.swift */; };
-		51BC29762D9BE47300C04EE4 /* ControlButtonState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BC29752D9BE46F00C04EE4 /* ControlButtonState.swift */; };
 		51BC29792D9BF42600C04EE4 /* ResetButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BC29782D9BF42600C04EE4 /* ResetButton.swift */; };
 		51BC298B2D9C42D200C04EE4 /* TimeIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BC298A2D9C42D200C04EE4 /* TimeIndicatorView.swift */; };
 		51CA3B842D9007D0009A7CD4 /* HideableVStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CA3B832D90078B009A7CD4 /* HideableVStack.swift */; };
@@ -74,7 +73,7 @@
 		513F7B472D9AF25E007BEFD0 /* TimerSetupVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerSetupVM.swift; sourceTree = "<group>"; };
 		513F7B492D9AF76C007BEFD0 /* ComfirmButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComfirmButton.swift; sourceTree = "<group>"; };
 		51657B012C31C1C500418325 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
-		517063952D8B3C8A00567612 /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
+		517063952D8B3C8A00567612 /* OnboardingVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingVM.swift; sourceTree = "<group>"; };
 		5172FD442C3FD33000BC3A44 /* PushNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationManager.swift; sourceTree = "<group>"; };
 		5172FD482C3FFC4400BC3A44 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		51732CA12DA1675200668C41 /* SettingsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVM.swift; sourceTree = "<group>"; };
@@ -91,7 +90,6 @@
 		51B40EF92C2F07440097A88C /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		51BC29702D9BD0A700C04EE4 /* TimerState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerState.swift; sourceTree = "<group>"; };
 		51BC29732D9BE3F500C04EE4 /* ControlButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlButton.swift; sourceTree = "<group>"; };
-		51BC29752D9BE46F00C04EE4 /* ControlButtonState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlButtonState.swift; sourceTree = "<group>"; };
 		51BC29782D9BF42600C04EE4 /* ResetButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetButton.swift; sourceTree = "<group>"; };
 		51BC298A2D9C42D200C04EE4 /* TimeIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeIndicatorView.swift; sourceTree = "<group>"; };
 		51CA3B832D90078B009A7CD4 /* HideableVStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideableVStack.swift; sourceTree = "<group>"; };
@@ -123,6 +121,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5108505A2DA3D0BE0008C9D7 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				5123DEFA2D9D02CE0034B58B /* AchievementRateView.swift */,
+				51BC298A2D9C42D200C04EE4 /* TimeIndicatorView.swift */,
+				51BC29732D9BE3F500C04EE4 /* ControlButton.swift */,
+				51BC29782D9BF42600C04EE4 /* ResetButton.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		5113EA362D8DAFE600153ECD /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -131,14 +140,6 @@
 				51CA3B8B2D902EFF009A7CD4 /* CapsuleDismissButton.swift */,
 			);
 			path = Components;
-			sourceTree = "<group>";
-		};
-		5123DEF92D9D02C00034B58B /* AchievementRateView */ = {
-			isa = PBXGroup;
-			children = (
-				5123DEFA2D9D02CE0034B58B /* AchievementRateView.swift */,
-			);
-			path = AchievementRateView;
 			sourceTree = "<group>";
 		};
 		51309D992D0DC8BB00660118 /* Feature */ = {
@@ -158,7 +159,7 @@
 			children = (
 				5113EA362D8DAFE600153ECD /* Components */,
 				51657B012C31C1C500418325 /* OnboardingView.swift */,
-				517063952D8B3C8A00567612 /* Onboarding.swift */,
+				517063952D8B3C8A00567612 /* OnboardingVM.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -275,14 +276,6 @@
 			path = Localization;
 			sourceTree = "<group>";
 		};
-		513F7B3E2D9A883F007BEFD0 /* PageView */ = {
-			isa = PBXGroup;
-			children = (
-				513F7B3C2D9A8831007BEFD0 /* PageView.swift */,
-			);
-			path = PageView;
-			sourceTree = "<group>";
-		};
 		513F7B432D9AE711007BEFD0 /* TimerEntryView */ = {
 			isa = PBXGroup;
 			children = (
@@ -312,10 +305,7 @@
 		513F7B4C2D9B01AB007BEFD0 /* TimerMainView */ = {
 			isa = PBXGroup;
 			children = (
-				5123DEF92D9D02C00034B58B /* AchievementRateView */,
-				51BC29892D9C3D1F00C04EE4 /* TimeIndicatorView */,
-				51BC29722D9BE3E400C04EE4 /* ControlButton */,
-				51BC29772D9BF41000C04EE4 /* ResetButton */,
+				5108505A2DA3D0BE0008C9D7 /* Components */,
 				519701FA2D297BFA00B74205 /* TimerMainView.swift */,
 			);
 			path = TimerMainView;
@@ -329,31 +319,6 @@
 				513F7B4C2D9B01AB007BEFD0 /* TimerMainView */,
 			);
 			path = Components;
-			sourceTree = "<group>";
-		};
-		51BC29722D9BE3E400C04EE4 /* ControlButton */ = {
-			isa = PBXGroup;
-			children = (
-				51BC29732D9BE3F500C04EE4 /* ControlButton.swift */,
-				51BC29752D9BE46F00C04EE4 /* ControlButtonState.swift */,
-			);
-			path = ControlButton;
-			sourceTree = "<group>";
-		};
-		51BC29772D9BF41000C04EE4 /* ResetButton */ = {
-			isa = PBXGroup;
-			children = (
-				51BC29782D9BF42600C04EE4 /* ResetButton.swift */,
-			);
-			path = ResetButton;
-			sourceTree = "<group>";
-		};
-		51BC29892D9C3D1F00C04EE4 /* TimeIndicatorView */ = {
-			isa = PBXGroup;
-			children = (
-				51BC298A2D9C42D200C04EE4 /* TimeIndicatorView.swift */,
-			);
-			path = TimeIndicatorView;
 			sourceTree = "<group>";
 		};
 		51C071DF2D913BE50054A606 /* Fonts */ = {
@@ -422,18 +387,10 @@
 		51FC27DC2D97E4BE0080EA17 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				513F7B3E2D9A883F007BEFD0 /* PageView */,
-				51FC27E32D9800010080EA17 /* StatusView */,
+				51FC27DD2D97E4E00080EA17 /* StatusView.swift */,
+				513F7B3C2D9A8831007BEFD0 /* PageView.swift */,
 			);
 			path = Components;
-			sourceTree = "<group>";
-		};
-		51FC27E32D9800010080EA17 /* StatusView */ = {
-			isa = PBXGroup;
-			children = (
-				51FC27DD2D97E4E00080EA17 /* StatusView.swift */,
-			);
-			path = StatusView;
 			sourceTree = "<group>";
 		};
 		51FD3CFA2D9ED07800969B60 /* ChartEmptyView */ = {
@@ -548,7 +505,7 @@
 				51FD3CFC2D9ED07F00969B60 /* ChartEmptyView.swift in Sources */,
 				51AD90E02C283543008E3E67 /* ChartView.swift in Sources */,
 				51732CA22DA1675500668C41 /* SettingsVM.swift in Sources */,
-				517063962D8B3C8D00567612 /* Onboarding.swift in Sources */,
+				517063962D8B3C8D00567612 /* OnboardingVM.swift in Sources */,
 				519701FB2D297BFA00B74205 /* TimerMainView.swift in Sources */,
 				51CA3B8C2D902EFF009A7CD4 /* CapsuleDismissButton.swift in Sources */,
 				51309DB82D0DCD2400660118 /* ChuUIButton.swift in Sources */,
@@ -556,7 +513,6 @@
 				513F7B422D9AC24F007BEFD0 /* TimerScreenState.swift in Sources */,
 				51BC29742D9BE3F500C04EE4 /* ControlButton.swift in Sources */,
 				51309DA82D0DCC4D00660118 /* Int+.swift in Sources */,
-				51BC29762D9BE47300C04EE4 /* ControlButtonState.swift in Sources */,
 				51FD3CFE2D9ED23100969B60 /* ChartData.swift in Sources */,
 				51BC29792D9BF42600C04EE4 /* ResetButton.swift in Sources */,
 				5123DEFB2D9D02CE0034B58B /* AchievementRateView.swift in Sources */,

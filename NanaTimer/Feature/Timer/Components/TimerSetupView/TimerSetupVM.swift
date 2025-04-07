@@ -10,6 +10,8 @@ import Combine
 
 final class TimerSetupVM: ObservableObject {
     
+    // MARK: State & Intent
+    
     struct State {
         let tintColor = Color.palette.randomElement()!
         let hours = Array(0..<112)
@@ -32,16 +34,15 @@ final class TimerSetupVM: ObservableObject {
     let intent = PassthroughSubject<Intent, Never>()
     private var cancellables = Set<AnyCancellable>()
     
-    // MARK: Init
+    // MARK: Initializer (Intent Binding)
     
     init() {
-        intent // 인텐트 바인딩
-            .print("TimerSetupVM")
+        intent
             .sink { [weak self] in self?.process($0) }
             .store(in: &cancellables)
     }
     
-    // MARK: Processing
+    // MARK: Intent Handling
     
     private func process(_ intent: Intent) {
         switch intent {

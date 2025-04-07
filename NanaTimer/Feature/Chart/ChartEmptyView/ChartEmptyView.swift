@@ -9,11 +9,11 @@ import SwiftUI
 
 struct ChartEmptyView: View {
     
-    // MARK: State
+    // MARK: Properties
     
     private let tintColor: Color
     
-    // MARK: Init
+    // MARK: Initializer
     
     init(tintColor: Color) {
         self.tintColor = tintColor

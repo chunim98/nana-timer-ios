@@ -10,21 +10,18 @@ import Combine
 
 struct TimerEntryView: View {
     
-    // MARK: State
-    
+    // MARK: Properties
+
     private let titleText: LocalizedStringKey
     private let tintColor: Color
-    
-    // MARK: Properties
-    
     private let intent: PassthroughSubject<TimerVM.Intent, Never>
     
-    // MARK: Init
+    // MARK: Initializer
     
     init(
         timerState: TimerState,
         tintColor: Color,
-        _ intent: PassthroughSubject<TimerVM.Intent, Never>
+        intent: PassthroughSubject<TimerVM.Intent, Never>
     ) {
         self.titleText = timerState == .timeout ?
         "24시간 동안 조작이 없어\n초기화했어요" :
@@ -55,7 +52,6 @@ struct TimerEntryView: View {
                 RoundedRectangle(cornerRadius: 25)
                     .fill(Color.pageIvory)
                     .stroke(.black.opacity(0.20), lineWidth: 0.5)
-
             }
         }
     }
@@ -65,6 +61,6 @@ struct TimerEntryView: View {
     TimerEntryView(
         timerState: .timeout,
         tintColor: .palette[0],
-        .init()
+        intent: .init()
     )
 }

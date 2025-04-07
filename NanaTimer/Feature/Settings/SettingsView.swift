@@ -9,7 +9,11 @@ import SwiftUI
 
 struct SettingsView: View {
     
+    // MARK: Properties
+    
     @StateObject private var vm = SettingsVM()
+    
+    // MARK: View
     
     var body: some View {
         List {

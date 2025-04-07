@@ -13,21 +13,32 @@ struct TimerSetupView: View {
     // MARK: Properties
     
     @ObservedObject private var vm = TimerSetupVM()
-    private let parentIntent: PassthroughSubject<TimerVM.Intent, Never>
+    private let timerVMIntent: PassthroughSubject<TimerVM.Intent, Never>
     
-    // MARK: Init
+    // MARK: Initializer
     
-    init(_ intent: PassthroughSubject<TimerVM.Intent, Never>) {
-        self.parentIntent = intent
+    init(intent: PassthroughSubject<TimerVM.Intent, Never>) {
+        self.timerVMIntent = intent
     }
     
     // MARK: View
     
     var body: some View {
+        // Properties
+        let hoursSelectionBinding = Binding(
+            get: { vm.state.hourSelection },
+            set: { vm.intent.send(.hourPickerSwiped($0)) }
+        )
+        let minutesSelectionBinding = Binding(
+            get: { vm.state.minuteSelection },
+            set: { vm.intent.send(.minutePickerSwiped($0)) }
+        )
+        
+        // View
         VStack {
             // x 모양 버튼
             Button {
-                parentIntent.send(.closeSetupViewButtonTapped)
+                timerVMIntent.send(.closeSetupViewButtonTapped)
                 
             } label: {
                 Image(systemName: "multiply.circle.fill").resizable()
@@ -37,17 +48,12 @@ struct TimerSetupView: View {
             .frame(maxWidth: .infinity, maxHeight: 50, alignment: .trailing)
             
             Spacer()
-                        
+            
             // 피커 뷰 가로 스택
             HStack {
                 // 시간
                 VStack {
-                    let selectionBinding = Binding(
-                        get: { vm.state.hourSelection },
-                        set: { vm.intent.send(.hourPickerSwiped($0)) }
-                    )
-                    
-                    Picker("시간", selection: selectionBinding) {
+                    Picker("시간", selection: hoursSelectionBinding) {
                         ForEach(vm.state.hours, id: \.self) { Text("\($0)") }
                     }
                     .pickerStyle(.wheel)
@@ -59,12 +65,7 @@ struct TimerSetupView: View {
                 
                 // 분
                 VStack {
-                    let selectionBinding = Binding(
-                        get: { vm.state.minuteSelection },
-                        set: { vm.intent.send(.minutePickerSwiped($0)) }
-                    )
-                    
-                    Picker("분", selection: selectionBinding) {
+                    Picker("분", selection: minutesSelectionBinding) {
                         ForEach(vm.state.minutes, id: \.self) { Text("\($0)") }
                     }
                     .pickerStyle(.wheel)
@@ -78,8 +79,11 @@ struct TimerSetupView: View {
             Spacer()
             
             // 결정 버튼
-            ComfirmButton(vm.state) {
-                parentIntent.send(.confirmButtonTapped(vm.state.selectionSum))
+            ComfirmButton(
+                isDisabled: vm.state.isConfirmButtonDiabled,
+                tintColor: vm.state.tintColor
+            ) {
+                timerVMIntent.send(.confirmButtonTapped(vm.state.selectionSum))
             }
             
             Spacer()
@@ -100,5 +104,5 @@ struct TimerSetupView: View {
 }
 
 #Preview {
-    TimerSetupView(.init())
+    TimerSetupView(intent: .init())
 }

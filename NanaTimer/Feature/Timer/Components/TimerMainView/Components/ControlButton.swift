@@ -1,5 +1,5 @@
 //
-//  ControlButtonState.swift
+//  ControlButton.swift
 //  NanaTimer
 //
 //  Created by 신정욱 on 4/1/25.
@@ -7,14 +7,24 @@
 
 import SwiftUI
 
-struct ControlButtonState {
-    let iconName: String
-    let iconColor: Color
-    let text: LocalizedStringKey
-    let textColor: Color
-    let isDisabled: Bool
-        
-    init(_ timerState: TimerState, _ tintColor: Color) {
+struct ControlButton: View {
+    
+    // MARK: Properties
+    
+    private let iconName: String
+    private let iconColor: Color
+    private let text: LocalizedStringKey
+    private let textColor: Color
+    private let isDisabled: Bool
+    private let perform: () -> Void
+    
+    // MARK: Initializer
+    
+    init(
+        timerState: TimerState,
+        tintColor: Color,
+        perform: @escaping () -> Void
+    ) {
         switch timerState {
         case .ready:
             self.iconName = "play.fill"
@@ -51,5 +61,38 @@ struct ControlButtonState {
             self.textColor = .textBlack
             self.isDisabled = false
         }
+        
+        self.perform = perform
     }
+    
+    // MARK: View
+    
+    var body: some View {
+        Button {
+            HapticManager.shared.occurLight()
+            perform()
+            
+        } label: {
+            VStack {
+                Image(systemName: iconName).resizable()
+                    .foregroundStyle(iconColor)
+                    .frame(width: 50, height: 50)
+                
+                Text(text)
+                    .foregroundStyle(textColor)
+                    .font(.localizedFont28)
+            }
+        }
+        .disabled(isDisabled)
+        .buttonStyle(ChuUIButton())
+        .frame(height: 300)
+    }
+}
+
+#Preview {
+    ControlButton(
+        timerState: .finished,
+        tintColor: .backgroundBeige,
+        perform: {}
+    )
 }

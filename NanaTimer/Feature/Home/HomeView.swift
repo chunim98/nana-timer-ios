@@ -9,17 +9,22 @@ import SwiftUI
 
 struct HomeView: View {
     
-    @Environment(\.scenePhase) private var scenePhase: ScenePhase
+    // MARK: Properties
     
-    @StateObject private var homeVM = HomeVM()
+    @Environment(\.scenePhase) private var scenePhase
     @StateObject private var timerVM = TimerVM()
+    @StateObject private var homeVM = HomeVM()
+    
+    // MARK: View
     
     var body: some View {
+        // Properties
         let pathBindig = Binding(
             get: { homeVM.state.navigationPath },
             set: { _ in homeVM.intent.send(.setttingsViewClosed) }
         )
         
+        // View
         ZStack {
             NavigationStack(path: pathBindig) {
                 VStack {
@@ -27,16 +32,19 @@ struct HomeView: View {
                     StatusView(
                         pageIndex: homeVM.state.currentPageIndex,
                         timerState: timerVM.state.timerState,
-                        homeVM.intent
+                        intent: homeVM.intent
                     )
                     
                     // 커스텀 인덱스 뷰가 적용된 페이지 스타일의 탭 뷰
                     PageView(
                         pageIndex: homeVM.state.currentPageIndex,
-                        homeVM.intent
+                        intent: homeVM.intent
                     ) {
                         // 도메인 로직과 직결된 핵심 뷰, TimerVM이 존재하는 이유
-                        TimerView(timerVM).tag(0)
+                        TimerView(
+                            vm: timerVM
+                        )
+                        .tag(0)
                         
                         // 차트를 표시하는 뷰
                         ChartView(
@@ -65,8 +73,6 @@ struct HomeView: View {
         }
     }
 }
-
-
 
 #Preview {
     HomeView()

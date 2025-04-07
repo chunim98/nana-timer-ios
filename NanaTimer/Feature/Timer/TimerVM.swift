@@ -10,20 +10,38 @@ import Combine
 
 final class TimerVM: ObservableObject {
     
+    // MARK: State
+    
     struct State {
-        @Storage("DST", [Int](repeating: 0, count: 7+1)) var dailyStudyTimes
-        @EnumStorage("SS", TimerScreenState.entry) var screenState
-        @EnumStorage("TS", TimerState.idle) var timerState
-        @Storage("BEA", Date()) var backgroundEnterAt
-        @Storage("IA", Date()) var initializedAt
-        @Storage("D", 0) var duration
-        @Storage("E", 0) var elapsed
-        var remaining: Int { duration - elapsed }
-        let colors = Color.palette.shuffled()
+        @Storage("T.DST", [Int](repeating: 0, count: 7+1))
+        var dailyStudyTimes
         
-        /// 설정 값 읽어오기 전용
-        @Storage("S.IHPE", false) private(set) var isHapticPulseEnabled
+        @EnumStorage("T.SS", TimerScreenState.entry)
+        var screenState
+        
+        @EnumStorage("T.TS", TimerState.idle)
+        var timerState
+        
+        @Storage("T.BEA", Date())
+        var backgroundEnterAt
+        
+        @Storage("T.IA", Date())
+        var initializedAt
+        
+        @Storage("T.D", 0)
+        var duration
+        
+        @Storage("T.E", 0)
+        var elapsed
+        
+        @Storage("S.IHPE", false) // 설정 값 읽어오기 전용
+        private(set) var isHapticPulseEnabled
+        
+        let colors = Color.palette.shuffled()
+        var remaining: Int { duration - elapsed }
     }
+    
+    // MARK: Intents
     
     enum Intent {
         case setupButtonTapped
@@ -59,11 +77,10 @@ final class TimerVM: ObservableObject {
     private let calendar = Calendar.current
     private weak var timer: Timer?
 
-    // MARK: Init
+    // MARK: Initializer (Intent Binding)
     
     init() {
         intent // 인텐트 바인딩
-            .print("타이머 뷰모델")
             .sink { [weak self] in self?.process($0) }
             .store(in: &cancellables)
         
@@ -72,7 +89,7 @@ final class TimerVM: ObservableObject {
             .store(in: &cancellables)
     }
     
-    // MARK: Intent Processing
+    // MARK: Intent Handling
     
     private func process(_ intent: Intent) {
         switch intent {
@@ -98,7 +115,7 @@ final class TimerVM: ObservableObject {
         }
     }
     
-    // MARK: Timer Intent Processing
+    // MARK: Internal Intent Handling
     
     private func timerProcess(_ intent: TimerIntent) {
         switch intent {
@@ -166,7 +183,7 @@ final class TimerVM: ObservableObject {
         }
     }
     
-    // MARK: Intent Handle Methods
+    // MARK: Methods
 
     /// 컨트롤 버튼의 탭 이벤트가 발생해, 타이머에 상태를 변경할 것을 요청합니다.
     private func handleControlButtonTapped() {
@@ -238,7 +255,7 @@ final class TimerVM: ObservableObject {
         }
     }
     
-    // MARK: Timer Handle Methods
+    // MARK: Timer Control Methods
 
     private func start() {
         guard timer == nil else { return }

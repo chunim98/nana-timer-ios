@@ -9,11 +9,17 @@ import SwiftUI
 
 struct TimerView: View {
     
+    // MARK: Properties
+    
     @ObservedObject private var vm: TimerVM
     
-    init(_ vm: TimerVM) {
+    // MARK: Initializer
+    
+    init(vm: TimerVM) {
         self.vm = vm
     }
+    
+    // MARK: View
     
     var body: some View {
         VStack {
@@ -22,17 +28,22 @@ struct TimerView: View {
                 TimerEntryView(
                     timerState: vm.state.timerState,
                     tintColor: vm.state.colors[1],
-                    vm.intent
+                    intent: vm.intent
                 )
                 .transition(.blurReplace)
                 
             case .setup:
-                TimerSetupView(vm.intent)
-                    .transition(.blurReplace)
+                TimerSetupView(
+                    intent: vm.intent
+                )
+                .transition(.blurReplace)
                 
             case .main:
-                TimerMainView(vm.state, vm.intent)
-                    .transition(.blurReplace)
+                TimerMainView(
+                    state: vm.state,
+                    intent: vm.intent
+                )
+                .transition(.blurReplace)
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)

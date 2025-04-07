@@ -10,30 +10,27 @@ import Combine
 
 struct TimerMainView: View {
     
-    // MARK: State
+    // MARK: Properties
     
     private let colors: [Color]
     private let timerState: TimerState
     private let duration: Int
     private let elapsedTime: Int
     private let remainingTime: Int
+    private let intent: PassthroughSubject<TimerVM.Intent, Never>
     
-    // MARK: Properties
-    
-    private let parentIntent: PassthroughSubject<TimerVM.Intent, Never>
-    
-    // MARK: Init
+    // MARK: Initializer
     
     init(
-        _ state: TimerVM.State,
-        _ intent: PassthroughSubject<TimerVM.Intent, Never>
+        state: TimerVM.State,
+        intent: PassthroughSubject<TimerVM.Intent, Never>
     ) {
         self.colors = state.colors
         self.timerState = state.timerState
         self.duration = state.duration
         self.elapsedTime = state.elapsed
         self.remainingTime = state.remaining
-        self.parentIntent = intent
+        self.intent = intent
     }
     
     // MARK: View
@@ -66,19 +63,19 @@ struct TimerMainView: View {
                 timerState: timerState,
                 tintColor: colors[2]
             ) {
-                parentIntent.send(.controlButtonTapped)
+                intent.send(.controlButtonTapped)
             }
             
             Spacer().frame(height: 30)
             
             // 타이머 초기화 버튼 (확인 얼럿 표시)
             ResetButton(tintColor: colors[3]) {
-                parentIntent.send(.resetAlertAccepted)
+                intent.send(.resetAlertAccepted)
             }
         }
     }
 }
 
 #Preview {
-    TimerMainView(.init(), .init())
+    TimerMainView(state: .init(), intent: .init())
 }

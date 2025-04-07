@@ -9,23 +9,20 @@ import SwiftUI
 
 struct ResetButton: View {
     
-    // MARK: State
+    // MARK: Propertes
     
     @State private var isAlertPreseted = false
     private let tintColor: Color
+    private let perform: () -> Void
     
-    // MARK: Properties
-    
-    private let action: () -> Void
-    
-    // MARK: Init
+    // MARK: Initializer
     
     init(
         tintColor: Color,
-        action: @escaping () -> Void
+        perform: @escaping () -> Void
     ) {
         self.tintColor = tintColor
-        self.action = action
+        self.perform = perform
     }
     
     // MARK: View
@@ -47,8 +44,9 @@ struct ResetButton: View {
             isPresented: $isAlertPreseted
         ) {
             Button("취소", role: .cancel) {}
+            
             Button("초기화") {
-                action()
+                perform()
                 HapticManager.shared.occurSuccess()
             }
         }
@@ -56,5 +54,5 @@ struct ResetButton: View {
 }
 
 #Preview {
-    ResetButton(tintColor: .backgroundBeige, action: {})
+    ResetButton(tintColor: .backgroundBeige, perform: {})
 }

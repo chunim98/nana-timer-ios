@@ -10,13 +10,13 @@ import Combine
 
 struct ECTSectionView: View {
     
-    // MARK: State
+    // MARK: Properties
     
     private let isHapticPulseEnabled: Bool
     private let tintColor: Color
-    private let parentIntent: PassthroughSubject<SettingsVM.Intent, Never>
+    private let intent: PassthroughSubject<SettingsVM.Intent, Never>
     
-    // MARK: Init
+    // MARK: Initializer
     
     init(
         isHapticPulseEnabled: Bool,
@@ -25,18 +25,20 @@ struct ECTSectionView: View {
     ) {
         self.isHapticPulseEnabled = isHapticPulseEnabled
         self.tintColor = tintColor
-        self.parentIntent = intent
+        self.intent = intent
     }
     
     // MARK: View
     
     var body: some View {
+        // Properties
         let isHapticPulseEnabledBinding = Binding(
             get: { isHapticPulseEnabled },
-            set: { parentIntent.send(.hapticPulseToggled($0)) }
+            set: { intent.send(.hapticPulseToggled($0)) }
         )
         let headerView = Text("기타").bold()
         
+        // View
         Section(header: headerView) {
             VStack(alignment: .leading) {
                 Toggle(isOn: isHapticPulseEnabledBinding) { Text("촉각 피드백") }
@@ -52,5 +54,9 @@ struct ECTSectionView: View {
 }
 
 #Preview {
-    ECTSectionView(isHapticPulseEnabled: true, tintColor: .blue, intent: .init())
+    ECTSectionView(
+        isHapticPulseEnabled: true,
+        tintColor: .blue,
+        intent: .init()
+    )
 }

@@ -9,14 +9,14 @@ import SwiftUI
 
 struct AchievementRateView: View {
     
-    // MARK: State
+    // MARK: Properties
     
     private let achievementRate: Int
     private let elapsedDayText: LocalizedStringKey
     private let tintColor1: Color
     private let tintColor2: Color
     
-    // MARK: Init
+    // MARK: Initializer
     
     init(
         duration: Float,
@@ -48,7 +48,6 @@ struct AchievementRateView: View {
         
         self.tintColor1 = tintColor1
         self.tintColor2 = tintColor2
-        
     }
     
     // MARK: View

@@ -9,38 +9,47 @@ import SwiftUI
 import Combine
 
 struct ComfirmButton: View {
-        
-    private let state: TimerSetupVM.State
-    private let action: () -> Void
+    
+    // MARK: Properties
+    
+    private let isDisabled: Bool
+    private let tintColor: Color
+    private let perform: () -> Void
+    
+    // MARK: Initializer
     
     init(
-        _ state: TimerSetupVM.State,
-        _ action: @escaping () -> Void
+        isDisabled: Bool,
+        tintColor: Color,
+        perform: @escaping () -> Void
     ) {
-        self.state = state
-        self.action = action
+        self.isDisabled = isDisabled
+        self.tintColor = tintColor.opacity(isDisabled ? 0.5 : 1.0)
+        self.perform = perform
     }
+    
+    // MARK: View
     
     var body: some View {
         Button {
-            action()
+            perform()
             
         } label: {
             Text("결정")
                 .font(.localizedFont28)
                 .foregroundStyle(Color.pageIvory)
                 .padding(EdgeInsets(horizontal: 15, vertical: 10))
-                .background {
-                    let opacity: Double = state.isConfirmButtonDiabled ? 0.5 : 1.0
-                    RoundedRectangle(cornerRadius: 25)
-                        .fill(state.tintColor.opacity(opacity))
-                }
+                .background { RoundedRectangle(cornerRadius: 25).fill(tintColor) }
         }
-        .disabled(state.isConfirmButtonDiabled)
-        .animation(.default, value: state.isConfirmButtonDiabled)
+        .disabled(isDisabled)
+        .animation(.default, value: isDisabled)
     }
 }
 
 #Preview {
-    ComfirmButton(.init(), {})
+    ComfirmButton(
+        isDisabled: false,
+        tintColor: .textBlack,
+        perform: {}
+    )
 }
