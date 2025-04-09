@@ -35,8 +35,7 @@ final class HomeVM: ObservableObject {
     // MARK: Init(Intent Binding)
     
     init() {
-        intent // 인텐트 바인딩
-            .print("HomeVM")
+        intent
             .sink { [weak self] in self?.process($0) }
             .store(in: &cancellables)
     }

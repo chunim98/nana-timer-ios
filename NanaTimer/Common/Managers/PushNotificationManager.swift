@@ -56,15 +56,15 @@ final class PushNotificationManager {
             trigger: trigger
         )
         
-        // 내 앱의 알림센터 객체에 추가
+        // 알림 발신 스케줄 추가
         center.add(request)
     }
     
     // 등록된 알림 취소
     func cancelNotification() {
-        // 곧 다가올 알림 지우기
+        // 계류중인 알림 제거
         center.removeAllPendingNotificationRequests()
-        // 현재 사용자 폰에 떠 있는 알림 지우기
+        // 현재 사용자 폰에 떠 있는 알림 제거
         center.removeAllDeliveredNotifications()
         // 뱃지 제거
         center.setBadgeCount(0)

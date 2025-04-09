@@ -28,7 +28,7 @@ struct ChartView: View {
         
         self.dataArr = Array(1...7).map { i in ChartData(
             weakdayText: String(localized: i.weekdayText),
-            dailyStudied: dailyStudyTimes[i],
+            dailyStudied: dailyStudyTimes[i] / 60, // 분 단위로 표시
             barColor: tintColors[i]
         ) }
     }

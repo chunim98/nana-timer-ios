@@ -37,6 +37,9 @@ final class TimerVM: ObservableObject {
         @Storage("S.IHPE", false) // 설정 값 읽어오기 전용
         private(set) var isHapticPulseEnabled
         
+        @Storage("S.PI", 60) // 설정 값 읽어오기 전용
+        private(set) var pushInterval: Int
+        
         let colors = Color.palette.shuffled()
         var remaining: Int { duration - elapsed }
     }
@@ -163,10 +166,7 @@ final class TimerVM: ObservableObject {
             invalidate()
             
         case .enterBackground:
-            guard state.timerState == .running else { return }
-            state.timerState = .backgrounded
-            state.backgroundEnterAt = Date()
-            invalidate()
+            handleEnterBackground()
             
         case .enterForeground:
             handleEnterForeground()
@@ -206,17 +206,33 @@ final class TimerVM: ObservableObject {
         }
     }
     
+    private func handleEnterBackground() {
+        guard state.timerState == .running else { return }
+        state.timerState = .backgrounded
+        state.backgroundEnterAt = Date()
+        invalidate()
+        
+        // 푸시 알림 등록
+        PushNotificationManager.shared.requestScheduleNotification(
+            title: "나나타이머",
+            body: "타이머가 실행중이에요.",
+            interval: Double(state.pushInterval.minToSec)
+        )
+    }
+    
     private func handleEnterForeground() {
+        guard state.timerState == .backgrounded else { return }
+        
+        // 푸시 알림 취소
+        PushNotificationManager.shared.cancelNotification()
         
         /// 1. 백그라운드에서 24시간(86400초) 이상 경과 -> 타임아웃 처리
         /// 2. 타이머가 종료될 만큼 시간이 지남 -> 완료 처리
         /// 3. 백그라운드에서 경과한 시간만큼 반영하여 타이머 재개
         
-        guard state.timerState == .backgrounded else { return }
-        
         let elapsedInBG = Int(state.backgroundEnterAt.distance(to: Date()))
         
-        if elapsedInBG >= 10 {
+        if elapsedInBG >= 86400 {
             timerIntent.send(.cancel) // 1
         } else if elapsedInBG >= state.remaining {
             timerIntent.send(.completeInBackGround(elapsedInBG)) // 2
