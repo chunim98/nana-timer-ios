@@ -92,7 +92,7 @@ final class TimerVM: ObservableObject {
             .store(in: &cancellables)
     }
     
-    // MARK: Intent Handling
+    // MARK: External Intent Handling
     
     private func process(_ intent: Intent) {
         switch intent {

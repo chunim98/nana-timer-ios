@@ -47,6 +47,7 @@ struct TimerView: View {
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .id(vm.state.screenState)
     }
 }
 
