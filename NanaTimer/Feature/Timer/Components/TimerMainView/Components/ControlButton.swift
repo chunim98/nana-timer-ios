@@ -84,7 +84,7 @@ struct ControlButton: View {
             }
         }
         .disabled(isDisabled)
-        .buttonStyle(ChuUIButton())
+        .buttonStyle(PressPopButtonStyle())
         .frame(height: 300)
     }
 }

@@ -14,8 +14,7 @@
 		51309DA62D0DCC4100660118 /* Color+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51309DA52D0DCC4100660118 /* Color+.swift */; };
 		51309DA82D0DCC4D00660118 /* Int+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51309DA72D0DCC4D00660118 /* Int+.swift */; };
 		51309DAA2D0DCC5500660118 /* Font+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51309DA92D0DCC5500660118 /* Font+.swift */; };
-		51309DB82D0DCD2400660118 /* ChuUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51309DB72D0DCD2400660118 /* ChuUIButton.swift */; };
-		51309DBC2D0DCD3E00660118 /* ChuUIModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51309DBB2D0DCD3E00660118 /* ChuUIModifier.swift */; };
+		51309DB82D0DCD2400660118 /* PressPopButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51309DB72D0DCD2400660118 /* PressPopButtonStyle.swift */; };
 		513F7B3D2D9A8838007BEFD0 /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513F7B3C2D9A8831007BEFD0 /* PageView.swift */; };
 		513F7B402D9AC100007BEFD0 /* TimerVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513F7B3F2D9AC0FD007BEFD0 /* TimerVM.swift */; };
 		513F7B422D9AC24F007BEFD0 /* TimerScreenState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513F7B412D9AC241007BEFD0 /* TimerScreenState.swift */; };
@@ -65,8 +64,7 @@
 		51309DA52D0DCC4100660118 /* Color+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+.swift"; sourceTree = "<group>"; };
 		51309DA72D0DCC4D00660118 /* Int+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+.swift"; sourceTree = "<group>"; };
 		51309DA92D0DCC5500660118 /* Font+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+.swift"; sourceTree = "<group>"; };
-		51309DB72D0DCD2400660118 /* ChuUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChuUIButton.swift; sourceTree = "<group>"; };
-		51309DBB2D0DCD3E00660118 /* ChuUIModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChuUIModifier.swift; sourceTree = "<group>"; };
+		51309DB72D0DCD2400660118 /* PressPopButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PressPopButtonStyle.swift; sourceTree = "<group>"; };
 		513F7B3C2D9A8831007BEFD0 /* PageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
 		513F7B3F2D9AC0FD007BEFD0 /* TimerVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerVM.swift; sourceTree = "<group>"; };
 		513F7B412D9AC241007BEFD0 /* TimerScreenState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerScreenState.swift; sourceTree = "<group>"; };
@@ -260,8 +258,7 @@
 		51309DB62D0DCD1800660118 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				51309DBB2D0DCD3E00660118 /* ChuUIModifier.swift */,
-				51309DB72D0DCD2400660118 /* ChuUIButton.swift */,
+				51309DB72D0DCD2400660118 /* PressPopButtonStyle.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -478,7 +475,6 @@
 				519701F72D280F0700B74205 /* TimerEntryView.swift in Sources */,
 				51CA3B842D9007D0009A7CD4 /* HideableVStack.swift in Sources */,
 				5172FD452C3FD33000BC3A44 /* PushNotificationManager.swift in Sources */,
-				51309DBC2D0DCD3E00660118 /* ChuUIModifier.swift in Sources */,
 				51732CAE2DA176BC00668C41 /* ECTSectionView.swift in Sources */,
 				51309DA62D0DCC4100660118 /* Color+.swift in Sources */,
 				51CA3B882D900AF0009A7CD4 /* CircleDismissButton.swift in Sources */,
@@ -500,7 +496,7 @@
 				517063962D8B3C8D00567612 /* OnboardingVM.swift in Sources */,
 				519701FB2D297BFA00B74205 /* TimerMainView.swift in Sources */,
 				51CA3B8C2D902EFF009A7CD4 /* CapsuleDismissButton.swift in Sources */,
-				51309DB82D0DCD2400660118 /* ChuUIButton.swift in Sources */,
+				51309DB82D0DCD2400660118 /* PressPopButtonStyle.swift in Sources */,
 				51657B022C31C1C500418325 /* OnboardingView.swift in Sources */,
 				513F7B422D9AC24F007BEFD0 /* TimerScreenState.swift in Sources */,
 				51BC29742D9BE3F500C04EE4 /* ControlButton.swift in Sources */,

@@ -37,7 +37,7 @@ struct ResetButton: View {
                 .frame(width: 25, height: 25)
                 .foregroundStyle(tintColor)
         }
-        .buttonStyle(ChuUIButton())
+        .buttonStyle(PressPopButtonStyle())
         .frame(height: 75)
         .alert(
             "초기화할까요?\n이 작업은 되돌릴 수 없어요",
